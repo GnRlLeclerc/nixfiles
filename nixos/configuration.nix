@@ -1,11 +1,15 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
-
+# TODO : faire une option pour enable les trucs laptop-like (wireless, graphics, pulseaudio...)
+# TODO : définition des users
+# TODO : window system : gnome wayland vs hyprland wayland (permettre de switcher facilement entre les 2, mettre une option enable à chacun)
 {
-  imports = [./hardware/hardware-laptop.nix];
+  imports = [
+    ./hardware/hardware-laptop.nix
+    ./modules/desktop-apps.nix
+  ];
+
+  # Install and enable desktop apps
+  programs.desktop-apps.enable = true;
 
   # test option for amd gpu support
   # It might change in unstable, to be tested (nixos 24 right now)
@@ -22,14 +26,8 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -98,40 +96,16 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
   # Base system packages
-  git
-  neovim
-  curl
-  wget
+  environment.systemPackages = with pkgs; [
+    git
+    neovim
+    curl
+    wget
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # Overriden by the flake (set to unstable)
   system.stateVersion = "24.05";

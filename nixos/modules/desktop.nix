@@ -3,36 +3,40 @@
 
 with lib;
 
-{
-  options = {
+let
+  cfg = config.settings;
+in {
+  options.settings = {
     desktop.enable = mkEnableOption "Desktop environment features and applications";
 
     desktop.environment = mkOption {
-      type = types.str;
+      type = types.enum ["hyprland" "gnome-wayland" "gnome-xorg" ];
       default = "gnome-xorg";
       description = "Choose a desktop environment: \"hyprland\"|\"gnome-wayland\"|\"gnome-xorg\"";
-      example = "hyprland";
     };
   };
 
-  config = mkIf config.desktop.enable {
-    programs.firefox.enable = true;   
+  config = mkIf cfg.desktop.enable (mkMerge [
+    {
+      # Enable CUPS for printing
+      services.printing.enable = true;
+
+      # Desktop programs
+      programs.firefox.enable = true;   
+
+      environment.systemPackages = with pkgs; [
+        kitty
+        slack
+        obsidian
+      ];
+    }
 
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+    #################################################
+    #              Desktop environments             #
+    #################################################
 
-    # Other desktop applications
-    environment.systemPackages = with pkgs; [
-      kitty
-      slack
-      obsidian
-    ];
-
-    ########################
-    # Desktop environments #
-    ########################
-
+    (mkIf (cfg.desktop.environment == "gnome-xorg") {
       # Enable Xorg
       services.xserver.enable = true;
 
@@ -45,5 +49,7 @@ with lib;
         layout = "us";
         variant = "intl";
       };
-  };
+    })
+
+  ]);
 }

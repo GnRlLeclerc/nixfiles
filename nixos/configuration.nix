@@ -13,8 +13,9 @@
     ./modules/users.nix
   ];
 
-  # Install and enable desktop apps, graphics, sound...
-  desktop.enable = true;
+  # Setup the desktop environment and apps
+  settings.desktop.enable = true;
+  settings.desktop.environment = "gnome-xorg";
 
   settings.sound.enable = true;
   settings.graphics.enable = true;

@@ -6,6 +6,7 @@
   imports = [
     ./hardware/hardware-laptop.nix
     ./modules/desktop-apps.nix
+    ./modules/users.nix
   ];
 
   # Install and enable desktop apps
@@ -86,16 +87,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.thibaut = {
-    isNormalUser = true;
-    description = "Thibaut";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -105,6 +96,7 @@
     neovim
     curl
     wget
+    just
   ];
 
   # Overriden by the flake (set to unstable)

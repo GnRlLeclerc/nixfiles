@@ -10,9 +10,9 @@ in {
     desktop.enable = mkEnableOption "Desktop environment features and applications";
 
     desktop.environment = mkOption {
-      type = types.enum ["hyprland" "gnome-wayland" "gnome-xorg" ];
+      type = types.enum ["hyprland" "gnome" ];
       default = "gnome-xorg";
-      description = "Choose a desktop environment: \"hyprland\"|\"gnome-wayland\"|\"gnome-xorg\"";
+      description = "Choose a desktop environment";
     };
   };
 
@@ -28,6 +28,13 @@ in {
         kitty
         slack
         obsidian
+        
+	# Libre Office fresh + spellcheck
+	libreoffice-fresh
+        hunspell
+	hunspellDicts.fr-any
+	hunspellDicts.en-us
+	hunspellDicts.en-gb-ise
       ];
     }
 
@@ -36,7 +43,7 @@ in {
     #              Desktop environments             #
     #################################################
 
-    (mkIf (cfg.desktop.environment == "gnome-xorg") {
+    (mkIf (cfg.desktop.environment == "gnome") {
       # Enable Xorg
       services.xserver.enable = true;
 
@@ -51,5 +58,9 @@ in {
       };
     })
 
+    (mkIf (cfg.desktop.environment == "hyprland") {
+      # hyprland
+      # TODO : hyprland
+    })
   ]);
 }

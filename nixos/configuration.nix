@@ -15,7 +15,7 @@
 
   # Setup the desktop environment and apps
   settings.desktop.enable = true;
-  settings.desktop.environment = "gnome-xorg";
+  settings.desktop.environment = "gnome";
 
   settings.sound.enable = true;
   settings.graphics.enable = true;

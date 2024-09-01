@@ -52,6 +52,9 @@ in
 
         # Sound control
         playerctl
+
+        # Wayland clipboard utilities
+        wl-clipboard
       ];
     }
 

@@ -12,6 +12,7 @@
     ./modules/bluetooth.nix
     ./modules/bootloader.nix
     ./modules/desktop.nix
+    ./modules/fonts.nix
     ./modules/garbage-collection.nix
     ./modules/graphics.nix
     ./modules/locale.nix

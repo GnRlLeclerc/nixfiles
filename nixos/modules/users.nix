@@ -1,5 +1,10 @@
 # System users
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -16,7 +21,9 @@ in
       extraGroups = [
         "networkmanager"
         "wheel"
+        "docker"
       ];
+      shell = pkgs.zsh;
     };
   };
 }

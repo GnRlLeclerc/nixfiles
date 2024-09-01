@@ -16,6 +16,7 @@
     ./modules/garbage-collection.nix
     ./modules/graphics.nix
     ./modules/locale.nix
+    ./modules/nvidia.nix
     ./modules/packages.nix
     ./modules/power.nix
     ./modules/sound.nix
@@ -26,6 +27,9 @@
   # Setup the desktop environment and apps
   settings.desktop.enable = true;
   settings.desktop.environment = "gnome";
+
+  # Enable Nvidia drivers
+  settings.nvidia.enable = true;
 
   settings.bluetooth.enable = true;
   settings.sound.enable = true;

@@ -1,6 +1,8 @@
 # Default system packages
 { pkgs, ... }:
 {
+  programs.zsh.enable = true;
+
   environment.systemPackages = with pkgs; [
     git
     just

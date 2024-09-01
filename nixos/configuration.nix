@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, outputs, ... }:
 {
   imports = [
     ./hardware/hardware-laptop.nix
+    outputs.overlays
 
     ./modules/bootloader.nix
     ./modules/desktop.nix

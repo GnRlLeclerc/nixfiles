@@ -25,9 +25,11 @@ in {
       programs.firefox.enable = true;   
 
       environment.systemPackages = with pkgs; [
+        # TODO : ne pas mettre ces packages ici, mais uniquement dans home manager. Ça sert à rien de dédoubler.
         kitty
         slack
         obsidian
+	vscode-fhs
         
 	# Libre Office fresh + spellcheck
 	libreoffice-fresh
@@ -56,11 +58,14 @@ in {
         layout = "us";
         variant = "intl";
       };
+
+      # Gnome triple buffering patch: fix multi-monitors & mouse lag
+      environment.sessionVariables.MUTTER_DEBUG_ENABLE_ATOMIC_KMS = "0";
     })
 
     (mkIf (cfg.desktop.environment == "hyprland") {
-      # hyprland
       # TODO : hyprland
+      # Maybe do this in home-manager instead. See how to handle the login screen, then
     })
   ]);
 }

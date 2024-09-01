@@ -15,9 +15,14 @@
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
-	modules = [./nixos/configuration.nix];
+	modules = [
+	  ./nixos/configuration.nix
+	  ];
       };
     };
+
+    # Expose overlays to modules through ouputs
+    overlays = import ./overlays;
   };
 }  
 

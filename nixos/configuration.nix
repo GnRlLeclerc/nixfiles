@@ -9,6 +9,7 @@
     ./hardware/hardware-laptop.nix
     outputs.overlays
 
+    ./modules/bluetooth.nix
     ./modules/bootloader.nix
     ./modules/desktop.nix
     ./modules/garbage-collection.nix
@@ -25,6 +26,7 @@
   settings.desktop.enable = true;
   settings.desktop.environment = "gnome";
 
+  settings.bluetooth.enable = true;
   settings.sound.enable = true;
   settings.graphics.enable = true;
   settings.me.enable = true;
@@ -37,8 +39,14 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
+  # Auto mount drives
+  services.udisks2.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Enable flatpak
+  services.flatpak.enable = true;
 
   # Enable flakes
   nix.settings.experimental-features = [

@@ -46,6 +46,12 @@ in
         hunspellDicts.fr-any
         hunspellDicts.en-us
         hunspellDicts.en-gb-ise
+
+        # Backlight control
+        brightnessctl
+
+        # Sound control
+        playerctl
       ];
     }
 

@@ -1,8 +1,8 @@
+# The base nixos configuration for any of my devices
 {
   config,
   lib,
   pkgs,
-  outputs,
   ...
 }:
 
@@ -10,8 +10,6 @@ with lib;
 
 {
   imports = [
-    outputs.overlays
-
     ./modules/bluetooth.nix
     ./modules/bootloader.nix
     ./modules/desktop.nix

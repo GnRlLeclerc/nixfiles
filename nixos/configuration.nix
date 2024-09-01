@@ -14,6 +14,7 @@
     ./modules/graphics.nix
     ./modules/locale.nix
     ./modules/packages.nix
+    ./modules/power.nix
     ./modules/sound.nix
     ./modules/timezone.nix
     ./modules/users.nix

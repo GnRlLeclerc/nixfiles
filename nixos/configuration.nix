@@ -36,6 +36,10 @@
   # Miscellaneous Settings #
   ##########################
 
+  # Enable docker, but do not start it on boot (desktop context)
+  virtualisation.docker.enable = true;
+  virtualisation.docker.enableOnBoot = false;
+
   # Enable networking
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;

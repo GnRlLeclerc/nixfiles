@@ -1,16 +1,25 @@
 # Desktop environment features and applications (apps, sound, graphics)
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
 let
   cfg = config.settings;
-in {
+in
+{
   options.settings = {
     desktop.enable = mkEnableOption "Desktop environment features and applications";
 
     desktop.environment = mkOption {
-      type = types.enum ["hyprland" "gnome" ];
+      type = types.enum [
+        "hyprland"
+        "gnome"
+      ];
       default = "gnome-xorg";
       description = "Choose a desktop environment";
     };
@@ -22,24 +31,23 @@ in {
       services.printing.enable = true;
 
       # Desktop programs
-      programs.firefox.enable = true;   
+      programs.firefox.enable = true;
 
       environment.systemPackages = with pkgs; [
         # TODO : ne pas mettre ces packages ici, mais uniquement dans home manager. Ça sert à rien de dédoubler.
         kitty
         slack
         obsidian
-	vscode-fhs
-        
-	# Libre Office fresh + spellcheck
-	libreoffice-fresh
+        vscode-fhs
+
+        # Libre Office fresh + spellcheck
+        libreoffice-fresh
         hunspell
-	hunspellDicts.fr-any
-	hunspellDicts.en-us
-	hunspellDicts.en-gb-ise
+        hunspellDicts.fr-any
+        hunspellDicts.en-us
+        hunspellDicts.en-gb-ise
       ];
     }
-
 
     #################################################
     #              Desktop environments             #

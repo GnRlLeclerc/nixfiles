@@ -1,4 +1,9 @@
-{ config, pkgs, outputs, ... }:
+{
+  config,
+  pkgs,
+  outputs,
+  ...
+}:
 {
   imports = [
     ./hardware/hardware-laptop.nix
@@ -34,7 +39,10 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # TTY keymaps
   console.keyMap = "fr";

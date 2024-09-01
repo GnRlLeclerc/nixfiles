@@ -5,7 +5,8 @@ with lib;
 
 let
   cfg = config.settings;
-in {
+in
+{
   options.settings.sound.enable = mkEnableOption "Enable sound";
 
   config = mkIf cfg.sound.enable {

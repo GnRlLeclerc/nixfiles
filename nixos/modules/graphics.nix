@@ -5,7 +5,8 @@ with lib;
 
 let
   cfg = config.settings;
-in {
+in
+{
   options.settings.graphics.enable = mkEnableOption "Enable graphics";
 
   config = mkIf cfg.graphics.enable {

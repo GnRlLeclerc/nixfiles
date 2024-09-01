@@ -1,12 +1,15 @@
 {
   config,
+  lib,
   pkgs,
   outputs,
   ...
 }:
+
+with lib;
+
 {
   imports = [
-    ./hardware/hardware-laptop.nix
     outputs.overlays
 
     ./modules/bluetooth.nix
@@ -16,7 +19,6 @@
     ./modules/garbage-collection.nix
     ./modules/graphics.nix
     ./modules/locale.nix
-    ./modules/nvidia.nix
     ./modules/packages.nix
     ./modules/power.nix
     ./modules/sound.nix
@@ -24,38 +26,24 @@
     ./modules/users.nix
   ];
 
-  # Setup the desktop environment and apps
-  settings.desktop.enable = true;
-  settings.desktop.environment = "gnome";
-
-  # Enable Nvidia drivers
-  settings.nvidia.enable = true;
-
-  settings.bluetooth.enable = true;
-  settings.sound.enable = true;
-  settings.graphics.enable = true;
-  settings.me.enable = true;
-
   ##########################
   # Miscellaneous Settings #
   ##########################
 
-  # Enable docker, but do not start it on boot (desktop context)
-  virtualisation.docker.enable = true;
-  virtualisation.docker.enableOnBoot = false;
+  # Enable docker
+  virtualisation.docker.enable = mkDefault true;
 
   # Enable networking
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
+  networking.networkmanager.enable = mkDefault true;
 
   # Auto mount drives
-  services.udisks2.enable = true;
+  services.udisks2.enable = mkDefault true;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = mkDefault true;
 
   # Enable flatpak
-  services.flatpak.enable = true;
+  services.flatpak.enable = mkDefault true;
 
   # Enable flakes
   nix.settings.experimental-features = [
@@ -64,7 +52,7 @@
   ];
 
   # TTY keymaps
-  console.keyMap = "fr";
+  console.keyMap = mkDefault "fr";
 
   # Overriden by the flake (set to unstable)
   system.stateVersion = "24.05";

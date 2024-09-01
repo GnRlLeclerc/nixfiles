@@ -12,5 +12,6 @@
     curl
     pciutils
     wget
+    home-manager
   ];
 }

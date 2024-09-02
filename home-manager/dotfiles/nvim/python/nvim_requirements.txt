@@ -1,0 +1,3 @@
+# Python requirements for Nvim to function properly in general
+
+neovim-remote  # Latex synctex

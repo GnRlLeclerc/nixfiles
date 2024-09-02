@@ -2,6 +2,11 @@
 
 {
 
+  # Modules
+  imports = [
+    ./modules/git.nix
+  ];
+
   ##########################
   # Miscellaneous settings #
   ##########################

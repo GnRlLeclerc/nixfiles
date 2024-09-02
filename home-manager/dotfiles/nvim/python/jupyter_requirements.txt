@@ -1,0 +1,9 @@
+# Python requirements for Jupyter Notebooks
+
+pynvim
+jupyter_client
+cairosvg
+pnglatex
+plotly
+kaleido
+pyperclip

@@ -1,9 +1,7 @@
-{ config, pkgs, ... }:
-
+{ pkgs, ... }:
 {
   imports = [
     ../base-home.nix
-    ../modules/git.nix
   ];
 
   ##########################
@@ -26,4 +24,9 @@
     userEmail = "thibaut2saivre@gmail.com";
     userName = "Thibaut";
   };
+
+  # Neovim: readonly symlink to my config (TODO: use nixvim or something like that for proper version handling)
+  # TODO: provide luarocks in the new config for magick (do it in a module)
+  programs.neovim.enable = true;
+  xdg.configFile."nvim".source = ../dotfiles/nvim;
 }

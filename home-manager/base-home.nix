@@ -4,6 +4,7 @@
 
   # Modules
   imports = [
+    ./modules/fonts.nix
     ./modules/git.nix
   ];
 

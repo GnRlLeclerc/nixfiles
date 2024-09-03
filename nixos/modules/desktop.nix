@@ -29,33 +29,6 @@ in
     {
       # Enable CUPS for printing
       services.printing.enable = true;
-
-      # Desktop programs
-      programs.firefox.enable = true;
-
-      environment.systemPackages = with pkgs; [
-        # TODO : ne pas mettre ces packages ici, mais uniquement dans home manager. Ça sert à rien de dédoubler.
-        kitty
-        slack
-        obsidian
-        vscode-fhs
-
-        # Libre Office fresh + spellcheck
-        libreoffice-fresh
-        hunspell
-        hunspellDicts.fr-any
-        hunspellDicts.en-us
-        hunspellDicts.en-gb-ise
-
-        # Backlight control
-        brightnessctl
-
-        # Sound control
-        playerctl
-
-        # Wayland clipboard utilities
-        wl-clipboard
-      ];
     }
 
     #################################################

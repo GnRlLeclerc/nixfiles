@@ -1,8 +1,10 @@
 # Some cool fonts
 { pkgs, ... }:
 {
+  fonts.fontconfig.enable = true;
+
   # Nerd fonts
-  fonts.packages = with pkgs; [
+  home.packages = with pkgs; [
     (nerdfonts.override {
       fonts = [
         "FiraCode"

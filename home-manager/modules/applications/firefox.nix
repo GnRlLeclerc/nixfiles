@@ -181,11 +181,8 @@ in
       };
 
       # TODO: theming with native messaging
-      programs.firefox.nativeMessagingHosts = [ ];
-
-      # For gnome
-      programs.firefox.enableGnomeExtensions = cfg.gnome;
-      services.gnome.gnome-browser-connector.enable = cfg.gnome;
+      nativeMessagingHosts = [ ];
+      enableGnomeExtensions = cfg.gnome;
     };
   };
 }

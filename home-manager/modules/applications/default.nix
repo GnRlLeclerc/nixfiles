@@ -1,6 +1,6 @@
 # Import all application configurations (without activating them)
 # Set `options.settings.desktop-applications` to true to activate all applications
-{ lib, ... }:
+{ lib, config, ... }:
 
 with lib;
 
@@ -11,7 +11,9 @@ in
 {
   imports = [
     ./chromium.nix
+    ./betterdiscord.nix
     ./fastfetch.nix
+    ./flatpak.nix
     ./firefox.nix
     ./miscellaneous.nix
     ./spicetify.nix

@@ -1,16 +1,16 @@
 # Spicetify configuration
 {
   pkgs,
-  spicetify-nix,
+  inputs,
   ...
 }:
 let
-  spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
+  spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
 in
 {
-  imports = [ spicetify-nix.homeManagerModule ];
+  imports = [ inputs.spicetify-nix.homeManagerModule ];
 
-  programs.spicetify = {
+  config.programs.spicetify = {
     theme = spicePkgs.themes.sleek;
     colorScheme = "cherry"; # TODO: change and allow to customize using flavours
 

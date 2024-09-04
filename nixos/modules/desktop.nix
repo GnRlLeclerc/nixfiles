@@ -42,6 +42,7 @@ in
       # Enable GNOME
       services.xserver.displayManager.gdm.enable = true;
       services.xserver.desktopManager.gnome.enable = true;
+      services.gnome.gnome-browser-connector.enable = true;
 
       # Configure Xorg keymap
       services.xserver.xkb = {

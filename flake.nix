@@ -13,11 +13,14 @@
     firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
+
+    flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
   };
 
   outputs =
     {
       self,
+      flatpaks,
       home-manager,
       nixos-hardware,
       nixpkgs,
@@ -67,8 +70,8 @@
         homeConfigurations = {
           # My own user
           thibaut = home-manager.lib.homeManagerConfiguration {
-            pkgs = import nixpkgs { inherit system; };
-            specialArgs = {
+            pkgs = nixpkgs.legacyPackages.${system};
+            extraSpecialArgs = {
               inherit inputs outputs;
             };
 

@@ -1,5 +1,10 @@
 # Useful desktop applications (that do not need individual configuration)
-{ pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 

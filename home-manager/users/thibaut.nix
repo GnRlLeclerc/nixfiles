@@ -1,7 +1,5 @@
 { pkgs, inputs, ... }:
 
-with inputs;
-
 {
   imports = [
     ../base-home.nix
@@ -27,6 +25,9 @@ with inputs;
     userEmail = "thibaut2saivre@gmail.com";
     userName = "Thibaut";
   };
+
+  # Enable all desktop applications
+  settings.desktop-applications = true;
 
   # Neovim: readonly symlink to my config (TODO: use nixvim or something like that for proper version handling)
   # TODO: provide luarocks in the new config for magick (do it in a module)

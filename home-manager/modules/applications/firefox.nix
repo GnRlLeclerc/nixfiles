@@ -40,7 +40,7 @@ in
     };
   };
 
-  config = mkIf config.programs.firefox.enable {
+  config = {
 
     programs.firefox = {
       profiles.default = {

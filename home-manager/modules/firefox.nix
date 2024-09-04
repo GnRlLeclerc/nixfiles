@@ -1,8 +1,4 @@
 # Firefox module with default settings
-# TODO
-# https://github.com/vimjoyer/nix-firefox-video
-# https://gitlab.com/usmcamp0811/dotfiles/-/blob/fb584a888680ff909319efdcbf33d863d0c00eaa/modules/home/apps/firefox/default.nix
-# https://github.com/Misterio77/nix-config/blob/6390e833ee8802952a26f7724dc4c1248775c72b/home/gabriel/features/desktop/common/firefox.nix#L7
 {
   inputs,
   config,
@@ -16,16 +12,17 @@ let
 
   cfg = config.settings.firefox;
 
+  betterfox = pkgs.fetchFromGitHub {
+    owner = "yokoffing";
+    repo = "Betterfox";
+    rev = "130";
+    hash = "sha256-Ai8Szbrk/4FhGhS4r5gA2DqjALFRfQKo2a/TwWCIA6g=";
+  };
+
 in
 {
   options.settings.firefox = {
     # Base options
-    user = {
-      type = types.str;
-      default = "thibaut";
-      description = "The user profile name";
-    };
-
     system = {
       type = types.str;
       default = "x86_64-linux";
@@ -46,7 +43,20 @@ in
   config = mkIf config.programs.firefox.enable {
 
     programs.firefox = {
-      profiles."${cfg.user}" = {
+      profiles.default = {
+        id = 0;
+        isDefault = true;
+
+        search = {
+          force = true;
+          default = "Google";
+        };
+
+        extraConfig = builtins.concatStringsSep "\n" [
+          (builtins.readFile "${betterfox}/Securefox.js")
+          (builtins.readFile "${betterfox}/Fastfox.js")
+          (builtins.readFile "${betterfox}/Peskyfox.js")
+        ];
 
         extensions = with inputs.firefox-addons.packages."${cfg.system}"; [
           bitwarden
@@ -88,13 +98,20 @@ in
             }
             {
               name = "Gitlab";
-              tags = [ "gitlab" "polytechnique" "br" ];
+              tags = [
+                "gitlab"
+                "polytechnique"
+                "br"
+              ];
               keyword = "gitlab";
               url = "https://gitlab.binets.fr";
             }
             {
               name = "Ximbra";
-              tags = [ "zimbra" "polytechnique" ];
+              tags = [
+                "zimbra"
+                "polytechnique"
+              ];
               keyword = "zimbra";
               url = "https://webmail.polytechnique.fr";
             }
@@ -103,13 +120,20 @@ in
           (mkIf cfg.bookmarks.nix [
             {
               name = "Noogle";
-              tags = [ "noogle" "nix" ];
+              tags = [
+                "noogle"
+                "nix"
+              ];
               keyword = "noogle";
               url = "https://noogle.dev";
             }
             {
               name = "Nix Flake Book";
-              tags = [ "nix" "flakes" "book" ];
+              tags = [
+                "nix"
+                "flakes"
+                "book"
+              ];
               keyword = "nix flakes book";
               url = "https://nixos-and-flakes.thiscute.world";
             }
@@ -118,25 +142,37 @@ in
           (mkIf cfg.bookmarks.telecom [
             {
               name = "Synapses Télécom";
-              tags = [ "synapses" "télécom" ];
+              tags = [
+                "synapses"
+                "télécom"
+              ];
               keyword = "synapses telecom";
               url = "https://synapses.telecom-paris.fr";
             }
             {
               name = "Eole";
-              tags = [ "eole" "telecom" ];
+              tags = [
+                "eole"
+                "telecom"
+              ];
               keyword = "eole telecom";
               url = "https://eole.telecom-paris.fr";
             }
             {
               name = "Timbra";
-              tags = [ "zimbra" "telecom" ];
+              tags = [
+                "zimbra"
+                "telecom"
+              ];
               keyword = "zimbra";
               url = "https://z.imt.fr/zimbra/mail";
             }
             {
               name = "ECampus";
-              tags = [ "ecampus" "telecom" ];
+              tags = [
+                "ecampus"
+                "telecom"
+              ];
               keyword = "ecampus telecom";
               url = "https://ecampus.paris-saclay.fr/course/index.php?categoryid=573";
             }

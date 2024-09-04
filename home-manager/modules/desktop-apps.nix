@@ -3,6 +3,7 @@
 {
   # Desktop programs
   programs.firefox.enable = true;
+  programs.chromium.enable = true;
 
   # TODO : add all other apps (chromium) + use the home manager options when possible
   home.packages = with pkgs; [

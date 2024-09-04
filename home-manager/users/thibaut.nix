@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
+
+with inputs;
+
 {
   imports = [
     ../base-home.nix

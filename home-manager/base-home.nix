@@ -4,6 +4,7 @@
 
   # Modules
   imports = [
+    ./modules/firefox.nix
     ./modules/fonts.nix
     ./modules/git.nix
   ];

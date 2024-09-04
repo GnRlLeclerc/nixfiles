@@ -8,18 +8,23 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
     {
       self,
-      nixpkgs,
       home-manager,
       nixos-hardware,
+      nixpkgs,
       ...
     }@inputs:
     let
       inherit (self) outputs;
+
+      overlays = import ./overlays;
 
       # Supported systems
       systems = [
@@ -32,7 +37,6 @@
 
       forAllSystems = nixpkgs.lib.genAttrs systems;
 
-      overlays = import ./overlays;
     in
     {
       # Nixos configurations with home-manager as a module
@@ -62,6 +66,9 @@
           # My own user
           thibaut = home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs { inherit system; };
+            specialArgs = {
+              inherit inputs outputs;
+            };
 
             modules = [
               overlays

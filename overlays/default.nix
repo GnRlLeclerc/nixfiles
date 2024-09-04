@@ -17,5 +17,7 @@
         }
       );
     })
+
+    # TODO : overlay pour firefox-base16-native
   ];
 }

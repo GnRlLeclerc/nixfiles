@@ -29,5 +29,6 @@ in
     programs.fastfetch.enable = mkDefault desktop;
     programs.zathura.enable = mkDefault desktop;
     programs.discord.enable = mkDefault desktop;
+    services.flatpak.enableModule = mkDefault desktop;
   };
 }

@@ -21,7 +21,7 @@ return {
       vim.api.nvim_create_autocmd('FileType', {
         pattern = {
           'help',
-          'alpha',
+          'startup',
           'trouble',
           'neo-tree',
           'lazy',

@@ -12,7 +12,7 @@ return {
       exclude = {
         filetypes = {
           'help',
-          'alpha',
+          'startup',
           'neo-tree',
           'lazy',
           'mason',

@@ -2,7 +2,7 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons', 'AndreM222/copilot-lualine' },
 
-  event = 'BufRead', -- Triggers Copilot loading when a buffer is read, disabling it in the alpha.nvim startup screen
+  event = 'BufRead', -- Triggers Copilot loading when a buffer is read, disabling it in the startup screen
   config = function()
     require('lualine').setup({
       extensions = { 'neo-tree' },

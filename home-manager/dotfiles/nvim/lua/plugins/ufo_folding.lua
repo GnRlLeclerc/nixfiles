@@ -3,7 +3,7 @@ return {
   dependencies = {
     'kevinhwang91/promise-async',
   },
-  event = 'VeryLazy',
+  event = 'BufReadPost',
 
   config = function()
     -- Custom handler to display the number of lines in a fold
@@ -53,7 +53,7 @@ return {
 
     -- Disable folding in the neo-tree pane
     vim.api.nvim_create_autocmd('FileType', {
-      pattern = { 'neo-tree' },
+      pattern = { 'neo-tree', 'startup' },
       callback = function()
         require('ufo').detach()
         vim.opt_local.foldenable = false

@@ -15,6 +15,9 @@
     spicetify-nix.url = "github:the-argus/spicetify-nix";
 
     flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
+
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -72,7 +75,7 @@
           thibaut = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.${system};
             extraSpecialArgs = {
-              inherit inputs outputs;
+              inherit inputs outputs system;
             };
 
             modules = [

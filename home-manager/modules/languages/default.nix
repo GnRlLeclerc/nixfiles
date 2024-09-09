@@ -8,6 +8,8 @@ let
 in
 {
   imports = [
+    ./cmake.nix
+    ./docker.nix
     ./go.nix
     ./lua.nix
     ./make.nix
@@ -21,6 +23,8 @@ in
   options.settings.languages.enable = mkEnableOption "Enable all programming language support";
 
   config.settings.languages = {
+    cmake.enable = mkDefault cfg.enable;
+    docker.enable = mkDefault cfg.enable;
     go.enable = mkDefault cfg.enable;
     lua.enable = mkDefault cfg.enable;
     make.enable = mkDefault cfg.enable;

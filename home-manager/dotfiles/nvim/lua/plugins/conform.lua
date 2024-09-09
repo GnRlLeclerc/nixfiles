@@ -10,35 +10,26 @@ return {
     local conform = require('conform')
     conform.setup({
       formatters_by_ft = {
-        lua = { 'stylua' },
-        python = { 'isort', 'black' }, -- Run both formatters sequentially
-
-        -- Prefer prettierd to prettier if available
-        typescript = { 'prettierd', 'prettier', stop_after_first = true },
-        typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+        bash = { 'shfmt' },
+        cmake = { 'cmake_format' },
+        css = { 'prettierd', 'prettier', stop_after_first = true },
+        go = { 'goimports' },
+        html = { 'prettierd', 'prettier', stop_after_first = true },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
         json = { 'prettierd', 'prettier', stop_after_first = true },
-        html = { 'prettierd', 'prettier', stop_after_first = true },
-        css = { 'prettierd', 'prettier', stop_after_first = true },
-        scss = { 'prettierd', 'prettier', stop_after_first = true },
+        lua = { 'stylua' },
         markdown = { 'prettierd', 'prettier', stop_after_first = true },
-        yaml = { 'prettierd', 'prettier', stop_after_first = true },
+        nix = { 'nixfmt' },
+        python = { 'isort', 'black' },
+        rust = { 'rustfmt' },
+        scss = { 'prettierd', 'prettier', stop_after_first = true },
+        sh = { 'shfmt' },
         tex = { 'latexindent' },
         toml = { 'taplo' },
-
-        -- Rust
-        rust = { 'rustfmt' },
-
-        -- Bash and ZSH
-        sh = { 'shfmt' },
-        bash = { 'shfmt' },
-
-        -- Nix
-        nix = { 'nixfmt' },
-
-        -- Go
-        go = { 'goimports' },
+        typescript = { 'prettierd', 'prettier', stop_after_first = true },
+        typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+        yaml = { 'prettierd', 'prettier', stop_after_first = true },
       },
       format_on_save = function(bufnr)
         -- Disable with a global or buffer-local variable

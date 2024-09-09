@@ -98,7 +98,8 @@ return {
         },
         nil_ls = true,
         gopls = true,
-        -- TODO: gopls, sqls
+        autotools_ls = true,
+        -- TODO: sqls
       }
 
       require('neodev').setup()

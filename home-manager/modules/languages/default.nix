@@ -10,6 +10,8 @@ in
   imports = [
     ./go.nix
     ./lua.nix
+    ./make.nix
+    ./markdown.nix
     ./nix.nix
     ./rust.nix
     ./toml.nix
@@ -21,6 +23,8 @@ in
   config.settings.languages = {
     go.enable = mkDefault cfg.enable;
     lua.enable = mkDefault cfg.enable;
+    make.enable = mkDefault cfg.enable;
+    markdown.enable = mkDefault cfg.enable;
     nix.enable = mkDefault cfg.enable;
     rust.enable = mkDefault cfg.enable;
     toml.enable = mkDefault cfg.enable;

@@ -11,6 +11,8 @@ return {
     conform.setup({
       formatters_by_ft = {
         bash = { 'shfmt' },
+        c = { 'clang-format' },
+        cpp = { 'clang-format' },
         cmake = { 'cmake_format' },
         css = { 'prettierd', 'prettier', stop_after_first = true },
         go = { 'goimports' },

@@ -7,6 +7,7 @@
     ./modules/applications
     ./modules/fonts.nix
     ./modules/git.nix
+    ./modules/languages
   ];
 
   ##########################

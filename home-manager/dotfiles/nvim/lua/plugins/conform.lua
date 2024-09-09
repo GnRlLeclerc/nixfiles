@@ -25,6 +25,7 @@ return {
         markdown = { 'prettierd', 'prettier', stop_after_first = true },
         yaml = { 'prettierd', 'prettier', stop_after_first = true },
         tex = { 'latexindent' },
+        toml = { 'taplo' },
 
         -- Rust
         rust = { 'rustfmt' },
@@ -32,6 +33,12 @@ return {
         -- Bash and ZSH
         sh = { 'shfmt' },
         bash = { 'shfmt' },
+
+        -- Nix
+        nix = { 'nixfmt' },
+
+        -- Go
+        go = { 'goimports' },
       },
       format_on_save = function(bufnr)
         -- Disable with a global or buffer-local variable

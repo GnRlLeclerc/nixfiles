@@ -53,7 +53,7 @@ return {
 
     -- Disable folding in the neo-tree pane
     vim.api.nvim_create_autocmd('FileType', {
-      pattern = { 'neo-tree', 'startup' },
+      pattern = { 'neo-tree', 'alpha' },
       callback = function()
         require('ufo').detach()
         vim.opt_local.foldenable = false

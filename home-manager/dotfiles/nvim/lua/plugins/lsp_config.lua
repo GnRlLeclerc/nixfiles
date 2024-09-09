@@ -28,15 +28,8 @@ end
 
 return {
   {
-    'williamboman/mason.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require('mason').setup({ ui = { border = 'rounded' } })
-    end,
-  },
-  {
     'neovim/nvim-lspconfig',
-    dependencies = { 'folke/neodev.nvim', 'b0o/SchemaStore.nvim', 'williamboman/mason-lspconfig.nvim' },
+    dependencies = { 'folke/neodev.nvim', 'b0o/SchemaStore.nvim' },
     event = 'VeryLazy',
     config = function()
       -- LSP CONFIGURATION
@@ -104,14 +97,11 @@ return {
           },
         },
         nil_ls = true,
+        gopls = true,
         -- TODO: gopls, sqls
       }
 
-      -- Mason LSP installed servers
       require('neodev').setup()
-      require('mason-lspconfig').setup({
-        ensure_installed = servers,
-      })
 
       local lspconfig = require('lspconfig')
       local capabilities = require('cmp_nvim_lsp').default_capabilities()

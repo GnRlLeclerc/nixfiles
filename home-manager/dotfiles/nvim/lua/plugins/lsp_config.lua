@@ -71,7 +71,7 @@ return {
         svelte = true,
         taplo = true,
         tailwindcss = true,
-        tsserver = {
+        ts_ls = {
           on_attach = function(client, bufnr)
             -- On tsserver attach, add additional keymaps for organizing imports
             vim.keymap.set('n', '<leader>oi', tsserver_organize_imports, { buffer = bufnr })

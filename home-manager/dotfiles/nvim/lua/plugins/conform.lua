@@ -17,6 +17,7 @@ return {
         css = { 'prettierd', 'prettier', stop_after_first = true },
         go = { 'goimports' },
         html = { 'prettierd', 'prettier', stop_after_first = true },
+        java = { 'google-java-format' },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
         json = { 'prettierd', 'prettier', stop_after_first = true },

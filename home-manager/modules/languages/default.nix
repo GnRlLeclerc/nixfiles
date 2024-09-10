@@ -12,11 +12,14 @@ in
     ./cmake.nix
     ./docker.nix
     ./go.nix
+    ./java.nix
     ./latex.nix
     ./lua.nix
     ./make.nix
     ./markdown.nix
     ./nix.nix
+    ./node.nix
+    ./python.nix
     ./rust.nix
     ./shells.nix
     ./toml.nix
@@ -30,11 +33,14 @@ in
     cmake.enable = mkDefault cfg.enable;
     docker.enable = mkDefault cfg.enable;
     go.enable = mkDefault cfg.enable;
+    java.enable = mkDefault cfg.enable;
     latex.enable = mkDefault cfg.enable;
     lua.enable = mkDefault cfg.enable;
     make.enable = mkDefault cfg.enable;
     markdown.enable = mkDefault cfg.enable;
     nix.enable = mkDefault cfg.enable;
+    node.enable = mkDefault cfg.enable;
+    python.enable = mkDefault cfg.enable;
     rust.enable = mkDefault cfg.enable;
     shells.enable = mkDefault cfg.enable;
     toml.enable = mkDefault cfg.enable;

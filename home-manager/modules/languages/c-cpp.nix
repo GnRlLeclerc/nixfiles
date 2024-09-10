@@ -17,6 +17,10 @@ in
   config = mkIf cfg.enable {
 
     home.packages = with pkgs; [
+      # Build tools
+      cmake
+      gnumake
+
       # Debuggers
       gdb
       valgrind

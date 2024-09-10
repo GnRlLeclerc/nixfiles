@@ -18,3 +18,9 @@ test:
 # Rollback to the previous NixOS generation
 rollback:
     sudo nixos-rebuild switch --rollback --flake .#main-laptop
+
+
+# Make Neovim's lazy-lock.json file symlink point to this repository instead
+fix-neovim-lockfile:
+    unlink ~/.config/nvim/lazy-lock.json
+    ln -s $(pwd)/home-manager/dotfiles/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json

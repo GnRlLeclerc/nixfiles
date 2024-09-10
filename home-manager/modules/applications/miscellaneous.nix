@@ -9,7 +9,7 @@
 with lib;
 
 {
-  config = mkIf config.settings.desktop-applications {
+  config = mkIf config.settings.desktop-applications.enable {
     home.packages = with pkgs; [
       kitty
       slack

@@ -1,11 +1,11 @@
 # Import all application configurations (without activating them)
-# Set `options.settings.desktop-applications` to true to activate all applications
+# Set `options.settings.cfg.enable-applications` to true to activate all applications
 { lib, config, ... }:
 
 with lib;
 
 let
-  desktop = config.settings.desktop-applications;
+  cfg = config.settings.desktop-applications;
 
 in
 {
@@ -20,15 +20,15 @@ in
     ./zathura.nix
   ];
 
-  options.settings.desktop-applications = mkEnableOption "Desktop applications";
+  options.settings.desktop-applications.enable = mkEnableOption "Desktop applications";
 
   config = {
-    programs.firefox.enable = mkDefault desktop;
-    programs.chromium.enable = mkDefault desktop;
-    programs.spicetify.enable = mkDefault desktop;
-    programs.fastfetch.enable = mkDefault desktop;
-    programs.zathura.enable = mkDefault desktop;
-    programs.discord.enable = mkDefault desktop;
-    services.flatpak.enableModule = mkDefault desktop;
+    programs.firefox.enable = mkDefault cfg.enable;
+    programs.chromium.enable = mkDefault cfg.enable;
+    programs.spicetify.enable = mkDefault cfg.enable;
+    programs.fastfetch.enable = mkDefault cfg.enable;
+    programs.zathura.enable = mkDefault cfg.enable;
+    programs.discord.enable = mkDefault cfg.enable;
+    services.flatpak.enableModule = mkDefault cfg.enable;
   };
 }

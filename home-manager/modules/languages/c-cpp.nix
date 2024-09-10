@@ -28,9 +28,9 @@ in
       # LSP & formatters
       clang-tools
 
-      # Compilers
+      # Compilers (only one by default, as they conflict with each other)
       gcc
-      clang
+      # clang
     ];
   };
 }

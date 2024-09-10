@@ -22,12 +22,10 @@
   };
 
   # Enable all desktop applications
-  # settings.desktop-applications = true;
+  # settings.desktop-applications.enable = true;
 
-  # Neovim: readonly symlink to my config (TODO: use nixvim or something like that for proper version handling)
-  # TODO: provide luarocks in the new config for magick (do it in a module)
-  programs.neovim.enable = true;
-  xdg.configFile."nvim".source = ../dotfiles/nvim;
+  # Enable all cli applications
+  settings.cli.enable = true;
 
   # Programming languages support
   settings.languages.enable = true;

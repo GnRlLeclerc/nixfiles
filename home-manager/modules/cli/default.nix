@@ -12,6 +12,7 @@ in
   imports = [
     ./helix.nix
     ./neovim.nix
+    ./shell.nix
   ];
 
   options.settings.cli.enable = mkEnableOption "Enable all cli applications";
@@ -19,5 +20,6 @@ in
   config = {
     programs.helix.enable = mkDefault cfg.enable;
     programs.neovim.enable = mkDefault cfg.enable;
+    programs.zsh.enable = mkDefault cfg.enable;
   };
 }

@@ -11,6 +11,10 @@
   # Image.nvim additional dependencies
   programs.neovim = {
     extraLuaPackages = ps: [ ps.magick ];
-    extraPackages = with pkgs; [ imagemagick ];
+    extraPackages = with pkgs; [
+      imagemagick
+      ripgrep
+      fd
+    ];
   };
 }

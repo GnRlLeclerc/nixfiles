@@ -10,12 +10,14 @@ let
 in
 {
   imports = [
+    ./helix.nix
     ./neovim.nix
   ];
 
   options.settings.cli.enable = mkEnableOption "Enable all cli applications";
 
   config = {
+    programs.helix.enable = mkDefault cfg.enable;
     programs.neovim.enable = mkDefault cfg.enable;
   };
 }

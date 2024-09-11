@@ -1,8 +1,7 @@
 # The base nixos configuration for any of my devices
 {
-  config,
+  inputs,
   lib,
-  pkgs,
   ...
 }:
 
@@ -53,4 +52,7 @@ with lib;
 
   # Overriden by the flake (set to unstable)
   system.stateVersion = "24.05";
+
+  # Pin the nixpkgs registry to the flake input
+  nix.registry.nixpkgs.flake = inputs.nixpkgs;
 }

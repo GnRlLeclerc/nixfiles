@@ -17,6 +17,7 @@ in
     ./firefox.nix
     ./miscellaneous.nix
     ./spicetify.nix
+    ./vscode.nix
     ./zathura.nix
   ];
 

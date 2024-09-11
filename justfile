@@ -19,8 +19,17 @@ test:
 rollback:
     sudo nixos-rebuild switch --rollback --flake .#main-laptop
 
+# Read-write symlinks
 
-# Make Neovim's lazy-lock.json file symlink point to this repository instead
+# Make Neovim's lazy-lock.json file symlink point to this repository instead of a readonly derivation build
 fix-neovim-lockfile:
     unlink ~/.config/nvim/lazy-lock.json
     ln -s $(pwd)/home-manager/dotfiles/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
+
+# Make VSCode's settings and keybindings symlink point to this repository instead of a readonly derivation build
+fix-vscode-settings:
+    unlink ~/.config/Code/User/settings.json
+    unlink ~/.config/Code/User/keybindings.json
+    ln -s $(pwd)/home-manager/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
+    ln -s $(pwd)/home-manager/dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+

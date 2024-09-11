@@ -86,7 +86,7 @@
         };
       });
 
-      # Nix files ormatter for this repository
+      # Nix files formatter for this repository
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
     };
 }

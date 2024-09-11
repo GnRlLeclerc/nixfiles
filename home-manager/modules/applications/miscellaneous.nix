@@ -14,7 +14,6 @@ with lib;
       kitty
       slack
       obsidian
-      vscode-fhs
       signal-desktop
       bitwarden-desktop
 

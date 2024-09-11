@@ -1,0 +1,388 @@
+{
+  // ******************************************************************************************* //
+  //                                    GENERIC IDE SETTINGS                                     //
+  // ******************************************************************************************* //
+
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.console.fontFamily": "JetBrainsMonoNL Nerd Font",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "editor.fontFamily": "JetBrainsMono Nerd Font, Courier New, monospace",
+  "editor.fontLigatures": "'calt', 'zero'",
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
+  "explorer.confirmDelete": false,
+  "extensions.ignoreRecommendations": true,
+  "http.proxySupport": "off",
+  "scm.inputFontFamily": "editor",
+  "settingsSync.ignoredSettings": ["clangd.arguments", "editor.fontFamily"],
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.inheritEnv": false,
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "Dynamic Base16",
+  "workbench.iconTheme": "vscode-great-icons",
+
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false,
+    "yaml": true
+  },
+
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "workbench.editorAssociations": {
+    "*.csv": "gc-excelviewer-csv-editor"
+  },
+
+  // ******************************************************************************************* //
+  //                                     FORMATTER SETTINGS                                      //
+  // ******************************************************************************************* //
+
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[edge]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[graphql]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ******************************************************************************************* //
+  //                                         LANGUAGES                                           //
+  // ******************************************************************************************* //
+
+  // C/C++
+  "clangd.arguments": ["--clang-tidy"],
+  "clangd.checkUpdates": true,
+  "clangd.path": "/usr/bin/clangd",
+
+  "clang-format.language.apex.enable": false,
+  "clang-format.style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, NamespaceIndentation: All, FixNamespaceComments: false }",
+
+  "C_Cpp.autocomplete": "disabled",
+  "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+  "C_Cpp.codeAnalysis.clangTidy.path": "/usr/bin/clang-tidy",
+  "C_Cpp.errorSquiggles": "disabled",
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "cmake.configureOnEdit": false,
+
+  // Java
+  "java.import.gradle.java.home": "/usr/lib/jvm/java-8-openjdk",
+  "java.imports.gradle.wrapper.checksums": [
+    {
+      "sha256": "2c23278a62dc9f96ab11bee897d9f53e6479d6419135e4560ce822a6431df5e5",
+      "allowed": false
+    }
+  ],
+
+  // Javascript
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // Jupyter
+  "jupyter.askForKernelRestart": false,
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "notebook.formatOnCellExecution": true,
+
+  // Latex
+  "latex-workshop.message.badbox.show": false,
+  "ltex.enabled": [
+    "bibtex",
+    "context",
+    "context.tex",
+    // "html",
+    "latex",
+    // "markdown",
+    "org",
+    "restructuredtext",
+    "rsweave"
+  ],
+
+  // Makefile
+  "makefile.compileCommandsPath": "",
+  "makefile.configureOnOpen": false,
+  "makefile.makePath": "",
+
+  // Python
+
+  // Add explicit hints overlays for arguments, return types, variable types...
+  "python.terminal.activateEnvironment": false,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": false, // Deactivate variable type inlays (they clutter the view)
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.callArgumentNames": "partial", // Do not show argument names when the variable has the same name
+  "python.analysis.typeCheckingMode": "strict",
+
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingTypeStubs": "none", // Scipy does not have type stubs
+    "reportUnknownMemberType": "none", // Member types are not complete for numpy
+    "reportUnknownVariableType": "none", // Skimage.io has unknown variable types
+    "reportUnknownArgumentType": "none",
+    "reportUnknownParameterType": "none", // Disable warnings when a type is partially unknown
+    "reportUnknownLambdaType": "none",
+    "reportMissingTypeArgument": "none", // Allow "generic" types like lst, dict, np.ndarray...
+    "reportConstantRedefinition": "none",
+
+    // Set severity to Warning
+    "reportUnusedVariable": "warning",
+    "reportMissingParameterType": "warning",
+    "reportGeneralTypeIssues": "error"
+  },
+
+  // Rust
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+
+  // Shader
+  "glsllint.additionalStageAssociations": {
+    "frag.glsl": "frag",
+    "vert.glsl": "vert"
+  },
+  "glsllint.supportedLangsWithStringLiterals": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "elm"
+  ],
+
+  // Typescript
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // ******************************************************************************************* //
+  //                                              GIT                                            //
+  // ******************************************************************************************* //
+
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+
+  // ******************************************************************************************* //
+  //                                           TODO TREE                                         //
+  // ******************************************************************************************* //
+
+  "todo-tree.highlights.useColourScheme": true,
+
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "DEBUG"
+  ],
+  "todo-tree.highlights.backgroundColourScheme": [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "indigo",
+    "violet",
+    "indigo"
+  ],
+  "todo-tree.highlights.foregroundColourScheme": [
+    "white",
+    "black",
+    "black",
+    "white",
+    "white",
+    "white",
+    "black",
+    "white"
+  ],
+
+  // ******************************************************************************************* //
+  //                                  EDITOR FONT CUSTOMIZATION                                  //
+  // ******************************************************************************************* //
+
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      // Imported from https://dev.to/salted-bytes/adding-italics-support-to-your-favourite-vscode-theme-2ec9
+      {
+        "scope": "emphasis",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "strong",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "entity.other.attribute-name",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "markup.underline",
+        "settings": {
+          "fontStyle": "underline"
+        }
+      },
+      {
+        "scope": "markup.bold",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "markup.heading",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "markup.italic",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "storage.type",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "storage.modifier",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "String interpolation",
+        "scope": [
+          "punctuation.definition.template-expression.begin",
+          "punctuation.definition.template-expression.end",
+          "punctuation.section.embedded"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "keyword.control",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "keyword.operator.new",
+          "keyword.operator.expression",
+          "keyword.operator.cast",
+          "keyword.operator.sizeof",
+          "keyword.operator.logical.python"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "this.self",
+        "scope": "variable.language",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#ff5874"
+        }
+      },
+      {
+        "name": "@Decorator",
+        "scope": ["meta.decorator punctuation.decorator"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": ["punctuation.definition.comment", "comment"],
+        "settings": {
+          // "foreground": "#ff5874",
+          "fontStyle": "italic"
+        }
+      },
+
+      // Personnal changes (at the end for override)
+      {
+        "scope": "meta.function-call.generic.python",
+        "settings": {
+          "foreground": "#5BAAEC"
+        }
+      },
+      {
+        "scope": ["keyword.control", "keyword.operator"],
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": ["storage.type", "storage.modifier", "constant"],
+        "settings": {
+          "fontStyle": "italic bold"
+        }
+      },
+      {
+        "scope": ["comment", "string.quoted.triple"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "github.copilot.editor.enableAutoCompletions": true
+}

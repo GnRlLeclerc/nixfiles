@@ -1,5 +1,8 @@
 # ZSH configuration
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
+
+with lib;
+
 {
   programs.zsh = {
     enableCompletion = true;
@@ -81,7 +84,10 @@
       eval "$(zoxide init --cmd cd zsh)"
       eval "$(fzf --zsh)"
 
-      # Paths
+      # Rearrange path to put nix-profile last
+      export PATH=$(echo $PATH | awk -v RS=: -v ORS=: '{ if ($0 != "" && $0 != ENVIRON["HOME"] "/.nix-profile/bin") print $0 }' | sed 's/:$//'):$HOME/.nix-profile/bin
+
+      # Additional paths
       export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
       export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
     '';
@@ -100,14 +106,9 @@
         };
       }
       {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-      {
-        name = "powerlevel10k-config";
+        name = "transient-prompt";
         src = ../../dotfiles/zsh;
-        file = "p10k.zsh";
+        file = "transient-prompt.zsh";
       }
       {
         name = "ssh";
@@ -116,6 +117,76 @@
       }
     ];
   };
+
+  programs.starship = {
+    enable = true;
+    settings = {
+      format = lib.concatStrings [
+        "$username"
+        "$hostname"
+        "$directory"
+        "$git_branch"
+        "$git_state"
+        "$git_status"
+        "$cmd_duration"
+        "$line_break"
+        "$python"
+        "$character"
+      ];
+
+      directory = {
+        style = "blue";
+      };
+
+      character = {
+        success_symbol = "[❯](purple)";
+        error_symbol = "[❯](red)";
+        vimcmd_symbol = "[❮](green)";
+      };
+
+      git_branch = {
+        format = "[$branch]($style)";
+        style = "bright-black";
+      };
+
+      git_status = {
+        format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
+        style = "cyan";
+        conflicted = "";
+        untracked = "";
+        modified = "";
+        staged = "";
+        renamed = "";
+        deleted = "";
+        stashed = "≡";
+      };
+
+      git_state = {
+        format = "\\([$state( $progress_current/$progress_total)]($style)\\) ";
+        style = "bright-black";
+      };
+
+      cmd_duration = {
+        format = "[$duration]($style) ";
+        style = "yellow";
+      };
+
+      python = {
+        format = "[$virtualenv]($style) ";
+        style = "bright-black";
+      };
+    };
+  };
+
+  # Transient prompt starship settings
+  xdg.configFile."starship-transient.toml".text = ''
+    format = "$character"
+
+    [character]
+    error_symbol = "[❯](red)"
+    success_symbol = "[❯](purple)"
+    vimcmd_symbol = "[❮](green)"
+  '';
 
   # Useful shell packages
   home.packages = with pkgs; [

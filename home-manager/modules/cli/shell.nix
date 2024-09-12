@@ -84,12 +84,23 @@ with lib;
       eval "$(zoxide init --cmd cd zsh)"
       eval "$(fzf --zsh)"
 
-      # Rearrange path to put nix-profile last
-      export PATH=$(echo $PATH | awk -v RS=: -v ORS=: '{ if ($0 != "" && $0 != ENVIRON["HOME"] "/.nix-profile/bin") print $0 }' | sed 's/:$//'):$HOME/.nix-profile/bin
+      # Additional paths for top level shells
+      if [[ $SHLVL -eq 1 ]]; then
+        export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+        export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
+      fi
 
-      # Additional paths
-      export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
-      export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
+      # Trim nix profile paths for subshells (remove leading paths not starting in `/nix/store`)
+      if [[ $SHLVL -gt 1 ]]; then
+        store_path=()
+        new_path=()
+
+        for entry in "''${path[@]}"; do
+          [[ $entry == /nix/store* ]] && store_path+=("$entry") || new_path+=("$entry")
+        done
+
+        path=("''${store_path[@]}" "''${new_path[@]}")
+      fi
     '';
 
     # Extra plugins
@@ -174,6 +185,11 @@ with lib;
       python = {
         format = "[$virtualenv]($style) ";
         style = "bright-black";
+      };
+
+      shlvl = {
+        disabled = false;
+        threshold = 2;
       };
     };
   };

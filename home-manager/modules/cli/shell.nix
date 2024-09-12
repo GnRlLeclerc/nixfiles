@@ -145,8 +145,13 @@ with lib;
         "$character"
       ];
 
+      right_format = lib.concatStrings [
+        "$shlvl"
+      ];
+
       directory = {
         style = "blue";
+        read_only = "  ";
       };
 
       character = {
@@ -190,6 +195,7 @@ with lib;
       shlvl = {
         disabled = false;
         threshold = 2;
+        symbol = " ";
       };
     };
   };

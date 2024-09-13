@@ -10,6 +10,7 @@ let
 in
 {
   imports = [
+    ./direnv.nix
     ./helix.nix
     ./neovim.nix
     ./shell.nix
@@ -19,6 +20,7 @@ in
   options.settings.cli.enable = mkEnableOption "Enable all cli applications";
 
   config = {
+    programs.direnv.enable = mkDefault cfg.enable;
     programs.helix.enable = mkDefault cfg.enable;
     programs.neovim.enable = mkDefault cfg.enable;
     programs.zsh.enable = mkDefault cfg.enable;

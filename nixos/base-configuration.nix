@@ -37,7 +37,6 @@ with lib;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = mkDefault true;
-  nixpkgs.config.cudaSupport = mkDefault true;
 
   # Enable flatpak
   services.flatpak.enable = mkDefault true;

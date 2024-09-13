@@ -22,7 +22,6 @@ with lib;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = mkDefault true;
-  nixpkgs.config.cudaSupport = mkDefault true;
 
   # Pin the nixpkgs registry to the flake input
   nix.registry.nixpkgs.flake = inputs.nixpkgs;

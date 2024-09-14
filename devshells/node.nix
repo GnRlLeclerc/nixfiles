@@ -29,9 +29,11 @@ let
     "node${major}";
 
   # Merge all node shells into a single attribute set
-  mergedShells = builtins.foldl' (
-    acc: node: acc // { "${mkShellName node}" = mkNodeShell node; }
-  ) { } nodeVersions;
-
+  nodeShells = builtins.listToAttrs (
+    map (node: {
+      name = mkShellName node;
+      value = mkNodeShell node;
+    }) nodeVersions
+  );
 in
-mergedShells
+nodeShells

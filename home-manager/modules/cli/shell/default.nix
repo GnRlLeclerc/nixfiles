@@ -1,11 +1,8 @@
 # Shell configuration
-{ config, lib, ... }:
+{ lib, ... }:
 
 with lib;
 
-let
-  cfg = config.settings.shell;
-in
 {
   imports = [
     ./starship.nix

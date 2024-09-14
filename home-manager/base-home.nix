@@ -14,7 +14,7 @@ with lib;
   ];
 
   ##########################
-  # Miscellaneous settings #
+  #      Nix settings      #
   ##########################
 
   home.stateVersion = "24.05";

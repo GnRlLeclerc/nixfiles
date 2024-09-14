@@ -39,9 +39,11 @@ let
     "python${major}${minor}";
 
   # Merge all python shells into a single attribute set
-  mergedShells = builtins.foldl' (
-    acc: python: acc // { "${mkShellName python}" = mkPythonShell python; }
-  ) { } pythonVersions;
-
+  pythonShells = builtins.listToAttrs (
+    map (python: {
+      name = mkShellName python;
+      value = mkPythonShell python;
+    }) pythonVersions
+  );
 in
-mergedShells
+pythonShells

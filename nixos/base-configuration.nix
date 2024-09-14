@@ -35,24 +35,28 @@ with lib;
   # Auto mount drives
   services.udisks2.enable = mkDefault true;
 
+  # Enable flatpak
+  services.flatpak.enable = mkDefault true;
+
+  # TTY keymaps
+  console.keyMap = mkDefault "fr";
+
+  ##########################
+  #      Nix settings      #
+  ##########################
+
+  # Overriden by the flake (set to unstable)
+  system.stateVersion = "24.05";
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = mkDefault true;
 
-  # Enable flatpak
-  services.flatpak.enable = mkDefault true;
+  # Pin the nixpkgs registry to the flake input
+  nix.registry.nixpkgs.flake = inputs.nixpkgs;
 
   # Enable flakes
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
-
-  # TTY keymaps
-  console.keyMap = mkDefault "fr";
-
-  # Overriden by the flake (set to unstable)
-  system.stateVersion = "24.05";
-
-  # Pin the nixpkgs registry to the flake input
-  nix.registry.nixpkgs.flake = inputs.nixpkgs;
 }

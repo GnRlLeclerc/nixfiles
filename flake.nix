@@ -30,12 +30,6 @@
       ...
     }@inputs:
     let
-      inherit (self) outputs;
-
-      overlays = import ./overlays;
-      devShells = import ./devshells { inherit nixpkgs forAllSystems; };
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
-
       # Supported systems
       systems = [
         "aarch64-linux"
@@ -46,48 +40,30 @@
       ];
 
       forAllSystems = nixpkgs.lib.genAttrs systems;
+      overlays = import ./overlays;
 
-    in
-    {
-      # Nixos configurations with home-manager as a module
-      nixosConfigurations = {
-        main-laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs;
-          };
-          modules = [
-            ./nixos/devices/main-laptop.nix
-            nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7-nvidia
-            overlays
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.thibaut = import ./home-manager/users/thibaut.nix;
-            }
-          ];
-        };
+      inheritArgs = {
+        inherit
+          forAllSystems
+          home-manager
+          inputs
+          nixos-hardware
+          nixpkgs
+          overlays
+          ;
       };
 
-      # Standalone home-manager profiles for all platforms
-      packages = forAllSystems (system: {
-        homeConfigurations = {
-          # My own user
-          thibaut = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.${system};
-            extraSpecialArgs = {
-              inherit inputs outputs system;
-            };
-
-            modules = [
-              overlays
-              ./home-manager/users/thibaut.nix
-            ];
-          };
-        };
-      });
-
-      inherit devShells formatter;
+      nixosConfigurations = import ./nixos/nixos-configurations.nix inheritArgs;
+      homeConfigurations = import ./home-manager/home-configurations.nix inheritArgs;
+      devShells = import ./devshells inheritArgs;
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+    in
+    {
+      inherit
+        nixosConfigurations
+        devShells
+        formatter
+        homeConfigurations
+        ;
     };
 }

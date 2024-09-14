@@ -12,7 +12,6 @@ in
   imports = [
     ./chromium.nix
     ./betterdiscord.nix
-    ./fastfetch.nix
     ./flatpak.nix
     ./firefox.nix
     ./miscellaneous.nix

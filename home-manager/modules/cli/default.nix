@@ -11,6 +11,7 @@ in
 {
   imports = [
     ./direnv.nix
+    ./fastfetch.nix
     ./helix.nix
     ./neovim.nix
     ./shell

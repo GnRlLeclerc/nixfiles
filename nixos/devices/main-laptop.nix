@@ -1,11 +1,5 @@
 # Configuration for my main personal laptop
 {
-  config,
-  pkgs,
-  outputs,
-  ...
-}:
-{
   imports = [
     ../base-configuration.nix
     ../hardware-configuration/main-laptop.nix

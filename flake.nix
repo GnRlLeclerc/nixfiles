@@ -33,6 +33,8 @@
       inherit (self) outputs;
 
       overlays = import ./overlays;
+      devShells = import ./devshells { inherit nixpkgs forAllSystems; };
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
 
       # Supported systems
       systems = [
@@ -86,7 +88,6 @@
         };
       });
 
-      # Nix files formatter for this repository
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+      inherit devShells formatter;
     };
 }

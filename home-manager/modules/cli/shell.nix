@@ -228,6 +228,7 @@ with lib;
     fzf
     lazygit
     lazydocker
+    nvtopPackages.full
     procs
     ripgrep
     tldr

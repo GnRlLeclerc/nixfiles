@@ -13,7 +13,7 @@ in
     ./direnv.nix
     ./helix.nix
     ./neovim.nix
-    ./shell.nix
+    ./shell
     ./tmux.nix
   ];
 
@@ -23,7 +23,7 @@ in
     programs.direnv.enable = mkDefault cfg.enable;
     programs.helix.enable = mkDefault cfg.enable;
     programs.neovim.enable = mkDefault cfg.enable;
-    programs.zsh.enable = mkDefault cfg.enable;
+    settings.shell.enable = mkDefault cfg.enable;
     programs.tmux.enable = mkDefault cfg.enable;
   };
 }

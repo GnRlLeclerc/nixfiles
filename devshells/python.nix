@@ -25,12 +25,6 @@ let
       ];
 
       packages = [ python ];
-
-      shellHook = ''
-        # Necessary library paths for some python packages
-        export LD_LIBRARY_PATH=${pkgs.zlib}/lib:${pkgs.stdenv.cc.cc.lib}/lib
-      '';
-
     };
 
   # Create python shell names based on the major and minor version

@@ -17,6 +17,7 @@ let
 
   # Devshell modules
   imports = map import [
+    ./node.nix
     ./python-datascience.nix
     ./python.nix
   ];

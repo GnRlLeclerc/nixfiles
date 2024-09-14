@@ -33,7 +33,7 @@ let
 
     };
 
-  # Create python shell names based  on the major and minor version
+  # Create python shell names based on the major and minor version
   # Example: python39, python310, python311, python312, python313
   mkShellName =
     python:

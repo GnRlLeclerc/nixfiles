@@ -33,4 +33,7 @@ in
   shell-python310 = mkNixDevelopAlias "python310";
   shell-python311 = mkNixDevelopAlias "python311";
   shell-python312 = mkNixDevelopAlias "python312";
+  shell-node18 = mkNixDevelopAlias "node18";
+  shell-node20 = mkNixDevelopAlias "node20";
+  shell-node22 = mkNixDevelopAlias "node22";
 }

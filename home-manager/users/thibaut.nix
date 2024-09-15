@@ -23,11 +23,18 @@
 
   # Enable all desktop applications
   settings.desktop-applications.enable = true;
-  programs.kitty.enable = true;
 
   # Enable all cli applications
   settings.cli.enable = true;
 
   # Programming languages support
   settings.languages.enable = true;
+
+  # Firefox bookmarks
+  settings.firefox.bookmarks = {
+    google = true;
+    polytechnique = true;
+    telecom = true;
+    nix = true;
+  };
 }

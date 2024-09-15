@@ -1,14 +1,14 @@
 # Flatpak applications
 { inputs, ... }:
 {
-  imports = [ inputs.flatpaks.homeManagerModules.default ];
+  imports = [ inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
 
   services.flatpak.packages = [
-    "flathub:app/com.github.tchx84.Flatseal//master"
-    "flathub:app/com.belmoussaoui.Authenticator//master"
-    "flathub:app/com.github.unrud.VideoDownloader//master"
-    "flathub:app/com.yubico.yubioath//master"
-    "flathub:app/io.github.celluloid_player.Celluloid//master"
-    "flathub:app/org.gnome.gitlab.YaLTeR.VideoTrimmer//master"
+    "com.github.tchx84.Flatseal"
+    "com.belmoussaoui.Authenticator"
+    "com.github.unrud.VideoDownloader"
+    "com.yubico.yubioath"
+    "io.github.celluloid_player.Celluloid"
+    "org.gnome.gitlab.YaLTeR.VideoTrimmer"
   ];
 }

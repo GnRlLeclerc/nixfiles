@@ -3,6 +3,8 @@
   inputs,
   config,
   lib,
+  pkgs,
+  system,
   ...
 }:
 
@@ -15,8 +17,8 @@ let
   betterfox = pkgs.fetchFromGitHub {
     owner = "yokoffing";
     repo = "Betterfox";
-    rev = "130";
-    hash = "sha256-Ai8Szbrk/4FhGhS4r5gA2DqjALFRfQKo2a/TwWCIA6g=";
+    rev = "130.0";
+    hash = "sha256-8uzURO0wjoKQT/R2xzYFZxZS50DA92JiKxtNYh6aMOQ=";
   };
 
 in
@@ -58,7 +60,7 @@ in
           (builtins.readFile "${betterfox}/Peskyfox.js")
         ];
 
-        extensions = with inputs.firefox-addons.packages."${cfg.system}"; [
+        extensions = with inputs.firefox-addons.packages."${system}"; [
           bitwarden
           ublock-origin
           darkreader

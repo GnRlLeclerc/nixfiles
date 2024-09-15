@@ -25,10 +25,10 @@ in
   config = {
     programs.firefox.enable = mkDefault cfg.enable;
     programs.chromium.enable = mkDefault cfg.enable;
-    programs.spicetify.enable = mkDefault cfg.enable;
-    programs.fastfetch.enable = mkDefault cfg.enable;
+    # programs.spicetify.enable = mkDefault cfg.enable;
     programs.zathura.enable = mkDefault cfg.enable;
     programs.discord.enable = mkDefault cfg.enable;
-    services.flatpak.enableModule = mkDefault cfg.enable;
+    programs.vscode.enable = mkDefault cfg.enable;
+    services.flatpak.enable = mkDefault cfg.enable;
   };
 }

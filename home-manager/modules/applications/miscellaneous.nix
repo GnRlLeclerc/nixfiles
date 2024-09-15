@@ -11,7 +11,6 @@ with lib;
 {
   config = mkIf config.settings.desktop-applications.enable {
     home.packages = with pkgs; [
-      kitty
       slack
       obsidian
       signal-desktop

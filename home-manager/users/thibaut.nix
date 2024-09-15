@@ -22,7 +22,7 @@
   };
 
   # Enable all desktop applications
-  # settings.desktop-applications.enable = true;
+  settings.desktop-applications.enable = true;
 
   # Enable all cli applications
   settings.cli.enable = true;

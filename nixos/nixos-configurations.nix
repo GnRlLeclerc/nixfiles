@@ -23,6 +23,9 @@ let
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users = config.users;
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
         }
       ] ++ config.modules;
     };

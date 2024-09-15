@@ -29,6 +29,4 @@
 
   # Programming languages support
   settings.languages.enable = true;
-
-  services.flatpak.enableModule = true;
 }

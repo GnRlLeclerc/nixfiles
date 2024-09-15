@@ -14,6 +14,7 @@ in
     ./betterdiscord.nix
     ./flatpak.nix
     ./firefox.nix
+    ./kitty.nix
     ./miscellaneous.nix
     ./spicetify.nix
     ./vscode.nix
@@ -23,12 +24,13 @@ in
   options.settings.desktop-applications.enable = mkEnableOption "Desktop applications";
 
   config = {
-    programs.firefox.enable = mkDefault cfg.enable;
     programs.chromium.enable = mkDefault cfg.enable;
-    # programs.spicetify.enable = mkDefault cfg.enable;
-    programs.zathura.enable = mkDefault cfg.enable;
     programs.discord.enable = mkDefault cfg.enable;
-    programs.vscode.enable = mkDefault cfg.enable;
+    programs.firefox.enable = mkDefault cfg.enable;
     services.flatpak.enable = mkDefault cfg.enable;
+    programs.kitty.enable = mkDefault cfg.enable;
+    # programs.spicetify.enable = mkDefault cfg.enable;
+    programs.vscode.enable = mkDefault cfg.enable;
+    programs.zathura.enable = mkDefault cfg.enable;
   };
 }

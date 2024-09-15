@@ -23,6 +23,7 @@
 
   # Enable all desktop applications
   settings.desktop-applications.enable = true;
+  programs.kitty.enable = true;
 
   # Enable all cli applications
   settings.cli.enable = true;

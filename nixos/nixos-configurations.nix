@@ -14,7 +14,7 @@ let
     nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
-        system = "x86_64-linux";
+        inherit (config) system;
       };
       modules = [
         overlays
@@ -26,6 +26,7 @@ let
           home-manager.users = config.users;
           home-manager.extraSpecialArgs = {
             inherit inputs;
+            inherit (config) system;
           };
         }
       ] ++ config.modules;
@@ -39,5 +40,6 @@ in
       nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7-nvidia
     ];
     users.thibaut = import ../home-manager/users/thibaut.nix;
+    system = "x86_64-linux";
   };
 }

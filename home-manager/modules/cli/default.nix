@@ -26,5 +26,6 @@ in
     programs.neovim.enable = mkDefault cfg.enable;
     settings.shell.enable = mkDefault cfg.enable;
     programs.tmux.enable = mkDefault cfg.enable;
+    programs.fastfetch.enable = mkDefault cfg.enable;
   };
 }

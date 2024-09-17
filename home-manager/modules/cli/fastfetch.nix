@@ -12,7 +12,7 @@
         type = "title";
         key = "    ";
         keyWidth = 6;
-        format = "-> \u001b[96m{1}\u001b[97m@\u001b[96m{2}";
+        format = builtins.fromJSON ''"-> \u001b[96m{1}\u001b[97m@\u001b[96m{2}"'';
       }
       {
         type = "locale";
@@ -40,7 +40,7 @@
         key = "├── ";
         keyWidth = 6;
         keyColor = "green";
-        format = "-> {2} (pacman)";
+        format = "-> {9} (system) {10} (user)";
       }
       {
         type = "uptime";

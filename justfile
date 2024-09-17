@@ -33,3 +33,6 @@ fix-vscode-settings:
     ln -s $(pwd)/home-manager/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
     ln -s $(pwd)/home-manager/dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 
+# Update nixpkgs unstable
+update-nixpkgs:
+    nix flake lock --update-input nixpkgs

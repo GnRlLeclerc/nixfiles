@@ -6,6 +6,8 @@
       size = 10.5;
     };
 
+    shellIntegration.mode = "no-cursor";
+
     settings = {
       # General behavior
       scrollback_lines = 5000;
@@ -15,7 +17,7 @@
       hide_window_decorations = "yes";
 
       # Cursor
-      shell_integration = "no-cursor";
+      cursor_shape = "block";
       cursor_blink_interval = "0.8";
 
       # Allow remote control for dynamic theme change

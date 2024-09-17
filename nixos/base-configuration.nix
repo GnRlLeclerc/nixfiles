@@ -33,7 +33,7 @@ with lib;
   networking.networkmanager.enable = mkDefault true;
 
   # Auto mount drives
-  services.udisks2.enable = mkDefault true;
+  # services.udisks2.enable = mkDefault true;
 
   # Enable flatpak
   services.flatpak.enable = mkDefault true;

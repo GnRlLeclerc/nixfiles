@@ -45,8 +45,8 @@ in
 
       # Configure Xorg keymap
       services.xserver.xkb = {
-        layout = "us";
-        variant = "intl";
+        layout = "fr";
+        variant = "azerty";
       };
 
       # Gnome triple buffering patch: fix multi-monitors & mouse lag

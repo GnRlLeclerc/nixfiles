@@ -18,7 +18,7 @@ let
     owner = "yokoffing";
     repo = "Betterfox";
     rev = "130.0";
-    hash = "sha256-8uzURO0wjoKQT/R2xzYFZxZS50DA92JiKxtNYh6aMOQ=";
+    hash = "sha256-wxq/Ufk/AsWm2l4w66Dt5lIEe9Kuq151mt2wtjK6cwg=";
   };
 
 in

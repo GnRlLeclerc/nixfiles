@@ -29,6 +29,7 @@ in
       fastfetch
       fd
       fzf
+      just
       lazygit
       lazydocker
       nvtopPackages.full

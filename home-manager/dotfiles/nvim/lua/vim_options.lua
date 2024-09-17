@@ -37,7 +37,7 @@ vim.opt.termguicolors = true
 vim.opt.pumheight = 10 -- Limit max completions height
 
 -- Set language to English
-vim.cmd('language en_US')
+vim.cmd('language en_US.UTF-8')
 
 -- Set LSP diagnostic icons
 local symbols = { Error = '󰅙', Info = '󰋼', Hint = '󰌵', Warn = '' }

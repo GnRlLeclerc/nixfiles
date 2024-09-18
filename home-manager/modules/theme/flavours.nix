@@ -82,6 +82,20 @@ in
     # Install flavours
     home.packages = with pkgs; [ flavours ];
 
+    # Include custom themes and templates
+    xdg = {
+      configFile = {
+        "flavours/schemes" = {
+          source = ../../dotfiles/flavours/schemes;
+          recursive = true;
+        };
+        "flavours/templates" = {
+          source = ../../dotfiles/flavours/templates;
+          recursive = true;
+        };
+      };
+    };
+
     # Write the configuration file
     xdg.configFile."flavours/config.toml".text = builtins.concatStringsSep "\n\n" (
       map (fileConfig: ''

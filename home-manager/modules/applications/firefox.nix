@@ -66,6 +66,7 @@ in
           darkreader
           return-youtube-dislikes
           foxyproxy-standard
+          languagetool
         ];
 
         # Useful bookmarks with default priority

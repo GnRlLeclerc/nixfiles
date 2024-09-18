@@ -26,6 +26,7 @@ in
         ];
 
         right_format = lib.concatStrings [
+          "$direnv"
           "$shlvl"
         ];
 
@@ -76,6 +77,16 @@ in
           disabled = false;
           threshold = 2;
           symbol = " ";
+        };
+
+        direnv = {
+          symbol = "(direnv) ";
+          format = "[$symbol$loaded$allowed]($style) ";
+          disabled = false;
+          allowed_msg = " ";
+          not_allowed_msg = " ";
+          loaded_msg = " ";
+          unloaded_msg = " ";
         };
       };
     };

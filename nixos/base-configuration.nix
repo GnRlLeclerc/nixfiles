@@ -16,7 +16,6 @@ with lib;
     ./modules/graphics.nix
     ./modules/locale.nix
     ./modules/packages.nix
-    ./modules/plymouth.nix
     ./modules/power.nix
     ./modules/sound.nix
     ./modules/timezone.nix

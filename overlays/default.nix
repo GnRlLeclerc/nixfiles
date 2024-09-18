@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   nixpkgs.overlays = [
     # GNOME 46: triple-buffering-v4-46
@@ -17,6 +17,8 @@
         }
       );
     })
+
+    inputs.nur.overlay
 
     # TODO : overlay pour firefox-base16-native
   ];

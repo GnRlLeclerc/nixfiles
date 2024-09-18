@@ -9,15 +9,11 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-    firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
-
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    nur.url = "github:nix-community/nur";
   };
 
   outputs =

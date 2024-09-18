@@ -60,7 +60,7 @@ in
           (builtins.readFile "${betterfox}/Peskyfox.js")
         ];
 
-        extensions = with inputs.firefox-addons.packages."${system}"; [
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           bitwarden
           ublock-origin
           darkreader

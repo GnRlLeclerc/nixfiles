@@ -1,5 +1,4 @@
 # Power management config
-{ ... }:
 {
   # Default NixOS power management
   powerManagement.enable = true;

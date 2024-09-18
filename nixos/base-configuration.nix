@@ -42,6 +42,9 @@ with lib;
   # TTY keymaps
   console.keyMap = mkDefault "fr";
 
+  # Enable Nix LD
+  programs.nix-ld.enable = mkDefault true;
+
   ##########################
   #      Nix settings      #
   ##########################

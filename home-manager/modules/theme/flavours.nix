@@ -97,14 +97,14 @@ in
     };
 
     # Write the configuration file
-    xdg.configFile."flavours/config.toml".text = builtins.concatStringsSep "\n\n" (
+    xdg.configFile."flavours/config.toml".text = builtins.concatStringsSep "\n" (
       map (fileConfig: ''
         [[items]]
         file = "${fileConfig.file}"
         template = "${fileConfig.template}"
         ${optionalString (fileConfig.subtemplate != null) ''subtemplate = "${fileConfig.subtemplate}"''}
         ${optionalString (fileConfig.rewrite != null) ''rewrite = ${boolToString fileConfig.rewrite}''}
-        ${optionalString (fileConfig.hook != null) ''hook: "${fileConfig.hook}"''}
+        ${optionalString (fileConfig.hook != null) ''hook = "${fileConfig.hook}"''}
       '') cfg.settings
     );
   };

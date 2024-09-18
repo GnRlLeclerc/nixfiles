@@ -29,7 +29,5 @@
       # Tab bar
       tab_bar_style = "powerline";
     };
-
-    theme = "Tokyo Night Moon";
   };
 }

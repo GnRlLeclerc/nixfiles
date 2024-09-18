@@ -11,7 +11,7 @@ in
 
   config.programs.flavours.settings = mkIf cfg [
     {
-      file = "~/.config/nvim/lua/base16_colors.lua";
+      file = "${config.xdg.configHome}/nvim/lua/base16_colors.lua";
       template = "luakit";
       subtemplate = "colors";
       rewrite = true;

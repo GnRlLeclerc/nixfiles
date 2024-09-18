@@ -1,4 +1,7 @@
 # Theming configuration for all supported programs
 {
-  imports = [ ./neovim.nix ];
+  imports = [
+    ./kitty.nix
+    ./neovim.nix
+  ];
 }

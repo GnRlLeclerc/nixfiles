@@ -16,7 +16,4 @@
 
   # Bat & delta color theme
   BAT_THEME = "base16";
-
-  # Silence direnv logs (use starship instead)
-  DIRENV_LOG_FORMAT = "";
 }

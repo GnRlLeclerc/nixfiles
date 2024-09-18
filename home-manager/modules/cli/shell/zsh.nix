@@ -71,6 +71,9 @@ in
 
           path=("''${store_path[@]}" "''${new_path[@]}")
         fi
+
+        # Silence direnv logs (empty env var)
+        export DIRENV_LOG_FORMAT=
       '';
 
       # Extra plugins

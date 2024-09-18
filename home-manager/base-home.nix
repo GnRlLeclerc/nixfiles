@@ -11,6 +11,7 @@ with lib;
     ./modules/fonts.nix
     ./modules/git.nix
     ./modules/languages
+    ./modules/theme
   ];
 
   ##########################

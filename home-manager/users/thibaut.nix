@@ -21,6 +21,12 @@
     userName = "Thibaut";
   };
 
+  # Enable theming
+  programs.flavours = {
+    enable = true;
+    neovim = true;
+  };
+
   # Enable all desktop applications
   settings.desktop-applications.enable = true;
 

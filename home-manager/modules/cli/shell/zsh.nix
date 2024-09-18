@@ -74,6 +74,9 @@ in
 
         # Silence direnv logs (empty env var)
         export DIRENV_LOG_FORMAT=
+
+        # Disable seahorse askpass
+        unset SSH_ASKPASS
       '';
 
       # Extra plugins

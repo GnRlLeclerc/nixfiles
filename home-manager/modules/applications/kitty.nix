@@ -1,4 +1,5 @@
 # Kitty Configuration
+# WARNING: open kitty with `kitty -1` to share the instance
 {
   programs.kitty = {
     font = {

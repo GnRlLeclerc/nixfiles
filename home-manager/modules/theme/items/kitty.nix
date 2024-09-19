@@ -16,7 +16,7 @@ in
         file = "${config.xdg.configHome}/kitty/current-theme.conf";
         template = "kitty";
         rewrite = true;
-        hook = "kitty @ set-colors --all ${config.xdg.configHome}/kitty/current-theme.conf";
+        hook = "kill -USR1 $(pgrep kitty)"; # Reload kitty config
       }
     ];
 

@@ -11,7 +11,6 @@
     };
 
     extraConfig = ''
-      include colors.conf
       map i recolor
       map p print
     '';

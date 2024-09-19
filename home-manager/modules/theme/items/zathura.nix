@@ -19,5 +19,8 @@ in
         rewrite = true;
       }
     ];
+    zathura.extraConfig = ''
+      include colors.conf
+    '';
   };
 }

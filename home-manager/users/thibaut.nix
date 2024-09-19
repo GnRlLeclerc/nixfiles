@@ -28,6 +28,7 @@
     kitty = true;
     neovim = true;
     obsidian = true;
+    zathura = true;
   };
 
   # Enable all desktop applications

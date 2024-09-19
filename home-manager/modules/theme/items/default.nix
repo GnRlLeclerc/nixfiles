@@ -5,5 +5,6 @@
     ./kitty.nix
     ./neovim.nix
     ./obsidian.nix
+    ./zathura.nix
   ];
 }

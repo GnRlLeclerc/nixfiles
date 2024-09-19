@@ -81,6 +81,7 @@ in
 
         direnv = {
           symbol = "(direnv) ";
+          style = "bold yellow";
           format = "[$symbol$loaded$allowed]($style) ";
           disabled = false;
           allowed_msg = " ";

@@ -4,5 +4,6 @@
     ./fzf.nix
     ./kitty.nix
     ./neovim.nix
+    ./obsidian.nix
   ];
 }

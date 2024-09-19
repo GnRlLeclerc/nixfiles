@@ -27,6 +27,7 @@
     fzf = true;
     kitty = true;
     neovim = true;
+    obsidian = true;
   };
 
   # Enable all desktop applications

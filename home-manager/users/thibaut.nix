@@ -24,6 +24,7 @@
   # Enable theming
   programs.flavours = {
     enable = true;
+    fzf = true;
     kitty = true;
     neovim = true;
   };

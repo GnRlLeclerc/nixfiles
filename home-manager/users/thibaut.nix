@@ -25,6 +25,7 @@
   programs.flavours = {
     enable = true;
     fzf = true;
+    helix = true;
     kitty = true;
     neovim = true;
     obsidian = true;

@@ -2,6 +2,7 @@
 {
   imports = [
     ./fzf.nix
+    ./helix.nix
     ./kitty.nix
     ./neovim.nix
     ./obsidian.nix

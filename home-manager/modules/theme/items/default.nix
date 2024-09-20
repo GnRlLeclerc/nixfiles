@@ -6,6 +6,7 @@
     ./kitty.nix
     ./neovim.nix
     ./obsidian.nix
+    ./vscode.nix
     ./zathura.nix
   ];
 }

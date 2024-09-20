@@ -34,6 +34,9 @@
           # Image processing
           (opencv4.override { enableGtk3 = true; })
           pygobject3
+
+          # Jupyter notebooks
+          ipykernel
         ]
       ))
     ];

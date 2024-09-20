@@ -14,6 +14,9 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     nur.url = "github:nix-community/nur";
+
+    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

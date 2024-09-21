@@ -26,6 +26,7 @@ in
       pnpm
 
       # LSP
+      typescript-language-server
       vscode-langservers-extracted
       tailwindcss-language-server
       svelte-language-server

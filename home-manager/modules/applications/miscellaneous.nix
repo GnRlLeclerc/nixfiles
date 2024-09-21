@@ -31,6 +31,9 @@ with lib;
 
       # Wayland clipboard utilities
       wl-clipboard
+
+      # Game launcher (Minecraft)
+      prismlauncher
     ];
 
   };

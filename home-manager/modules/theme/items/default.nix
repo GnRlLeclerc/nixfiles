@@ -1,6 +1,7 @@
 # Theming configuration for all supported programs
 {
   imports = [
+    ./betterdiscord.nix
     ./fzf.nix
     ./helix.nix
     ./kitty.nix

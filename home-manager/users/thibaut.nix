@@ -24,6 +24,7 @@
   # Enable theming
   programs.flavours = {
     enable = true;
+    betterdiscord = true;
     fzf = true;
     helix = true;
     kitty = true;

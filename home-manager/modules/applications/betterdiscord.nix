@@ -1,4 +1,5 @@
 # Betterdiscord configuration
+# Run `betterdiscordctl install` to install betterdiscord
 {
   config,
   lib,

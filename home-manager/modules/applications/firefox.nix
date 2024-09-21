@@ -389,8 +389,6 @@ in
         ];
       };
 
-      # TODO: theming with native messaging
-      nativeMessagingHosts = [ ];
       enableGnomeExtensions = cfg.gnome;
     };
   };

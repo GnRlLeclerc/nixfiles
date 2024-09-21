@@ -25,6 +25,7 @@
   programs.flavours = {
     enable = true;
     betterdiscord = true;
+    firefox = true;
     fzf = true;
     helix = true;
     kitty = true;

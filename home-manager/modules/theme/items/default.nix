@@ -2,6 +2,7 @@
 {
   imports = [
     ./betterdiscord.nix
+    ./firefox.nix
     ./fzf.nix
     ./helix.nix
     ./kitty.nix

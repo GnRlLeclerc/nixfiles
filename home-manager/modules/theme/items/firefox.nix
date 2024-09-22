@@ -35,7 +35,7 @@ in
       text = ''
         #!/usr/bin/env bash
 
-        trap 'kill -SIGTERM $native_pid' SIGTERM
+        trap 'kill -TERM $native_pid' TERM
         ${pkgs.firefox-native-base16}/bin/firefox-native-base16 &
         native_pid=$!
         wait $native_pid

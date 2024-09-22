@@ -8,6 +8,7 @@
     ./kitty.nix
     ./neovim.nix
     ./obsidian.nix
+    ./tmux.nix
     ./vscode.nix
     ./zathura.nix
   ];

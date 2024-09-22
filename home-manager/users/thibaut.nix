@@ -31,6 +31,7 @@
     kitty = true;
     neovim = true;
     obsidian = true;
+    tmux = true;
     vscode = true;
     zathura = true;
   };

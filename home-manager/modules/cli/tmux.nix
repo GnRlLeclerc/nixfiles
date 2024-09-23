@@ -1,11 +1,20 @@
 # Tmux configuration
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
+  # Enable flavours support
+  withFlavours = config.programs.flavours.tmux;
+
   # Custom tmux plugins
   tmux-sessionx = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "tmux-sessionx";
     version = "1.0";
+    rtpFilePath = "sessionx.tmux";
     src = pkgs.fetchFromGitHub {
       owner = "omerxx";
       repo = "tmux-sessionx";
@@ -17,11 +26,36 @@ let
   tmux-floax = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "tmux-floax";
     version = "1.0";
+    rtpFilePath = "floax.tmux";
     src = pkgs.fetchFromGitHub {
       owner = "omerxx";
       repo = "tmux-floax";
       rev = "dab0587c5994f3b061a597ac6d63a5c9964d2883";
       sha256 = "sha256-gp/l3SLmRHOwNV3glaMsEUEejdeMHW0CXmER4cRhYD4=";
+    };
+  };
+
+  test = pkgs.tmuxPlugins.mkTmuxPlugin {
+    pluginName = "catppuccin";
+    version = "unstable-2024-05-15";
+    src = pkgs.fetchFromGitHub {
+      owner = "catppuccin";
+      repo = "tmux";
+      rev = "697087f593dae0163e01becf483b192894e69e33";
+      hash = "sha256-EHinWa6Zbpumu+ciwcMo6JIIvYFfWWEKH1lwfyZUNTo=";
+    };
+
+    # Apply custom patch to modify the theme directory (make it point to a local one)
+    postInstall = lib.optionalString withFlavours ''
+      sed -i -e 's|done <"''${PLUGIN_DIR}/themes/catppuccin_''${theme}.tmuxtheme"|done <"${config.xdg.configHome}/tmux/themes/catppuccin_base16.tmuxtheme"|g' $target/catppuccin.tmux
+    '';
+
+    meta = with lib; {
+      homepage = "https://github.com/catppuccin/tmux";
+      description = "Soothing pastel theme for Tmux!";
+      license = licenses.mit;
+      platforms = platforms.unix;
+      maintainers = with maintainers; [ jnsgruk ];
     };
   };
 
@@ -70,9 +104,9 @@ in
         '';
       }
       {
-        plugin = tmuxPlugins.catppuccin;
+        plugin = test;
         extraConfig = ''
-          set -g @catppuccin_flavour 'mocha'  # TODO: Custom theme base16
+          set -g @catppuccin_flavour '${if withFlavours then "base16" else "mocha"}'
           set -g @catppuccin_window_left_separator ""
           set -g @catppuccin_window_right_separator " "
           set -g @catppuccin_window_middle_separator " █"

@@ -29,7 +29,7 @@ in
     programs.firefox.enable = mkDefault cfg.enable;
     services.flatpak.enable = mkDefault cfg.enable;
     programs.kitty.enable = mkDefault cfg.enable;
-    # programs.spicetify.enable = mkDefault cfg.enable;
+    programs.spicetify.enable = mkDefault cfg.enable;
     programs.vscode.enable = mkDefault cfg.enable;
     programs.zathura.enable = mkDefault cfg.enable;
   };

@@ -10,6 +10,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 

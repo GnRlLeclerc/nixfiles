@@ -21,9 +21,5 @@ in
         hidePodcasts
       ];
     };
-
-    home.packages = with pkgs; [
-      spotify
-    ];
   };
 }

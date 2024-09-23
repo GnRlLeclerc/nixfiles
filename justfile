@@ -22,6 +22,11 @@ test:
 rollback:
     sudo nixos-rebuild switch --rollback --flake .#main-laptop
 
+# Remove all old nixos & home-manager generations, and collect garbage
+prune: 
+    home-manager expire-generations "-0 days"
+    nix-collect-garbage --delete-old
+
 # Read-write symlinks
 fix-all:
     just fix-neovim-lockfile

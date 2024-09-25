@@ -8,12 +8,15 @@
   ...
 }:
 let
+  darwin = false;
+  nixos = true;
+
   # Helper to create nixos configurations
   mkNixosConfiguration =
     config:
     nixpkgs.lib.nixosSystem {
       specialArgs = {
-        inherit inputs;
+        inherit inputs nixos darwin;
         inherit (config) system;
       };
       modules = [
@@ -21,12 +24,16 @@ let
 
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.users = config.users;
-          home-manager.extraSpecialArgs = {
-            inherit inputs;
-            inherit (config) system;
+          home-manager = {
+            useGlobalPkgs = true;
+            users = config.users;
+            extraSpecialArgs = {
+              inherit inputs nixos darwin;
+              inherit (config) system;
+            };
+            backupFileExtension = "backup";
           };
+
         }
       ] ++ config.modules;
     };

@@ -22,21 +22,7 @@
   };
 
   # Enable theming
-  programs.flavours = {
-    enable = true;
-    betterdiscord = true;
-    firefox = true;
-    fzf = true;
-    gtk = true;
-    helix = true;
-    kitty = true;
-    neovim = true;
-    obsidian = true;
-    spicetify = true;
-    tmux = true;
-    vscode = true;
-    zathura = true;
-  };
+  stylix.enable = true;
 
   # Enable all desktop applications
   settings.desktop-applications.enable = true;

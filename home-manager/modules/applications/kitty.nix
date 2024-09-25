@@ -1,12 +1,6 @@
 # Kitty Configuration
-# WARNING: open kitty with `kitty -1` to share the instance
 {
   programs.kitty = {
-    font = {
-      name = "JetBrainsMono Nerd Font";
-      size = 10.5;
-    };
-
     shellIntegration.mode = "no-cursor";
 
     settings = {
@@ -14,7 +8,6 @@
       scrollback_lines = 5000;
 
       # Background
-      background_opacity = 1;
       hide_window_decorations = "yes";
 
       # Cursor

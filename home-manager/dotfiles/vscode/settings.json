@@ -24,7 +24,6 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.inheritEnv": false,
   "window.titleBarStyle": "custom",
-  "workbench.colorTheme": "Dynamic Base16",
   "workbench.iconTheme": "vscode-great-icons",
 
   "github.copilot.enable": {

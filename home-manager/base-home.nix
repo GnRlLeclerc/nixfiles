@@ -8,7 +8,6 @@ with lib;
   imports = [
     ./modules/applications
     ./modules/cli
-    ./modules/fonts.nix
     ./modules/git.nix
     ./modules/languages
     ./modules/theme

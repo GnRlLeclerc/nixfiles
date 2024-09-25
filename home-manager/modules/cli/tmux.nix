@@ -1,15 +1,11 @@
 # Tmux configuration
 {
-  config,
   lib,
   pkgs,
   ...
 }:
 
 let
-  # Enable flavours support
-  withFlavours = config.programs.flavours.tmux;
-
   # Custom tmux plugins
   tmux-sessionx = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "tmux-sessionx";
@@ -46,9 +42,10 @@ let
     };
 
     # Apply custom patch to modify the theme directory (make it point to a local one)
-    postInstall = lib.optionalString withFlavours ''
-      sed -i -e 's|done <"''${PLUGIN_DIR}/themes/catppuccin_''${theme}.tmuxtheme"|done <"${config.xdg.configHome}/tmux/themes/catppuccin_base16.tmuxtheme"|g' $target/catppuccin.tmux
-    '';
+    # TODO : see how to integrate this with stylix instead
+    # postInstall = lib.optionalString withFlavours ''
+    #   sed -i -e 's|done <"''${PLUGIN_DIR}/themes/catppuccin_''${theme}.tmuxtheme"|done <"${config.xdg.configHome}/tmux/themes/catppuccin_base16.tmuxtheme"|g' $target/catppuccin.tmux
+    # '';
 
     meta = with lib; {
       homepage = "https://github.com/catppuccin/tmux";
@@ -106,7 +103,7 @@ in
       {
         plugin = test;
         extraConfig = ''
-          set -g @catppuccin_flavour '${if withFlavours then "base16" else "mocha"}'
+          set -g @catppuccin_flavour "mocha"
           set -g @catppuccin_window_left_separator ""
           set -g @catppuccin_window_right_separator " "
           set -g @catppuccin_window_middle_separator " █"

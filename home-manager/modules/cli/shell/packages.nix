@@ -22,6 +22,7 @@ in
 
       # Fancy cli
       bat
+      cava
       delta
       dotacat
       dust

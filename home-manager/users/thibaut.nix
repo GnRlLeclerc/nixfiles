@@ -27,10 +27,12 @@
     betterdiscord = true;
     firefox = true;
     fzf = true;
+    gtk = true;
     helix = true;
     kitty = true;
     neovim = true;
     obsidian = true;
+    spicetify = true;
     tmux = true;
     vscode = true;
     zathura = true;

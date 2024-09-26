@@ -51,6 +51,10 @@ in
 
       # Gnome triple buffering patch: fix multi-monitors & mouse lag
       environment.sessionVariables.MUTTER_DEBUG_ENABLE_ATOMIC_KMS = "0";
+
+      # Hint at electron apps to run under wayland
+      # NIXOS_OZONE_WL works as well
+      environment.sessionVariables.ELECTRON_OZONE_PLATFORM_HINT = "auto";
     })
 
     (mkIf (cfg.desktop.environment == "hyprland") {

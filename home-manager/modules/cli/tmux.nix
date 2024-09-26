@@ -2,10 +2,13 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }:
 
 let
+  stylix = config.stylix.targets.tmux.enable;
+
   # Custom tmux plugins
   tmux-sessionx = pkgs.tmuxPlugins.mkTmuxPlugin {
     pluginName = "tmux-sessionx";
@@ -42,10 +45,9 @@ let
     };
 
     # Apply custom patch to modify the theme directory (make it point to a local one)
-    # TODO : see how to integrate this with stylix instead
-    # postInstall = lib.optionalString withFlavours ''
-    #   sed -i -e 's|done <"''${PLUGIN_DIR}/themes/catppuccin_''${theme}.tmuxtheme"|done <"${config.xdg.configHome}/tmux/themes/catppuccin_base16.tmuxtheme"|g' $target/catppuccin.tmux
-    # '';
+    postInstall = lib.optionalString stylix ''
+      sed -i -e 's|done <"''${PLUGIN_DIR}/themes/catppuccin_''${theme}.tmuxtheme"|done <"${config.xdg.configHome}/tmux/themes/base16.tmuxtheme"|g' $target/catppuccin.tmux
+    '';
 
     meta = with lib; {
       homepage = "https://github.com/catppuccin/tmux";
@@ -103,7 +105,7 @@ in
       {
         plugin = test;
         extraConfig = ''
-          set -g @catppuccin_flavour "mocha"
+          set -g @catppuccin_flavour "mocha" # TODO
           set -g @catppuccin_window_left_separator ""
           set -g @catppuccin_window_right_separator " "
           set -g @catppuccin_window_middle_separator " █"

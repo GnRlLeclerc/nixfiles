@@ -4,5 +4,7 @@
     ./betterdiscord.nix
     ./neovim.nix
     ./obsidian.nix
+    ./spicetify.nix
+    ./tmux.nix
   ];
 }

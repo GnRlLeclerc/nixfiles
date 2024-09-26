@@ -36,4 +36,9 @@ in
       terminal = 10;
     };
   };
+
+  # Make these fonts available for apps not using the Stylix theme
+  home.packages = [
+    nerdfonts
+  ];
 }

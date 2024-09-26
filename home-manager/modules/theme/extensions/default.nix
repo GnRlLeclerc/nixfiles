@@ -2,5 +2,6 @@
 {
   imports = [
     ./betterdiscord.nix
+    ./obsidian.nix
   ];
 }

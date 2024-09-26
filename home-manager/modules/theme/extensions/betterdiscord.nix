@@ -8,7 +8,7 @@ in
 {
   options.stylix.targets.betterdiscord.enable = config.lib.stylix.mkEnableTarget "BetterDiscord" true;
 
-  config = mkIf cfg.enable {
+  config = mkIf (cfg.enable && config.programs.discord.enable) {
     xdg.configFile."BetterDiscord/themes/base16.theme.css".source = config.lib.stylix.colors {
       template = ./templates/betterdiscord.mustache;
     };

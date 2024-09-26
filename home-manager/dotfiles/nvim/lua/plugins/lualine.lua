@@ -7,7 +7,7 @@ return {
     require('lualine').setup({
       extensions = { 'neo-tree' },
       options = {
-        theme = 'dynamic-base16',
+        theme = 'base16',
         section_separators = { left = '', right = '' },
         -- ignore_focus = { "neo-tree" },
       },

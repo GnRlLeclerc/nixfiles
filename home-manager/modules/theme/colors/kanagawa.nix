@@ -1,0 +1,62 @@
+{
+  kanagawa-dragon = {
+    scheme = "Kanagawa Dragon";
+    author = "Originally by rebelot(https=//github.com/rebelot)";
+    base00 = "181616";
+    base01 = "282727";
+    base02 = "223249";
+    base03 = "737C73";
+    base04 = "625E5A";
+    base05 = "C5C9C5";
+    base06 = "E7DBA0";
+    base07 = "C5C9C5";
+    base08 = "C4746E";
+    base09 = "B6927B";
+    base0A = "C4b28A";
+    base0B = "8A9A7B";
+    base0C = "8EA4A2";
+    base0D = "949FB5";
+    base0E = "8992A7";
+    base0F = "A292A3";
+  };
+  kanagawa-wave = {
+    scheme = "Kanagawa";
+    author = "Originally by rebelot(https=//github.com/rebelot), ported by montdor (https=//github.com/montdor)";
+    base00 = "1F1F28";
+    base01 = "2A2A37";
+    base02 = "223249";
+    base03 = "727169";
+    base04 = "C8C093";
+    base05 = "DCD7BA";
+    base06 = "938AA9";
+    base07 = "DCD7BA";
+    base08 = "E46876";
+    base09 = "FFA066";
+    base0A = "E6C384";
+    base0B = "98BB6C";
+    base0C = "7FB4CA";
+    base0D = "7E9CD8";
+    base0E = "957FB8";
+    base0F = "D27E99";
+  };
+  kanagawa-lotus = {
+    scheme = "Kanagawa";
+    author = "Originally by rebelot(https=//github.com/rebelot)";
+    base00 = "F2ECBC";
+    base01 = "E7DBA0";
+    base02 = "C9CBD1";
+    base03 = "8A8980";
+    base04 = "716E61";
+    base05 = "545464";
+    base06 = "2A2A37";
+    base07 = "545464";
+    base08 = "D7474B";
+    base09 = "CC6D00";
+    base0A = "dE9800";
+    base0B = "6F894E";
+    base0C = "6693BF";
+    base0D = "4E8CA2";
+    base0E = "624C83";
+    base0F = "B35B79";
+  };
+}

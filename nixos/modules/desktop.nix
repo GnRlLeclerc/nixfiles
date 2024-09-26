@@ -35,6 +35,8 @@ in
     #################################################
 
     (mkIf (cfg.desktop.environment == "gnome") {
+      # NOTE: add https://extensions.gnome.org/extension/19/user-themes/ to enable custom stylix gnome theme
+
       # Enable Xorg
       services.xserver.enable = true;
 

@@ -25,7 +25,7 @@ rollback:
 # Remove all old nixos & home-manager generations, and collect garbage
 prune: 
     home-manager expire-generations "-0 days"
-    nix-collect-garbage --delete-old
+    sudo nix-collect-garbage --delete-old  # Do not forget sudo, else it will not remove the old generations
 
 # Read-write symlinks
 fix-all:

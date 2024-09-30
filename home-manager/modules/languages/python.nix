@@ -20,6 +20,9 @@ in
       # Language (latest python version)
       python3
 
+      # Useful build tools
+      hatch
+
       # LSP
       pyright
 

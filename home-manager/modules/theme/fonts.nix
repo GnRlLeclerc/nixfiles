@@ -33,7 +33,7 @@ in
     };
 
     sizes = {
-      terminal = 10;
+      terminal = 11;
     };
   };
 

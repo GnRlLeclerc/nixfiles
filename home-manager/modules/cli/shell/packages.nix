@@ -37,6 +37,7 @@ in
       procs
       ripgrep
       tldr
+      yazi
       zoxide
     ];
   };

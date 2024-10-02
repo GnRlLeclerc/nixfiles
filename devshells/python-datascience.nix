@@ -29,6 +29,7 @@
 
           # Deep learning
           torch-bin
+          torchvision-bin
           scikit-learn
 
           # Image processing

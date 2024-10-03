@@ -28,9 +28,11 @@
           seaborn
 
           # Deep learning
+          tensorboardx
           torch-bin
           torchvision-bin
           scikit-learn
+          scikit-image
 
           # Image processing
           (opencv4.override { enableGtk3 = true; })

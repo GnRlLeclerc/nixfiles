@@ -34,6 +34,10 @@ with lib;
 
       # Game launcher (Minecraft)
       prismlauncher
+
+      # Image edition
+      gthumb
+      gimp
     ];
 
   };

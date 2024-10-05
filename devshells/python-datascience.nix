@@ -40,6 +40,9 @@
 
           # Jupyter notebooks
           ipykernel
+
+          # Needed for tensorboardX
+          protobuf
         ]
       ))
     ];

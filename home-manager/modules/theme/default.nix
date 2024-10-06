@@ -2,6 +2,7 @@
 {
   inputs,
   darwin,
+  pkgs,
   ...
 }:
 {
@@ -21,4 +22,9 @@
     targets.firefox.profileNames = [ "default" ];
   };
 
+  # Set papirus icons
+  gtk.iconTheme = {
+    name = "Papirus";
+    package = pkgs.papirus-icon-theme;
+  };
 }

@@ -19,6 +19,7 @@ in
       gawk
       gnused
       jq
+      bind
 
       # Fancy cli
       bat

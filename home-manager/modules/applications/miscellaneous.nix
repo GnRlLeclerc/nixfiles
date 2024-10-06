@@ -38,6 +38,9 @@ with lib;
       # Image edition
       gthumb
       gimp
+
+      # EPUB viewer
+      foliate
     ];
 
   };

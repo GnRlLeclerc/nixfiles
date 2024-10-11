@@ -56,7 +56,7 @@ in
 
       # Hint at electron apps to run under wayland
       # NIXOS_OZONE_WL works as well
-      environment.sessionVariables.ELECTRON_OZONE_PLATFORM_HINT = "auto";
+      environment.sessionVariables.NIXOS_OZONE_WL = "1";
     })
 
     (mkIf (cfg.desktop.environment == "hyprland") {

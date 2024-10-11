@@ -28,8 +28,7 @@
 
       # Battery life
       START_CHARGE_THRESH_BAT0 = 70;
-      STOP_CHARGE_THRESH_BAT0 = 80;
-
+      STOP_CHARGE_THRESH_BAT0 = 1;
     };
   };
 }

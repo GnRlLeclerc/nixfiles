@@ -24,6 +24,7 @@ in
       # Fancy cli
       bat
       cava
+      cmatrix
       delta
       dotacat
       dust

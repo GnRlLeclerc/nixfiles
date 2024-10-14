@@ -33,7 +33,7 @@ with lib;
       wl-clipboard
 
       # Game launcher (Minecraft)
-      prismlauncher
+      modrinth-app
 
       # Image edition
       gthumb

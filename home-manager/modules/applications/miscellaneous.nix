@@ -14,7 +14,7 @@ with lib;
       slack
       obsidian
       signal-desktop
-      bitwarden-desktop
+      # Broken: bitwarden-desktop
 
       # Libre Office fresh + spellcheck
       libreoffice-fresh

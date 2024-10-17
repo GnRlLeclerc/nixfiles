@@ -41,6 +41,8 @@ with lib;
 
       # EPUB viewer
       foliate
+
+      zoom-us
     ];
 
   };

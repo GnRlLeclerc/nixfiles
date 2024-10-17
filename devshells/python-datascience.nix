@@ -43,6 +43,9 @@
 
           # Needed for tensorboardX
           protobuf
+
+          # Utility
+          tqdm
         ]
       ))
     ];

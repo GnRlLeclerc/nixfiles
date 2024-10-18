@@ -92,7 +92,8 @@ return {
                 enable = false,
                 url = '',
               },
-              schemas = require('schemastore').yaml.schemas(),
+              -- Remove Sigma schema (interferes with sigma)
+              schemas = require('schemastore').yaml.schemas({ ignore = { 'Sigma Detection Rule' } }),
             },
           },
         },

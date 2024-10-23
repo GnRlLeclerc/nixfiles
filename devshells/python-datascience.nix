@@ -46,6 +46,7 @@
 
           # Utility
           tqdm
+          ftfy
         ]
       ))
     ];

@@ -45,8 +45,9 @@
           protobuf
 
           # Utility
-          tqdm
           ftfy
+          regex
+          tqdm
         ]
       ))
     ];

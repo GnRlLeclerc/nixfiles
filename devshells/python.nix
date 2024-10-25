@@ -24,7 +24,13 @@ let
         zlib
       ];
 
-      packages = [ python ];
+      packages = [
+        (python.withPackages (
+          ps: with ps; [
+            pip
+          ]
+        ))
+      ];
     };
 
   # Create python shell names based on the major and minor version

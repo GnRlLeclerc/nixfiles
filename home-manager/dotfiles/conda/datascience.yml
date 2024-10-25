@@ -1,0 +1,44 @@
+# Generic python datascience environment
+
+name: datascience
+
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+  - defaults
+
+dependencies:
+  - python=3.12
+
+  # Data processing libraries
+  - numpy
+  - pandas
+  - polars
+
+  # Plotting libraries
+  - matplotlib
+  - seaborn
+
+  # Deep learning libraries
+  - pytorch>=2.5.0
+  - torchvision
+  - tensorboardx
+  - scikit-learn
+  - scikit-image
+
+  # Image processing
+  - opencv
+  - pygobject # For GTK opencv GTK support
+  - PyQt5 # For Qt support
+
+  # Jupyter notebook support
+  - ipykernel
+
+  # Needed for tensorboardX
+  - protobuf
+
+  # Utility libraries
+  - ftfy
+  - regex
+  - tqdm

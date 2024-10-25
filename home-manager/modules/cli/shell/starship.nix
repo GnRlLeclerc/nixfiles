@@ -22,6 +22,7 @@ in
           "$cmd_duration"
           "$line_break"
           "$python"
+          "$conda"
           "$character"
         ];
 
@@ -70,6 +71,11 @@ in
 
         python = {
           format = "[$virtualenv]($style) ";
+          style = "bright-black";
+        };
+
+        conda = {
+          format = "[\\(conda\\) $environment]($style) ";
           style = "bright-black";
         };
 

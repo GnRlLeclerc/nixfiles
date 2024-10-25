@@ -29,6 +29,7 @@ in
 
   # Global nix shell aliases
   shell-datascience = mkNixDevelopAlias "datascience";
+  shell-mamba = mkNixDevelopAlias "mamba";
   shell-python39 = mkNixDevelopAlias "python39";
   shell-python310 = mkNixDevelopAlias "python310";
   shell-python311 = mkNixDevelopAlias "python311";

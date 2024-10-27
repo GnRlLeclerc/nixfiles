@@ -42,6 +42,9 @@ in
       tldr
       yazi
       zoxide
+
+      # Caching
+      cachix
     ];
   };
 }

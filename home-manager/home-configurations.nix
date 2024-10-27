@@ -17,6 +17,7 @@ let
         inherit (config) system;
         darwin = config.system == "x86_64-darwin" || config.system == "aarch64-darwin";
         nixos = false; # Disable NixOS specific features (Chromium can only be themed from NixOS config, not home-manager)
+        config.nix.settings.trusted-users = [ config.user.home.username ];
       };
       modules = [
         overlays

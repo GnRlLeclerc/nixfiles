@@ -8,7 +8,6 @@ in
   cargo-update = "cargo install-update -a"; # Update all programs installed via "cargo install"
   cat = "bat --paging=never --style=plain"; # Bat without paging
   du = "dust";
-  grep = "rg";
   less = "bat --paging=always --style=plain"; # Bat with always paging
   neofetch = "fastfetch";
   ps = "procs";

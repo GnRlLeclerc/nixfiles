@@ -18,7 +18,7 @@
     ];
 
     packages = with pkgs; [
-      (python311.withPackages (
+      (python312.withPackages (
         ps: with ps; [
           # Basic
           numpy
@@ -31,8 +31,8 @@
 
           # Deep learning
           tensorboardx
-          torch-bin
-          torchvision-bin
+          torch
+          torchvision
           scikit-learn
           scikit-image
 

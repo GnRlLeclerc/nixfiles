@@ -12,8 +12,6 @@ in
 
   config = {
     programs.spicetify = {
-      theme = spicePkgs.themes.sleek;
-
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay
         shuffle

@@ -1,5 +1,11 @@
 # Devshells configuration
-{ nixpkgs, forAllSystems, ... }:
+{
+  nixpkgs,
+  forAllSystems,
+  inputs,
+  overlays,
+  ...
+}:
 let
   # For every system, merge all devshells and inject system-specific packages
   devShells = forAllSystems (
@@ -9,9 +15,12 @@ let
         inherit system;
         config = {
           allowUnfree = true;
-          cudaSupport = true;
         };
+
+        overlays = overlayList;
       };
+
+      overlayList = (overlays { inherit inputs; }).nixpkgs.overlays;
     in
     builtins.foldl' (acc: shell: acc // shell pkgs) { } imports
   );

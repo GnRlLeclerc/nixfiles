@@ -1,7 +1,8 @@
 # Nix cache sources
+{ lib, ... }:
 {
   nix.settings = {
-    substituters = [
+    substituters = lib.mkAfter [
       "https://cuda-maintainers.cachix.org" # cudaSupport sources
     ];
 

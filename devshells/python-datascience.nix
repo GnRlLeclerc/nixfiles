@@ -31,8 +31,8 @@
 
           # Deep learning
           tensorboardx
-          torch
-          torchvision
+          torch-bin
+          torchvision-bin
           scikit-learn
           scikit-image
 

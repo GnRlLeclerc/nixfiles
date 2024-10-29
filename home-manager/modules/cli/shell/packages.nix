@@ -36,6 +36,7 @@ in
       just
       lazygit
       lazydocker
+      nix-output-monitor
       nvtopPackages.full
       procs
       ripgrep

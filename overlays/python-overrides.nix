@@ -15,6 +15,7 @@
       });
 
       # Temporary fix for python312Packages.proxy-py (hash mismatch)
+      # BUG: hydra build seems to succeed?
       proxy-py = prevPy.proxy-py.overridePythonAttrs (oldAttrs: {
         src = prev.pkgs.fetchFromGitHub {
           owner = "abhinavsingh";
@@ -25,6 +26,7 @@
       });
 
       # Permanent fix for python312Packages.cfn-lint (ignore some other tests that fail)
+      # A new version should come soon (1.18.1), which may fix the issue
       cfn-lint = prevPy.cfn-lint.overridePythonAttrs (oldAttrs: {
         disabledTests = oldAttrs.disabledTests ++ [
           "test_quickstart_templates"

@@ -1,6 +1,6 @@
 (final: prev: {
   python312 = prev.python312.override {
-    packageOverrides = final: prevPy: {
+    packageOverrides = finalPy: prevPy: {
 
       # Temporary fix for python312Packages.triton-bin
       # Follow this issue https://github.com/NixOS/nixpkgs/issues/351717
@@ -34,6 +34,11 @@
           "test_quickstart_templates_non_strict"
         ];
       });
+
+      # Replace main torch packages with their bin versions for CUDA support + caching
+      torch = finalPy.torch-bin;
+      torchvision = finalPy.torchvision-bin;
+      torchaudio = finalPy.torchaudio-bin;
     };
   };
   python312Packages = final.python312.pkgs;

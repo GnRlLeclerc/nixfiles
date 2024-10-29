@@ -30,13 +30,11 @@
           seaborn
 
           # Deep learning
-          torch-bin
-          torchvision-bin
-          (tensorboardx.override {
-            # Maybe do this override globally in an overlay
-            torch = torch-bin;
-            torchvision = torchvision-bin;
-          })
+          torch
+          torchvision
+          torchaudio
+          tensorboardx
+          transformers
           scikit-learn
           scikit-image
 

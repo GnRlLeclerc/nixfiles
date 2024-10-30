@@ -19,7 +19,12 @@
 
     packages = with pkgs; [
       (python312.withPackages (
-        ps: with ps; [
+        ps:
+        with ps;
+        let
+          opencvWithGtk = opencv4.override { enableGtk3 = true; };
+        in
+        [
           # Basic
           numpy
           pandas
@@ -37,9 +42,10 @@
           transformers
           scikit-learn
           scikit-image
+          (lpips.override { opencv4 = opencvWithGtk; })
 
           # Image processing
-          (opencv4.override { enableGtk3 = true; })
+          opencvWithGtk
           pygobject3
 
           # Jupyter notebooks
@@ -52,6 +58,7 @@
           ftfy
           regex
           tqdm
+          rich
         ]
       ))
     ];

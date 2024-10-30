@@ -2,19 +2,10 @@
 final: prev: {
   packageOverrides = finalPy: prevPy: {
 
+    # lpips package (with overridable opencv4 dependency because I need it)
     lpips = final.python312.pkgs.callPackage (
-      {
-        torch,
-        torchvision,
-        opencv4,
-        numpy,
-        scikit-image,
-        matplotlib,
-        tqdm,
-        ipykernel,
-        ...
-      }:
-      final.python312.pkgs.buildPythonPackage rec {
+      { buildPythonPackage, opencv4, ... }:
+      buildPythonPackage rec {
         pname = "lpips";
         version = "0.1.4";
 
@@ -23,7 +14,7 @@ final: prev: {
           sha256 = "sha256-OEYzHfbGloiuw9MApe7vbFKUNbyEYL1YIBw9YuVhiPo=";
         };
 
-        dependencies = [
+        dependencies = with final.python312.pkgs; [
           torch
           torchvision
           numpy

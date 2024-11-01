@@ -18,6 +18,10 @@
     ];
 
     packages = with pkgs; [
+      # Build system for loading C++ extensions in torch
+      ninja
+      cudatoolkit
+
       (python312.withPackages (
         ps:
         with ps;
@@ -66,6 +70,10 @@
     shellHook = ''
       # Make matplotlib use GTK3Agg backend
       export MPLBACKEND=GTK3Agg
+
+      # For custom CUDA plugins that have to be compiled
+      export CUDA_HOME=${pkgs.cudatoolkit}
+      export TORCH_CUDA_ARCH_LIST="8.6"  # Compute capability of RTX 3050
     '';
   };
 

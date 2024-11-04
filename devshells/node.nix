@@ -1,9 +1,5 @@
 # Standard nodejs shells
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 
 let
   nodeVersions = with pkgs; [
@@ -12,18 +8,14 @@ let
     nodejs_22
   ];
 
-  mkNodeShell =
-    node:
-    pkgs.mkShell {
-      packages = [ node ];
-    };
+  mkNodeShell = node: pkgs.mkShell { packages = [ node ]; };
 
   # Create node shell names based on the major version
   # Example: node18, node20, node22
   mkShellName =
     node:
     let
-      versionParts = lib.splitString "." node.version;
+      versionParts = pkgs.lib.splitString "." node.version;
       major = builtins.elemAt versionParts 0;
     in
     "node${major}";

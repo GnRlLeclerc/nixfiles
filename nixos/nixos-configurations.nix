@@ -1,6 +1,7 @@
 # All my nixos configurations, with home-manager as a module
 {
   nixpkgs,
+  nixpkgs-unstable,
   home-manager,
   nixos-hardware,
   overlays,
@@ -14,13 +15,28 @@ let
   # Helper to create nixos configurations
   mkNixosConfiguration =
     config:
+    let
+      # Define secondary unstable packages
+      unstable-pkgs = import nixpkgs-unstable {
+        inherit (config) system;
+        config = {
+          allowUnfree = true;
+        };
+        overlays = overlays.unstable;
+      };
+    in
     nixpkgs.lib.nixosSystem {
       specialArgs = {
-        inherit inputs nixos darwin;
+        inherit
+          inputs
+          nixos
+          darwin
+          unstable-pkgs
+          ;
         inherit (config) system;
       };
       modules = [
-        overlays
+        { nixpkgs.overlays = overlays.stable; }
 
         home-manager.nixosModules.home-manager
         {
@@ -28,7 +44,12 @@ let
             useGlobalPkgs = true;
             users = config.users;
             extraSpecialArgs = {
-              inherit inputs nixos darwin;
+              inherit
+                inputs
+                nixos
+                darwin
+                unstable-pkgs
+                ;
               inherit (config) system;
             };
             backupFileExtension = "backup";

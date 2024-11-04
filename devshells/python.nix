@@ -1,10 +1,6 @@
 # Standard python devshells for multiple versions
 # Many libraries are included for seamless use in venvs
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 
 let
   pythonVersions = with pkgs; [
@@ -24,13 +20,7 @@ let
         zlib
       ];
 
-      packages = [
-        (python.withPackages (
-          ps: with ps; [
-            pip
-          ]
-        ))
-      ];
+      packages = [ (python.withPackages (ps: with ps; [ pip ])) ];
     };
 
   # Create python shell names based on the major and minor version
@@ -38,7 +28,7 @@ let
   mkShellName =
     python:
     let
-      versionParts = lib.splitString "." python.version;
+      versionParts = pkgs.lib.splitString "." python.version;
       major = builtins.elemAt versionParts 0;
       minor = builtins.elemAt versionParts 1;
     in

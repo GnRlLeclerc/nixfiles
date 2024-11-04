@@ -3,6 +3,7 @@
   config,
   lib,
   pkgs,
+  unstable-pkgs,
   ...
 }:
 
@@ -21,7 +22,7 @@ in
       gnumake
 
       # LSP
-      autotools-language-server
+      unstable-pkgs.autotools-language-server
     ];
   };
 }

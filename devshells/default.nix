@@ -1,6 +1,7 @@
 # Devshells configuration
 {
   nixpkgs,
+  nixpkgs-unstable,
   forAllSystems,
   inputs,
   overlays,
@@ -11,26 +12,34 @@ let
   devShells = forAllSystems (
     system:
     let
+      # Define standard packages with overlays
       pkgs = import nixpkgs {
         inherit system;
         config = {
           allowUnfree = true;
         };
-
-        overlays = overlayList;
+        overlays = overlays.stable;
       };
 
-      overlayList = (overlays { inherit inputs; }).nixpkgs.overlays;
+      # Define unstable packages with overlays
+      unstable-pkgs = import nixpkgs-unstable {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+        overlays = overlays.unstable;
+      };
+
+      # Process devshell files
+      imports = map (file: import file { inherit pkgs unstable-pkgs; }) [
+        ./node.nix
+        ./python-datascience.nix
+        ./python.nix
+        ./tauri.nix
+      ];
     in
-    builtins.foldl' (acc: shell: acc // shell pkgs) { } imports
+    # Merge all devshell attribute sets into a single one
+    builtins.foldl' (acc: shell: acc // shell) { } imports
   );
-
-  # Devshell modules
-  imports = map import [
-    ./node.nix
-    ./python-datascience.nix
-    ./python.nix
-  ];
-
 in
 devShells

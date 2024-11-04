@@ -1,5 +1,10 @@
 # Main python datascience devshell
-{ pkgs, ... }:
+{ unstable-pkgs, ... }:
+let
+  # In order to benefit from the latest versions of all python packages,
+  # the datascience devshells rely on nixpkgs-unstable.
+  pkgs = unstable-pkgs;
+in
 {
   # Generic python datascience shell with preinstalled packages
   # Prefer this over mamba shell for GUIs and images
@@ -63,6 +68,7 @@
           regex
           tqdm
           rich
+          click
         ]
       ))
     ];
@@ -95,9 +101,7 @@
       libglvnd
     ];
 
-    packages = with pkgs; [
-      micromamba
-    ];
+    packages = with pkgs; [ micromamba ];
     shellHook = ''
       # Expose CUDA drivers to python
       # https://discourse.nixos.org/t/installing-pytorch-into-a-virtual-python-environment/34720/2

@@ -5,8 +5,6 @@ final: prev: {
     # Temporary fix for python312Packages.triton-bin
     # Follow this issue https://github.com/NixOS/nixpkgs/issues/351717
     triton-bin = prevPy.triton-bin.overridePythonAttrs (oldAttrs: {
-      # problème : il a besoin du prev !
-      # exporter packageOverrides à la place ?
       postFixup = ''
         chmod +x "$out/${prev.python312.sitePackages}/triton/backends/nvidia/bin/ptxas"
         substituteInPlace $out/${prev.python312.sitePackages}/triton/backends/nvidia/driver.py \
@@ -17,7 +15,6 @@ final: prev: {
     });
 
     # Temporary fix for python312Packages.proxy-py (hash mismatch)
-    # BUG: hydra build seems to succeed?
     proxy-py = prevPy.proxy-py.overridePythonAttrs (oldAttrs: {
       src = prev.pkgs.fetchFromGitHub {
         owner = "abhinavsingh";
@@ -27,8 +24,7 @@ final: prev: {
       };
     });
 
-    # Permanent fix for python312Packages.cfn-lint (ignore some other tests that fail)
-    # A new version should come soon (1.18.1), which may fix the issue
+    # Temporary fix for python312Packages.cfn-lint (ignore some other tests that fail)
     cfn-lint = prevPy.cfn-lint.overridePythonAttrs (oldAttrs: {
       disabledTests = oldAttrs.disabledTests ++ [
         "test_quickstart_templates"

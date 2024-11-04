@@ -2,9 +2,10 @@
   description = "GnRl_Leclerc's NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -29,6 +30,7 @@
       home-manager,
       nixos-hardware,
       nixpkgs,
+      nixpkgs-unstable,
       ...
     }@inputs:
     let
@@ -42,7 +44,7 @@
       ];
 
       forAllSystems = nixpkgs.lib.genAttrs systems;
-      overlays = import ./overlays;
+      overlays = import ./overlays { inherit inputs; };
 
       inheritArgs = {
         inherit
@@ -51,6 +53,7 @@
           inputs
           nixos-hardware
           nixpkgs
+          nixpkgs-unstable
           overlays
           ;
       };
@@ -59,6 +62,23 @@
       homeConfigurations = import ./home-manager/home-configurations.nix inheritArgs;
       devShells = import ./devshells inheritArgs;
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+
+      # Setup pour explorer le build d'un package
+      # TODO : proper isolated module ?
+      packages =
+        let
+          pkgs = import nixpkgs {
+            config = {
+              allowUnfree = true;
+            };
+            system = "x86_64-linux";
+            overlays = overlays.stable;
+          };
+
+        in
+        {
+          x86_64-linux.enchant2 = pkgs.enchant2;
+        };
     in
     {
       inherit
@@ -66,6 +86,7 @@
         devShells
         formatter
         homeConfigurations
+        packages
         ;
     };
 }

@@ -1,12 +1,14 @@
+# Overlays for the stable and unstable nixpkgs
+{ inputs, ... }:
 {
-  inputs,
-  ...
-}:
-{
-  nixpkgs.overlays = [
+  stable = [
     inputs.rust-overlay.overlays.default
     inputs.nur.overlay
 
-    (import ./python)
-  ];
+  ] ++ (import ./stable);
+  unstable = [
+    inputs.rust-overlay.overlays.default
+    inputs.nur.overlay
+
+  ] ++ (import ./unstable);
 }

@@ -46,4 +46,4 @@ fix-vscode-settings:
 
 # Update nixpkgs unstable
 update-nixpkgs:
-    nix flake lock --update-input nixpkgs
+    nix flake update nixpkgs

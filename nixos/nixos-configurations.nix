@@ -1,7 +1,7 @@
 # All my nixos configurations, with home-manager as a module
 {
   nixpkgs,
-  nixpkgs-unstable,
+  nixpkgs-stable,
   home-manager,
   nixos-hardware,
   overlays,
@@ -17,12 +17,12 @@ let
     config:
     let
       # Define secondary unstable packages
-      unstable-pkgs = import nixpkgs-unstable {
+      stable-pkgs = import nixpkgs-stable {
         inherit (config) system;
         config = {
           allowUnfree = true;
         };
-        overlays = overlays.unstable;
+        overlays = overlays.stable;
       };
     in
     nixpkgs.lib.nixosSystem {
@@ -31,12 +31,12 @@ let
           inputs
           nixos
           darwin
-          unstable-pkgs
+          stable-pkgs
           ;
         inherit (config) system;
       };
       modules = [
-        { nixpkgs.overlays = overlays.stable; }
+        { nixpkgs.overlays = overlays.unstable; }
 
         home-manager.nixosModules.home-manager
         {
@@ -48,7 +48,7 @@ let
                 inputs
                 nixos
                 darwin
-                unstable-pkgs
+                stable-pkgs
                 ;
               inherit (config) system;
             };

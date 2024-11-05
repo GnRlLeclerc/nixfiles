@@ -2,7 +2,7 @@
 {
   inputs,
   nixpkgs,
-  nixpkgs-unstable,
+  nixpkgs-stable,
   home-manager,
   overlays,
   ...
@@ -17,27 +17,27 @@ let
         config = {
           allowUnfree = true;
         };
-        overlays = overlays.stable;
+        overlays = overlays.unstable;
       };
-      unstable-pkgs = import nixpkgs-unstable {
+      stable-pkgs = import nixpkgs-stable {
         inherit (config) system;
         config = {
           allowUnfree = true;
         };
-        overlays = overlays.unstable;
+        overlays = overlays.stable;
       };
     in
     home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {
-        inherit inputs unstable-pkgs;
+        inherit inputs stable-pkgs;
         inherit (config) system;
         darwin = config.system == "x86_64-darwin" || config.system == "aarch64-darwin";
         nixos = false; # Disable NixOS specific features (Chromium can only be themed from NixOS config, not home-manager)
         config.nix.settings.trusted-users = [ config.user.home.username ];
       };
       modules = [
-        { nixpkgs.overlays = overlays.stable; }
+        { nixpkgs.overlays = overlays.unstable; }
         config.user
       ];
     };

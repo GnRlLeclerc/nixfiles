@@ -3,7 +3,6 @@
   config,
   lib,
   pkgs,
-  unstable-pkgs,
   ...
 }:
 
@@ -24,7 +23,7 @@ in
       nushell
 
       # LSP
-      unstable-pkgs.bash-language-server
+      bash-language-server
 
       # Formatter
       shfmt

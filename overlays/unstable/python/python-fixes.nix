@@ -14,16 +14,6 @@ final: prev: {
       '';
     });
 
-    # Temporary fix for python312Packages.proxy-py (hash mismatch)
-    proxy-py = prevPy.proxy-py.overridePythonAttrs (oldAttrs: {
-      src = prev.pkgs.fetchFromGitHub {
-        owner = "abhinavsingh";
-        repo = "proxy.py";
-        rev = "refs/tags/v${oldAttrs.version}";
-        hash = "sha256-icFYpuPF76imPxsRcbqvC03pHdGga2GUwvKqbeWg3+E=";
-      };
-    });
-
     # Temporary fix for python312Packages.cfn-lint (ignore some other tests that fail)
     cfn-lint = prevPy.cfn-lint.overridePythonAttrs (oldAttrs: {
       disabledTests = oldAttrs.disabledTests ++ [

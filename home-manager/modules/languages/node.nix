@@ -3,7 +3,6 @@
   config,
   lib,
   pkgs,
-  unstable-pkgs,
   ...
 }:
 
@@ -27,10 +26,10 @@ in
       pnpm
 
       # LSP
-      unstable-pkgs.typescript-language-server
+      typescript-language-server
       vscode-langservers-extracted
       tailwindcss-language-server
-      unstable-pkgs.svelte-language-server
+      svelte-language-server
 
       # Formatter
       prettierd

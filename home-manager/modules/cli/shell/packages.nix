@@ -36,12 +36,12 @@ in
       just
       lazygit
       lazydocker
+      nix-diff
       nix-output-monitor
       nvtopPackages.full
       procs
       ripgrep
       tldr
-      yazi
       zoxide
 
       # Caching

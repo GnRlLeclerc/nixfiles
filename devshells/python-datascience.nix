@@ -1,10 +1,5 @@
 # Main python datascience devshell
-{ unstable-pkgs, ... }:
-let
-  # In order to benefit from the latest versions of all python packages,
-  # the datascience devshells rely on nixpkgs-unstable.
-  pkgs = unstable-pkgs;
-in
+{ pkgs, ... }:
 {
   # Generic python datascience shell with preinstalled packages
   # Prefer this over mamba shell for GUIs and images
@@ -47,7 +42,6 @@ in
           torch
           torchvision
           torchaudio
-          tensorboardx
           transformers
           scikit-learn
           scikit-image
@@ -59,9 +53,6 @@ in
 
           # Jupyter notebooks
           ipykernel
-
-          # Needed for tensorboardX
-          protobuf
 
           # Utility
           ftfy

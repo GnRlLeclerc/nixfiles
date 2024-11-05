@@ -57,6 +57,9 @@ in
       # Hint at electron apps to run under wayland
       # NIXOS_OZONE_WL works as well
       environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+      # Fix Gdk display
+      environment.sessionVariables.GSK_RENDERER = "gl";
     })
 
     (mkIf (cfg.desktop.environment == "hyprland") {

@@ -1,7 +1,7 @@
 # Devshells configuration
 {
   nixpkgs,
-  nixpkgs-unstable,
+  nixpkgs-stable,
   forAllSystems,
   inputs,
   overlays,
@@ -18,20 +18,20 @@ let
         config = {
           allowUnfree = true;
         };
-        overlays = overlays.stable;
+        overlays = overlays.unstable;
       };
 
       # Define unstable packages with overlays
-      unstable-pkgs = import nixpkgs-unstable {
+      stable-pkgs = import nixpkgs-stable {
         inherit system;
         config = {
           allowUnfree = true;
         };
-        overlays = overlays.unstable;
+        overlays = overlays.stable;
       };
 
       # Process devshell files
-      imports = map (file: import file { inherit pkgs unstable-pkgs; }) [
+      imports = map (file: import file { inherit pkgs stable-pkgs; }) [
         ./node.nix
         ./python-datascience.nix
         ./python.nix

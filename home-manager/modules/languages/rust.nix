@@ -18,7 +18,11 @@ in
 
     home.packages = with pkgs; [
       # Language
-      rustup
+      # Using Oxalica rust overlay
+      rust-bin.stable.latest.default
+
+      # Language server
+      rust-analyzer
     ];
   };
 }

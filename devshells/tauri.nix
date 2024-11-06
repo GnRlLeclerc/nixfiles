@@ -1,10 +1,15 @@
 # Devshell for tauri applications development
 { pkgs, ... }:
+let
+  makeConcatPath = suffix: paths: pkgs.lib.concatMapStringsSep ":" (string: string + suffix) paths;
+  makePkgConfigPath = makeConcatPath "/lib/pkgconfig";
+in
+# makeLDLibraryPath = prefix: paths: "/lib";
 {
   # Recommended tauri setup (NixOS prerequisite)
   # https://v2.tauri.app/start/prerequisites/
   tauri = pkgs.mkShell {
-    buildInputs = with pkgs; [
+    nativeBuildInputs = with pkgs; [
       at-spi2-atk
       atkmm
       cairo
@@ -19,6 +24,39 @@
       pango
       webkitgtk_4_1
       webkitgtk_4_1.dev
+
+      # Additional libraries not mentionned
+      openssl
+      libsysprof-capture
+      libthai
+      libdatrie
+      libselinux
+      lerc
+      libsepol
+      xorg.libXdmcp
+      util-linux.dev
+      pcre2
+      sqlite
+      libpsl
+      libxkbcommon
+      libepoxy
+      xorg.libXtst
+      nghttp2
+
+      # Appimage build dependencies (still bugged, disabled)
+      # libz
+      # libstdcxx5
+      # xorg.libX11
+      # fontconfig
+      # freetype
+      # xorg.libxcb
+      # libdrm
+      # mesa
+      # expat
+      # libgpg-error
+      # fribidi
+      # harfbuzz
+      # libGL
     ];
 
     # Required for pkg-config to find the libraries
@@ -26,9 +64,41 @@
       pkgconf
     ];
 
+    # https://github.com/tauri-apps/tauri/issues/8929
+    NO_STRIP = "true";
+
     PKG_CONFIG_PATH =
       with pkgs;
-      "${glib.dev}/lib/pkgconfig:${libsoup_3.dev}/lib/pkgconfig:${webkitgtk_4_1.dev}/lib/pkgconfig:${at-spi2-atk.dev}/lib/pkgconfig:${gtk3.dev}/lib/pkgconfig:${gdk-pixbuf.dev}/lib/pkgconfig:${cairo.dev}/lib/pkgconfig:${pango.dev}/lib/pkgconfig:${harfbuzz.dev}/lib/pkgconfig";
+      makePkgConfigPath [
+        glib.dev
+        libsoup_3.dev
+        webkitgtk_4_1.dev
+        at-spi2-atk.dev
+        gtk3.dev
+        gdk-pixbuf.dev
+        cairo.dev
+        pango.dev
+        harfbuzz.dev
+      ];
+
+    # Appimage build time dependencies
+    # LD_LIBRARY_PATH =
+    #   with pkgs;
+    #   makeLDLibraryPath [
+    #     libz
+    #     libstdcxx5
+    #     xorg.libX11
+    #     fontconfig
+    #     freetype
+    #     xorg.libxcb
+    #     libdrm
+    #     mesa
+    #     expat
+    #     libgpg-error
+    #     fribidi
+    #     harfbuzz
+    #     libGL
+    #   ];
   };
 
   # A tauri devshell based on archlinux docker for guaranteed prebuilt dependencies

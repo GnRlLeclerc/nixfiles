@@ -11,9 +11,7 @@ with lib;
     ./modules/git.nix
     ./modules/languages
     ./modules/theme
-
-    # Home-manager cache settings (used for non nixos systems)
-    ../nixos/modules/cache.nix
+    ./modules/cache.nix
   ];
 
   ##########################

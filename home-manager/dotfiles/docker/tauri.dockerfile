@@ -39,5 +39,7 @@ RUN curl -fsSL https://bun.sh/install | bash
 
 # Use dark theme
 ENV GTK_THEME=Adwaita:dark
+# https://github.com/tauri-apps/tauri/issues/8929
+ENV NO_STRIP=true
 
 WORKDIR /home/$HOST_USER_NAME/development

@@ -3,8 +3,6 @@
 {
   # Recommended tauri setup (NixOS prerequisite)
   # https://v2.tauri.app/start/prerequisites/
-  # ISSUE: takes a very long time to build (notably webkitgtk_4_1, which must be built with 1 job to avoid crashing)
-  # Not viable on small systems (not enough packages are cached)
   tauri = pkgs.mkShell {
     buildInputs = with pkgs; [
       at-spi2-atk
@@ -19,9 +17,13 @@
       librsvg
       libsoup_3
       pango
-      # PB : is it built on stable ?
       webkitgtk_4_1
       webkitgtk_4_1.dev
+    ];
+
+    # Required for pkg-config to find the libraries
+    packages = with pkgs; [
+      pkgconf
     ];
 
     PKG_CONFIG_PATH =
@@ -30,6 +32,7 @@
   };
 
   # A tauri devshell based on archlinux docker for guaranteed prebuilt dependencies
+  # NOTE: not used anymore, but kept for reference on docker shells
   tauri-docker = pkgs.mkShell {
     shellHook = ''
       image_tag=tauri-docker-dev

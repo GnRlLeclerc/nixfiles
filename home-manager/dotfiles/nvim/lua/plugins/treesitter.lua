@@ -30,6 +30,7 @@ return {
         'toml',
         'make',
         'jsonc',
+        'svelte',
       },
       sync_install = false,
       highlight = {

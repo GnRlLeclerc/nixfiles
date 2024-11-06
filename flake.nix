@@ -63,23 +63,6 @@
       homeConfigurations = import ./home-manager/home-configurations.nix inheritArgs;
       devShells = import ./devshells inheritArgs;
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
-
-      # Setup pour explorer le build d'un package
-      # TODO : proper isolated module ?
-      packages =
-        let
-          pkgs = import nixpkgs {
-            config = {
-              allowUnfree = true;
-            };
-            system = "x86_64-linux";
-            overlays = overlays.stable;
-          };
-
-        in
-        {
-          x86_64-linux.enchant2 = pkgs.enchant2;
-        };
     in
     {
       inherit
@@ -87,7 +70,6 @@
         devShells
         formatter
         homeConfigurations
-        packages
         ;
     };
 }

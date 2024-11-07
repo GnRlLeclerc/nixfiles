@@ -54,6 +54,9 @@
           # Jupyter notebooks
           ipykernel
 
+          # Python jit compiler
+          numba
+
           # Utility
           ftfy
           regex

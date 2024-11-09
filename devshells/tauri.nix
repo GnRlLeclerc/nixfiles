@@ -4,7 +4,7 @@ let
   makeConcatPath = suffix: paths: pkgs.lib.concatMapStringsSep ":" (string: string + suffix) paths;
   makePkgConfigPath = makeConcatPath "/lib/pkgconfig";
 in
-# makeLDLibraryPath = prefix: paths: "/lib";
+# makeLDLibraryPath = mmakeConcatPath "/lib";
 {
   # Recommended tauri setup (NixOS prerequisite)
   # https://v2.tauri.app/start/prerequisites/

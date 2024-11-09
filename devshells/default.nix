@@ -32,6 +32,7 @@ let
 
       # Process devshell files
       imports = map (file: import file { inherit pkgs stable-pkgs; }) [
+        ./iced.nix
         ./node.nix
         ./python-datascience.nix
         ./python.nix

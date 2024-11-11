@@ -1,10 +1,8 @@
 # Devshell for tauri applications development
 { pkgs, ... }:
 let
-  makeConcatPath = suffix: paths: pkgs.lib.concatMapStringsSep ":" (string: string + suffix) paths;
-  makePkgConfigPath = makeConcatPath "/lib/pkgconfig";
+  makePkgConfigPath = pkgs.lib.makeSearchPathOutput "out" "lib/pkgconfig";
 in
-# makeLDLibraryPath = mmakeConcatPath "/lib";
 {
   # Recommended tauri setup (NixOS prerequisite)
   # https://v2.tauri.app/start/prerequisites/
@@ -84,7 +82,7 @@ in
     # Appimage build time dependencies
     # LD_LIBRARY_PATH =
     #   with pkgs;
-    #   makeLDLibraryPath [
+    #   pkgs.lib.makeLibraryPath [
     #     libz
     #     libstdcxx5
     #     xorg.libX11

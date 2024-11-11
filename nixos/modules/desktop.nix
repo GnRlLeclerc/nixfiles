@@ -2,6 +2,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 
@@ -60,7 +61,18 @@ in
 
       # Fix Gdk display
       environment.sessionVariables.GSK_RENDERER = "gl";
+
+      # Fix video metadata
+      environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 =
+        lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0"
+          [
+            pkgs.gst_all_1.gst-plugins-good
+            pkgs.gst_all_1.gst-plugins-bad
+            pkgs.gst_all_1.gst-plugins-ugly
+            pkgs.gst_all_1.gst-libav
+          ];
     })
+    # TODO: celluloid sound issue: https://github.com/celluloid-player/celluloid/issues/506#issuecomment-2425581455
 
     (mkIf (cfg.desktop.environment == "hyprland") {
       # TODO : hyprland

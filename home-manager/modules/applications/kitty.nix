@@ -22,6 +22,9 @@
 
       # Tab bar
       tab_bar_style = "powerline";
+
+      # Close the pane when the shell crashes
+      close_on_child_death = "yes";
     };
   };
 }

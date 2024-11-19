@@ -70,7 +70,7 @@ return {
         somesass_ls = true,
         svelte = true,
         taplo = true,
-        tailwindcss = true,
+        tailwindcss = false,
         ts_ls = {
           on_attach = function(client, bufnr)
             -- On tsserver attach, add additional keymaps for organizing imports
@@ -114,11 +114,12 @@ return {
 
       -- Hook all servers
       for lsp, config in pairs(servers) do
-        ---@diagnostic disable-next-line: redefined-local
-        local config = (config == true) and {} or config
-        config = vim.tbl_deep_extend('force', { capabilities = capabilities, on_attach = on_attach }, config)
-
-        lspconfig[lsp].setup(config)
+        if config ~= false then
+          ---@diagnostic disable-next-line: redefined-local
+          local config = (config == true) and {} or config
+          config = vim.tbl_deep_extend('force', { capabilities = capabilities, on_attach = on_attach }, config)
+          lspconfig[lsp].setup(config)
+        end
       end
 
       -- Some keymaps to reload common language servers

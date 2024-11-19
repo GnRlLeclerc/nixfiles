@@ -24,7 +24,7 @@ in
 
       # Fancy cli
       bat
-      cava
+      # cava  # BUG: broken
       cmatrix
       delta
       dotacat

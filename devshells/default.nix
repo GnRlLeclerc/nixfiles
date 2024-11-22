@@ -32,11 +32,13 @@ let
 
       # Process devshell files
       imports = map (file: import file { inherit pkgs stable-pkgs; }) [
+        ./egui.nix
         ./iced.nix
         ./node.nix
         ./python-datascience.nix
         ./python.nix
         ./tauri.nix
+        ./wgpu.nix
       ];
     in
     # Merge all devshell attribute sets into a single one

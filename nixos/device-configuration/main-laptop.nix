@@ -16,6 +16,12 @@
 
   hardware.nvidia.open = false;
 
+  # Enable Vulkan rendering
+  # Prefer rendering with the AMD GPU
+  environment.sessionVariables.VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
+  # Prefer renderin with the Nvidia GPU
+  # environment.sessionVariables.VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json";
+
   ##########################
   # Miscellaneous Settings #
   ##########################

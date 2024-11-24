@@ -9,9 +9,11 @@ final: prev: {
         pname = "lpips";
         version = "0.1.4";
 
-        src = final.python312.pkgs.fetchPypi {
-          inherit pname version;
-          sha256 = "sha256-OEYzHfbGloiuw9MApe7vbFKUNbyEYL1YIBw9YuVhiPo=";
+        src = final.pkgs.fetchFromGitHub {
+          owner = "richzhang";
+          repo = "PerceptualSimilarity";
+          rev = version;
+          sha256 = "sha256-dIQ9B/HV/2kUnXLXNxAZKHmv/Xv37kl2n6+8IfwIALE=";
         };
 
         dependencies = with final.python312.pkgs; [

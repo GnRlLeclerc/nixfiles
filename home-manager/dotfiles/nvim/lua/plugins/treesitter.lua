@@ -31,6 +31,7 @@ return {
         'make',
         'jsonc',
         'svelte',
+        'graphql',
       },
       sync_install = false,
       highlight = {

@@ -47,7 +47,17 @@ return {
         lua_ls = true,
         rust_analyzer = true,
         angularls = true,
-        bashls = true,
+        bashls = {
+          on_attach = function(client, bufnr)
+            -- Disable the language server for files in *.env
+            local file_name = vim.api.nvim_buf_get_name(bufnr)
+            if file_name:match('%.env$') then
+              client.stop() -- Stop the client if it's a .env or .example.env file
+              return
+            end
+            on_attach(client, bufnr)
+          end,
+        },
         clangd = true,
         cmake = true,
         cssls = true,

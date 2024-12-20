@@ -110,6 +110,7 @@ return {
         nil_ls = true,
         gopls = true,
         autotools_ls = true,
+        tinymist = true,
         -- TODO: sqls
       }
 

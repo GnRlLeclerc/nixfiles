@@ -32,6 +32,7 @@ return {
         toml = { 'taplo' },
         typescript = { 'prettier' },
         typescriptreact = { 'prettier' },
+        typst = { 'typstyle' },
         yaml = { 'prettier' },
       },
       format_on_save = function(bufnr)

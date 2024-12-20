@@ -23,6 +23,7 @@ in
     ./rust.nix
     ./shells.nix
     ./toml.nix
+    ./typst.nix
     ./yaml.nix
   ];
 
@@ -44,6 +45,7 @@ in
     rust.enable = mkDefault cfg.enable;
     shells.enable = mkDefault cfg.enable;
     toml.enable = mkDefault cfg.enable;
+    typst.enable = mkDefault cfg.enable;
     yaml.enable = mkDefault cfg.enable;
   };
 }

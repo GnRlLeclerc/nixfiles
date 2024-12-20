@@ -45,7 +45,7 @@
           transformers
           scikit-learn
           scikit-image
-          (lpips.override { opencv4 = opencvWithGtk; })
+          outlines
 
           # Image processing
           opencvWithGtk

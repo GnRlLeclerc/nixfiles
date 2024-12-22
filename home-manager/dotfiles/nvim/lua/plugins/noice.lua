@@ -25,6 +25,7 @@ return {
               { find = '%d fewer lines' },
               { find = '%d more lines' },
               { find = 'git commit' },
+              { find = 'git push' },
             },
           },
           opts = { skip = true },

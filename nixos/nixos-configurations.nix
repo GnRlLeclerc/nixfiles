@@ -46,7 +46,6 @@ let
             extraSpecialArgs = {
               inherit
                 inputs
-                nixos
                 darwin
                 stable-pkgs
                 ;

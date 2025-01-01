@@ -34,6 +34,7 @@ with lib;
 
       # Game launcher (Minecraft)
       modrinth-app
+      desmume # Nintendo DS emulator
 
       # Image edition
       gthumb

@@ -28,7 +28,10 @@ with lib;
   ##########################
 
   # Enable docker
-  virtualisation.docker.enable = mkDefault true;
+  virtualisation.docker = {
+    enable = mkDefault true;
+    logDriver = "json-file"; # Recommended default. NixOS sets it to "journald" by default.
+  };
 
   # Enable networking
   networking.networkmanager.enable = mkDefault true;

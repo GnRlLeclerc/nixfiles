@@ -7,7 +7,7 @@ final: prev: {
       { buildPythonPackage, opencv4, ... }:
       buildPythonPackage rec {
         pname = "lpips";
-        version = "0.1.4";
+        version = "v0.1.4";
 
         src = final.pkgs.fetchFromGitHub {
           owner = "richzhang";

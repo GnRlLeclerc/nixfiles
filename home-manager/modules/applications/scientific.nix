@@ -1,7 +1,7 @@
 # Scientific packages configuration
 {
   lib,
-  pkgs,
+  # pkgs,
   config,
   ...
 }:
@@ -15,6 +15,6 @@ in
   options.programs.scientific.enable = mkEnableOption "Scientific desktop applications";
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [ cloudcompare ];
+    home.packages = [ ];
   };
 }

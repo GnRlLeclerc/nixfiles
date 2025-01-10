@@ -1,17 +1,6 @@
 # Fonts configuration
 { pkgs, ... }:
 let
-
-  nerdfonts = (
-    pkgs.nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "JetBrainsMono"
-        "CascadiaCode"
-      ];
-    }
-  );
-
   gnome = {
     package = pkgs.cantarell-fonts;
     name = "Cantarell";
@@ -23,7 +12,7 @@ in
     sansSerif = gnome;
 
     monospace = {
-      package = nerdfonts;
+      package = pkgs.nerd-fonts.jetbrains-mono;
       name = "JetBrainsMono Nerd Font";
     };
 
@@ -38,7 +27,9 @@ in
   };
 
   # Make these fonts available for apps not using the Stylix theme
-  home.packages = [
-    nerdfonts
+  home.packages = with pkgs; [
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.caskaydia-cove
   ];
 }

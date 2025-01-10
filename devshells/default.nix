@@ -17,6 +17,7 @@ let
         inherit system;
         config = {
           allowUnfree = true;
+          cudaSupport = true; # Cached in cachix nix-community
         };
         overlays = overlays.unstable;
       };
@@ -26,6 +27,7 @@ let
         inherit system;
         config = {
           allowUnfree = true;
+          cudaSupport = true; # Cached in cachix nix-community
         };
         overlays = overlays.stable;
       };

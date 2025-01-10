@@ -45,7 +45,7 @@
           transformers
           scikit-learn
           scikit-image
-          outlines
+          # outlines  # Update is on the way: https://github.com/NixOS/nixpkgs/pull/357313
 
           # Image processing
           opencvWithGtk

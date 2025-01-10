@@ -10,7 +10,7 @@ in
   options.settings.sound.enable = mkEnableOption "Enable sound";
 
   config = mkIf cfg.sound.enable {
-    hardware.pulseaudio.enable = false;
+    services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
       enable = true;

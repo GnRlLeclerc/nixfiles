@@ -3,12 +3,12 @@
 {
   stable = [
     inputs.rust-overlay.overlays.default
-    inputs.nur.overlay
+    inputs.nur.overlays.default
 
   ] ++ (import ./stable);
   unstable = [
     inputs.rust-overlay.overlays.default
-    inputs.nur.overlay
+    inputs.nur.overlays.default
 
   ] ++ (import ./unstable);
 }

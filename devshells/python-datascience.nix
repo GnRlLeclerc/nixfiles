@@ -23,12 +23,7 @@
       cudatoolkit
 
       (python312.withPackages (
-        ps:
-        with ps;
-        let
-          opencvWithGtk = opencv4.override { enableGtk3 = true; };
-        in
-        [
+        ps: with ps; [
           # Basic
           numpy
           pandas
@@ -48,7 +43,7 @@
           # outlines  # Update is on the way: https://github.com/NixOS/nixpkgs/pull/357313
 
           # Image processing
-          opencvWithGtk
+          (opencv4.override { enableGtk3 = true; })
           pygobject3
 
           # Jupyter notebooks

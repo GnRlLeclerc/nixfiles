@@ -10,8 +10,8 @@
     modules = [
       {
         type = "title";
-        key = "    ";
-        keyWidth = 6;
+        key = "                    ";
+        keyWidth = 22;
         format = builtins.fromJSON ''"-> \u001b[96m{1}\u001b[97m@\u001b[96m{2}"'';
       }
       {
@@ -149,7 +149,7 @@
         key = "";
         keyWidth = 1;
         type = "locale";
-        format = builtins.fromJSON ''" ─────────────────(\u001b[31m \u001b[32m \u001b[33m \u001b[34m \u001b[35m \u001b[36m \u001b[37m )─────────────────── "'';
+        format = builtins.fromJSON ''" ──────────────────(\u001b[31m \u001b[32m \u001b[33m \u001b[34m \u001b[35m \u001b[36m \u001b[37m )────────────────── "'';
       }
     ];
   };

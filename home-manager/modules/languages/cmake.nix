@@ -19,6 +19,7 @@ in
     home.packages = with pkgs; [
       # Language
       cmake
+      ninja
 
       # LSP
       cmake-language-server

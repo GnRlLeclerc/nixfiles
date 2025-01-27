@@ -2,6 +2,7 @@
 { pkgs, ... }:
 {
   cuda = pkgs.mkShell {
+    # NOTE: issue with paths that have spaces in the names
 
     packages = with pkgs; [
       cudatoolkit
@@ -10,6 +11,9 @@
       cudaPackages.cuda_cudart.static
     ];
 
-    CPLUS_INCLUDE_PATH = "${pkgs.cudatoolkit}/include";
+    CUDA_HOME = "${pkgs.cudatoolkit}";
+
+    # NVIDIA drivers
+    LD_LIBRARY_PATH = "/run/opengl-driver/lib";
   };
 }

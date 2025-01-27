@@ -34,6 +34,7 @@ let
 
       # Process devshell files
       imports = map (file: import file { inherit pkgs stable-pkgs; }) [
+        ./cuda.nix
         ./egui.nix
         ./iced.nix
         ./node.nix

@@ -1,12 +1,11 @@
 # Nix cache sources
-{ lib, ... }:
-{
+_: {
   nix.settings = {
-    substituters = lib.mkAfter [
+    substituters = [
       "https://nix-community.cachix.org" # additional nix-community sources
     ];
 
-    trusted-public-keys = lib.mkAfter [
+    trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };

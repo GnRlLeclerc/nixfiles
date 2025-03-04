@@ -1,7 +1,4 @@
-{ inputs, lib, ... }:
-
-with lib;
-
+{ inputs, ... }:
 {
 
   # Modules

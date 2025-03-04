@@ -43,7 +43,10 @@
           # outlines  # Update is on the way: https://github.com/NixOS/nixpkgs/pull/357313
 
           # Image processing
-          (opencv4.override { enableGtk3 = true; })
+          (opencv4.override {
+            enableGtk3 = true;
+            enableCuda = false;
+          })
           pygobject3
 
           # Jupyter notebooks

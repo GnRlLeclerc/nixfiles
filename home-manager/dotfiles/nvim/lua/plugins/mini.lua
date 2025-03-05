@@ -10,7 +10,27 @@ return {
     },
 
     config = function()
-      require('mini.pairs').setup()
+      -- Custom pair matching, matches pairs of characters where:
+      -- 1st char is not a backslash (avoid autocomplete after escape chars)
+      -- 2nd chr is a space, tab, newline or end of line
+      local pairs_regex = '[^\\][ \t\n]'
+
+      require('mini.pairs').setup({
+        mappings = {
+          ['('] = { action = 'open', pair = '()', neigh_pattern = pairs_regex },
+          ['['] = { action = 'open', pair = '[]', neigh_pattern = pairs_regex },
+          ['{'] = { action = 'open', pair = '{}', neigh_pattern = pairs_regex },
+
+          [')'] = { action = 'close', pair = '()', neigh_pattern = pairs_regex },
+          [']'] = { action = 'close', pair = '[]', neigh_pattern = pairs_regex },
+          ['}'] = { action = 'close', pair = '{}', neigh_pattern = pairs_regex },
+
+          ['"'] = { action = 'closeopen', pair = '""', neigh_pattern = pairs_regex, register = { cr = false } },
+          ["'"] = { action = 'closeopen', pair = "''", neigh_pattern = pairs_regex, register = { cr = false } },
+          ['`'] = { action = 'closeopen', pair = '``', neigh_pattern = pairs_regex, register = { cr = false } },
+        },
+      })
+
       require('mini.surround').setup()
       require('mini.comment').setup()
       require('mini.indentscope').setup({

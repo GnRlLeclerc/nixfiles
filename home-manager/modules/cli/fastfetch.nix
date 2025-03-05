@@ -5,6 +5,9 @@
       padding = {
         top = 3;
       };
+      type = "kitty";
+      height = 20;
+      source = ../../../nixos.png;
     };
 
     modules = [

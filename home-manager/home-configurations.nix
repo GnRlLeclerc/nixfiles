@@ -36,7 +36,6 @@ let
         config.nix.settings.trusted-users = [ config.user.home.username ];
       };
       modules = [
-        { nixpkgs.overlays = overlays.unstable; }
         config.user
       ];
     };

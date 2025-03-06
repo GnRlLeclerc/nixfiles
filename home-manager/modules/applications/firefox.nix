@@ -252,7 +252,7 @@ in
           layout.word_select.eat_space_to_next_word = false;
         };
 
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           bitwarden
           ublock-origin
           darkreader

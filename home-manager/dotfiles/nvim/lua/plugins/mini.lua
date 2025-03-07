@@ -12,8 +12,8 @@ return {
     config = function()
       -- Custom pair matching, matches pairs of characters where:
       -- 1st char is not a backslash (avoid autocomplete after escape chars)
-      -- 2nd chr is a space, tab, newline or end of line
-      local pairs_regex = '[^\\][ \t\n]'
+      -- 2nd chr is a space, tab, newline, comma, end of line, or closing element
+      local pairs_regex = '[^\\][ \t\n)}%],]'
 
       require('mini.pairs').setup({
         mappings = {

@@ -26,8 +26,14 @@ return {
           ['}'] = { action = 'close', pair = '{}', neigh_pattern = pairs_regex },
 
           ['"'] = { action = 'closeopen', pair = '""', neigh_pattern = pairs_regex, register = { cr = false } },
-          ["'"] = { action = 'closeopen', pair = "''", neigh_pattern = pairs_regex, register = { cr = false } },
           ['`'] = { action = 'closeopen', pair = '``', neigh_pattern = pairs_regex, register = { cr = false } },
+          -- Apostrophe: not after letters
+          ["'"] = {
+            action = 'closeopen',
+            pair = "''",
+            neigh_pattern = '[^%a\\][ \t\n)}%],]',
+            register = { cr = false },
+          },
         },
       })
 

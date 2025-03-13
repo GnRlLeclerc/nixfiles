@@ -20,7 +20,7 @@ in
       gnused
       jq
       bind
-      cloc
+      tokei
 
       # Fancy cli
       bat

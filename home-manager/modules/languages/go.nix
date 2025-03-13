@@ -18,7 +18,7 @@ in
 
     home.packages = with pkgs; [
       # Language
-      go
+      go_1_24
 
       # Language server
       gopls

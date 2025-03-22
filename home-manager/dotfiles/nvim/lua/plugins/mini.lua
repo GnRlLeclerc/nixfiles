@@ -7,6 +7,7 @@ return {
       { 'echasnovski/mini.pairs', version = '*' },
       { 'echasnovski/mini.comment', version = '*' },
       { 'echasnovski/mini.surround', version = '*' },
+      { 'windwp/nvim-ts-autotag' },
     },
 
     config = function()
@@ -60,6 +61,9 @@ return {
           vim.b.miniindentscope_disable = true
         end,
       })
+
+      -- Add autotag for html, jsx, tsx
+      require('nvim-ts-autotag').setup()
     end,
   },
 }

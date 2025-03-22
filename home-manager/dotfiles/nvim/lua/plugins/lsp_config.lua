@@ -78,7 +78,25 @@ return {
         marksman = true,
         pyright = true,
         somesass_ls = true,
-        svelte = true,
+        svelte = {
+          -- Fix for svelte language server not updating on js/ts file changes
+          -- https://github.com/sveltejs/language-tools/issues/2008
+          -- Will be fixed in neovim 11 -> https://github.com/neovim/neovim/pull/30595
+          on_attach = function(client, bufnr)
+            if client.name == 'svelte' then
+              vim.api.nvim_create_autocmd('BufWritePost', {
+                pattern = { '*.js', '*.ts' },
+                group = vim.api.nvim_create_augroup('svelte_ondidchangetsorjsfile', { clear = true }),
+                callback = function(ctx)
+                  -- Here use ctx.match instead of ctx.file
+                  client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
+                end,
+              })
+            end
+
+            on_attach(client, bufnr)
+          end,
+        },
         taplo = true,
         tailwindcss = false,
         ts_ls = {

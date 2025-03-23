@@ -64,14 +64,8 @@
         ]
       ))
     ];
-
-    shellHook = ''
-      # Make matplotlib use GTK3Agg backend
-      export MPLBACKEND=GTK3Agg
-
-      # For custom CUDA plugins that have to be compiled
-      export CUDA_HOME=${pkgs.cudatoolkit}
-      export TORCH_CUDA_ARCH_LIST="8.6"  # Compute capability of RTX 3050
-    '';
+    MPLBACKEND = "GTK3Agg"; # Make matplotlib use GTK3Agg backend
+    TORCH_CUDA_ARCH_LIST = "8.6"; # Compute capability of RTX 3050
+    CUDA_HOME = pkgs.cudatoolkit;
   };
 }

@@ -101,6 +101,13 @@ in
           alias default-env-update='micromamba env update --name datascience -f ${../../../dotfiles/conda/datascience.yml}'
           alias default-env-activate='micromamba activate ~/micromamba/envs/datascience'
         fi
+
+        # Load pyenv if available
+        if which pyenv &> /dev/null; then
+          export PYENV_ROOT="$HOME/.pyenv"
+          [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+          eval "$(pyenv init - zsh)"
+        fi
       '';
 
       # Extra plugins

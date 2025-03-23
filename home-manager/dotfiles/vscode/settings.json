@@ -384,5 +384,6 @@
     ]
   },
   "github.copilot.editor.enableAutoCompletions": true,
-  "workbench.colorTheme": "Stylix"
+  "workbench.colorTheme": "Stylix",
+  "update.mode": "none"
 }

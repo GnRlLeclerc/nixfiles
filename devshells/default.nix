@@ -38,6 +38,7 @@ let
         ./egui.nix
         ./iced.nix
         ./node.nix
+        ./pyenv.nix
         ./python-datascience.nix
         ./python.nix
         ./tauri.nix

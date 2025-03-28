@@ -18,6 +18,11 @@
             sqlite
             ncurses
             tk
+
+            # Display libraries
+            xorg.libX11
+            libGLU
+            libGL
           ];
         in
         pkgs:

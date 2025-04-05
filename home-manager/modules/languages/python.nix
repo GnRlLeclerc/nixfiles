@@ -26,6 +26,7 @@ in
       # Formatter
       isort
       black
+      ruff
     ];
   };
 }

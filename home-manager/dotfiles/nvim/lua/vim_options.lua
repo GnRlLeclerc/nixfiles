@@ -83,3 +83,10 @@ vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
     end
   end,
 })
+
+-- Add slint filetype
+vim.filetype.add({
+  extension = {
+    slint = 'slint',
+  },
+})

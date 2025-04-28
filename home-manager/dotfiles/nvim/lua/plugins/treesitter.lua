@@ -26,6 +26,7 @@ return {
         'python',
         'regex',
         'rust',
+        'slint',
         'sql',
         'svelte',
         'toml',

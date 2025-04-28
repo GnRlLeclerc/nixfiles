@@ -13,5 +13,6 @@
     pciutils
     wget
     home-manager
+    xkeyboard_config
   ];
 }

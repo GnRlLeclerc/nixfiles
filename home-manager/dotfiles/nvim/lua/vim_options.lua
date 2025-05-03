@@ -90,3 +90,12 @@ vim.filetype.add({
     slint = 'slint',
   },
 })
+
+-- Use python filetype for sagemath
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  pattern = { '*.sage', '*.spyx', '*.pyx' },
+  callback = function()
+    vim.bo.filetype = 'python'
+  end,
+  group = vim.api.nvim_create_augroup('filetypedetect', { clear = true }),
+})

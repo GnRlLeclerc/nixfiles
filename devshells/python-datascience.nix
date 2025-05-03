@@ -51,6 +51,8 @@
 
           # Jupyter notebooks
           ipykernel
+          pip
+          notebook
 
           # Python jit compiler
           numba

@@ -19,6 +19,7 @@ return {
         'javascript',
         'json',
         'jsonc',
+        'just',
         'lua',
         'make',
         'markdown',

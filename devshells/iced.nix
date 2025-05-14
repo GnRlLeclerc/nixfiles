@@ -6,7 +6,7 @@ let
 in
 {
   # https://github.com/rust-windowing/winit/issues/3603
-  iced = pkgs.mkShell {
+  iced = pkgs.mkShell rec {
     buildInputs = with pkgs; [
       xorg.libX11
       xorg.libXcursor
@@ -16,15 +16,6 @@ in
       wayland
     ];
     # Runtime dependencies
-    LD_LIBRARY_PATH =
-      with pkgs;
-      makeLDLibraryPath [
-        xorg.libX11
-        xorg.libXcursor
-        xorg.libxcb
-        xorg.libXi
-        libxkbcommon
-        wayland
-      ];
+    LD_LIBRARY_PATH = makeLDLibraryPath buildInputs;
   };
 }

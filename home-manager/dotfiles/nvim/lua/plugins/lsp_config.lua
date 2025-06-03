@@ -29,7 +29,7 @@ end
 return {
   {
     'neovim/nvim-lspconfig',
-    dependencies = { 'folke/neodev.nvim', 'b0o/SchemaStore.nvim' },
+    dependencies = { 'folke/lazydev.nvim', 'b0o/SchemaStore.nvim' },
     event = 'VeryLazy',
     config = function()
       -- LSP CONFIGURATION
@@ -132,8 +132,6 @@ return {
         -- TODO: sqls
       }
 
-      require('neodev').setup()
-
       local lspconfig = require('lspconfig')
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       capabilities.textDocument.foldingRange = {
@@ -165,5 +163,15 @@ return {
         { silent = true, desc = 'Restart TSserver', noremap = true }
       )
     end,
+  },
+  {
+    'folke/lazydev.nvim',
+    ft = 'lua',
+    opts = {
+      library = {
+        -- Load luvit types when the `vim.uv` word is found
+        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+      },
+    },
   },
 }

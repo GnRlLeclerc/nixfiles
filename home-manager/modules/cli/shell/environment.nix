@@ -4,7 +4,8 @@
   DELTA_PAGER = "less --mouse";
 
   # Remote nvim for synctex
-  NVIM_LISTEN_ADDRESS = "/tmp/nvimsocket";
+  # NOTE: has to be set for one instance only
+  # NVIM_LISTEN_ADDRESS = "/tmp/nvimsocket";
 
   # Silence Poetry
   PYTHON_KEYRING_BACKEND = "keyring.backends.fail.Keyring";

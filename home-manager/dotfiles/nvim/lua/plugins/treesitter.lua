@@ -31,6 +31,7 @@ return {
         'sql',
         'svelte',
         'toml',
+        'tsx',
         'typescript',
         'typst',
         'vim',

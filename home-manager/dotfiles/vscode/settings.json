@@ -96,13 +96,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
-  // ******************************************************************************************* //
-  //                                         LANGUAGES                                           //
-  // ******************************************************************************************* //
-
-  // C/C++
-  "clangd.arguments": ["--clang-tidy"],
+  "clangd.arguments": [
+    "--clang-tidy"
+  ],
   "clangd.checkUpdates": true,
   "clangd.path": "/usr/bin/clangd",
 
@@ -385,5 +381,6 @@
   },
   "github.copilot.editor.enableAutoCompletions": true,
   "workbench.colorTheme": "Stylix",
-  "update.mode": "none"
+  "update.mode": "none",
+  "svelte.enable-ts-plugin": true
 }

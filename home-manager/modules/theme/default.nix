@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    (if darwin then inputs.stylix.darwinModules.stylix else inputs.stylix.homeManagerModules.stylix)
+    (if darwin then inputs.stylix.darwinModules.stylix else inputs.stylix.homeModules.stylix)
 
     ./extensions
 

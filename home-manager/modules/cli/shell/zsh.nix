@@ -34,7 +34,7 @@ in
       sessionVariables = import ./environment.nix;
       shellAliases = import ./aliases.nix;
 
-      initExtra = ''
+      initContent = ''
         # Completion styling
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
         zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"

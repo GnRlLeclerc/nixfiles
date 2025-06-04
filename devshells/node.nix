@@ -3,7 +3,6 @@
 
 let
   nodeVersions = with pkgs; [
-    nodejs_18
     nodejs_20
     nodejs_22
   ];
@@ -11,7 +10,7 @@ let
   mkNodeShell = node: pkgs.mkShell { packages = [ node ]; };
 
   # Create node shell names based on the major version
-  # Example: node18, node20, node22
+  # Example: node20, node22
   mkShellName =
     node:
     let

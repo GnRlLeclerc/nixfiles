@@ -42,6 +42,7 @@ let
         ./python-datascience.nix
         ./python.nix
         ./tauri.nix
+        ./uv.nix
         ./wgpu.nix
       ];
     in

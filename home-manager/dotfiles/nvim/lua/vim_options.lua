@@ -40,12 +40,22 @@ vim.opt.pumheight = 10 -- Limit max completions height
 vim.cmd('language en_US.UTF-8')
 
 -- Set LSP diagnostic icons
-local symbols = { Error = '󰅙', Info = '󰋼', Hint = '󰌵', Warn = '' }
-
-for name, icon in pairs(symbols) do
-  local hl = 'DiagnosticSign' .. name
-  vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
-end
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = ' ',
+      [vim.diagnostic.severity.WARN] = ' ',
+      [vim.diagnostic.severity.INFO] = '󰋼 ',
+      [vim.diagnostic.severity.HINT] = '󰌵 ',
+    },
+    numhl = {
+      [vim.diagnostic.severity.ERROR] = '',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.HINT] = '',
+      [vim.diagnostic.severity.INFO] = '',
+    },
+  },
+})
 
 -- Open a diagnostic window to show the full diagnostic
 -- Can also be inspected using trouble.nvim

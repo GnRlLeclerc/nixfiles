@@ -2,12 +2,10 @@
 
 -- Run the organize imports command from tsserver
 local function tsserver_organize_imports()
-  local params = {
+  local command = {
     command = '_typescript.organizeImports',
-    arguments = { vim.api.nvim_buf_get_name(0) },
-    title = '',
   }
-  vim.lsp.buf.execute_command(params)
+  vim.lsp.client:exec_cmd(command)
 end
 
 --  This function gets run when an LSP connects to a particular buffer.

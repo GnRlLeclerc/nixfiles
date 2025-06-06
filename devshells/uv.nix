@@ -1,7 +1,6 @@
-# Devshell for old / requirements.txt python environments
 { pkgs, ... }:
 {
-  # Python pyenv FHS environment to access old python versions, or use pip
+  # Python pyenv FHS environment to access old python versions or use uv
   uv =
     (pkgs.buildFHSEnv {
       name = "pyenv FHS";
@@ -42,14 +41,21 @@
 
           # PyGobject
           xorg.xorgproto
+
+          # CUDA
+          cudatoolkit
+          gcc13 # gcc <= 13 for cuda
+          cudaPackages.cuda_cudart
+          cudaPackages.cuda_cudart.static
+
         ])
         ++ buildPkgs # Include the build libraries
         ++ (map (p: p.dev) buildPkgs); # Include the development headers
       runScript = "zsh";
-
       profile = ''
-        # Matplotlib backend
         export MPLBACKEND=GTK3Agg
+        export CUDA_HOME="${pkgs.cudatoolkit}"
+        export TORCH_CUDA_ARCH_LIST="8.6" # Compute capability of RTX 3050
       '';
     }).env;
 }

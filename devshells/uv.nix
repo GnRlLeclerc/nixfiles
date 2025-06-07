@@ -56,6 +56,7 @@
         export MPLBACKEND=GTK3Agg
         export CUDA_HOME="${pkgs.cudatoolkit}"
         export TORCH_CUDA_ARCH_LIST="8.6" # Compute capability of RTX 3050
+        export SSL_CERT_FILE="${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
       '';
     }).env;
 }

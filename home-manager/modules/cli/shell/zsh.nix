@@ -14,6 +14,10 @@ in
 
 {
   config = mkIf cfg.enable {
+
+    # Empty nix direnv configuration to silence direnv logs
+    xdg.configFile."direnv/direnv.toml".text = "";
+
     programs.zsh = {
       enable = true;
       enableCompletion = true;

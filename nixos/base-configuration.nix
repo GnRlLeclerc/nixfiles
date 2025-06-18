@@ -13,6 +13,7 @@ with lib;
     ./modules/bootloader.nix
     ./modules/cache.nix
     ./modules/desktop.nix
+    ./modules/fonts.nix
     ./modules/garbage-collection.nix
     ./modules/graphics.nix
     ./modules/locale.nix

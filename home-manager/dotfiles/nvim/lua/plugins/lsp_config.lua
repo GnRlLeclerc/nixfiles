@@ -61,6 +61,7 @@ return {
         cssls = true,
         dockerls = true,
         eslint = true,
+        fish_lsp = true,
         graphql = true,
         html = true,
         -- htmx = true,

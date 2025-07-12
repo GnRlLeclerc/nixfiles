@@ -24,9 +24,11 @@ in
 
       # LSP
       bash-language-server
+      fish-lsp
 
       # Formatter
       shfmt
+      # fish_indent available in fish shell
     ];
   };
 }

@@ -42,6 +42,7 @@ in
       procs
       ripgrep
       tldr
+      zellij
       zoxide
 
       # Caching

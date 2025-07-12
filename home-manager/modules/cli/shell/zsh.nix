@@ -81,37 +81,6 @@ in
 
         # Disable seahorse askpass
         unset SSH_ASKPASS
-
-        # Load micromamba if available
-        if which micromamba &> /dev/null; then
-          export MAMBA_EXE='${pkgs.micromamba}/bin/micromamba';
-          export MAMBA_ROOT_PREFIX='/home/thibaut/micromamba';
-
-          __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-          if [ $? -eq 0 ]; then
-              eval "$__mamba_setup"
-          else
-              alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-          fi
-          unset __mamba_setup
-
-          # Disable prompt change on conda activation
-          micromamba config set changeps1 False
-
-          alias conda='micromamba'
-          alias mamba='micromamba'
-
-          alias default-env-create='micromamba env create -f ${../../../dotfiles/conda/datascience.yml}'
-          alias default-env-update='micromamba env update --name datascience -f ${../../../dotfiles/conda/datascience.yml}'
-          alias default-env-activate='micromamba activate ~/micromamba/envs/datascience'
-        fi
-
-        # Load pyenv if available
-        if which pyenv &> /dev/null; then
-          export PYENV_ROOT="$HOME/.pyenv"
-          [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-          eval "$(pyenv init - zsh)"
-        fi
       '';
 
       # Extra plugins

@@ -17,4 +17,7 @@
 
   # Bat & delta color theme
   BAT_THEME = "base16";
+
+  # Default editor
+  EDITOR = "nvim";
 }

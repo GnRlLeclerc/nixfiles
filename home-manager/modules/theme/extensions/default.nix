@@ -5,6 +5,5 @@
     ./neovim.nix
     ./obsidian.nix
     ./foliate.nix
-    ./tmux.nix
   ];
 }

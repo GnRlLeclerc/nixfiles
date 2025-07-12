@@ -15,7 +15,6 @@ in
     ./helix.nix
     ./neovim.nix
     ./shell
-    ./tmux.nix
   ];
 
   options.settings.cli.enable = mkEnableOption "Enable all cli applications";
@@ -25,7 +24,6 @@ in
     programs.helix.enable = mkDefault cfg.enable;
     programs.neovim.enable = mkDefault cfg.enable;
     settings.shell.enable = mkDefault cfg.enable;
-    programs.tmux.enable = mkDefault cfg.enable;
     programs.fastfetch.enable = mkDefault cfg.enable;
   };
 }

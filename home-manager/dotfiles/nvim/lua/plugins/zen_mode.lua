@@ -28,5 +28,3 @@ return {
     end,
   },
 }
-
--- For tmux: set-option -g allow-passthrough on

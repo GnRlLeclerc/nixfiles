@@ -32,6 +32,7 @@ in
       eza
       fastfetch
       fd
+      fish
       fzf
       just
       lazygit
@@ -41,6 +42,7 @@ in
       nvtopPackages.full
       procs
       ripgrep
+      stow
       tldr
       zellij
       zoxide

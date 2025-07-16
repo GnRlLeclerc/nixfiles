@@ -5,7 +5,9 @@ return {
     { '<C-t>', '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true } },
   },
   config = function()
-    require('FTerm').setup({})
+    require('FTerm').setup({
+      border = 'rounded',
+    })
 
     vim.keymap.set(
       'n',

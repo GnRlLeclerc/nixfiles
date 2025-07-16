@@ -43,7 +43,7 @@ return {
           file:close()
 
           if content:find('tool%.ruff%.format') then
-            return { 'ruff_format' }
+            return { 'ruff_organize_imports', 'ruff_format' }
           end
 
           return default

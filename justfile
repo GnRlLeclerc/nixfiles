@@ -35,13 +35,8 @@ symlink:
 
 # Read-write symlinks
 fix-all:
-  just fix-neovim-lockfile
   just fix-vscode-settings
 
-# Make Neovim's lazy-lock.json file symlink point to this repository instead of a readonly derivation build
-fix-neovim-lockfile:
-  unlink ~/.config/nvim/lazy-lock.json
-  ln -s $(pwd)/home-manager/dotfiles/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
 
 # Make VSCode's settings and keybindings symlink point to this repository instead of a readonly derivation build
 fix-vscode-settings:

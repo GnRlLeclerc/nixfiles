@@ -1,4 +1,4 @@
-# Bash, ZSH and nushell language support
+# Bash, Fish and nushell language support
 {
   config,
   lib,
@@ -19,7 +19,7 @@ in
     home.packages = with pkgs; [
       # Language
       bash
-      zsh
+      fish
       nushell
 
       # LSP

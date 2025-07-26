@@ -51,7 +51,7 @@
         ])
         ++ buildPkgs # Include the build libraries
         ++ (map (p: p.dev) buildPkgs); # Include the development headers
-      runScript = "zsh";
+      runScript = "fish";
       profile = ''
         export MPLBACKEND=GTK3Agg
         export CUDA_HOME="${pkgs.cudatoolkit}"

@@ -5,11 +5,13 @@ return {
   config = function()
     require('catppuccin').setup({
       flavour = 'dynamic',
+      transparent_background = true,
       integrations = {
         telescope = {
           style = 'nvchad',
         },
         noice = true,
+        copilot_vim = true,
       },
     })
     vim.cmd.colorscheme('catppuccin')

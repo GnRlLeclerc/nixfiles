@@ -8,3 +8,7 @@
 /dotfiles/kitty/current-theme.conf
 /dotfiles/kitty/kitty.conf.bak
 
+# Direnv
+/dotfiles/direnv/*
+!/dotfiles/direnv/direnv.toml
+

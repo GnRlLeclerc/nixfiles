@@ -3,3 +3,8 @@
 /dotfiles/fish/fish_variables
 !/dotfiles/fish/config.fish
 
+# Kitty generated config
+/dotfiles/kitty/themes/
+/dotfiles/kitty/current-theme.conf
+/dotfiles/kitty/kitty.conf.bak
+

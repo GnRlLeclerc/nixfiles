@@ -8,7 +8,7 @@ return {
   config = function()
     ---@diagnostic disable-next-line: missing-fields
     require('notify').setup({
-      background_colour = require('base16-colorscheme').colors.base00,
+      background_colour = require('catppuccin.palettes').get_palette('dynamic').base,
     })
     require('noice').setup({
       -- Disable Noice for LSP notifications (let fidget handle them)

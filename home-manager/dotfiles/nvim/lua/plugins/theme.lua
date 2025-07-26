@@ -9,6 +9,7 @@ return {
         telescope = {
           style = 'nvchad',
         },
+        noice = true,
       },
     })
     vim.cmd.colorscheme('catppuccin')

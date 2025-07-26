@@ -16,7 +16,7 @@
   GOPATH = "$HOME/go";
 
   # Bat & delta color theme
-  BAT_THEME = "base16";
+  BAT_THEME = "catppuccin-flavours";
 
   # Default editor
   EDITOR = "nvim";

@@ -1,0 +1,5 @@
+# Fish temp files
+/dotfiles/fish/*.fish
+/dotfiles/fish/fish_variables
+!/dotfiles/fish/config.fish
+

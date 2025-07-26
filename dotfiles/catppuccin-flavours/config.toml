@@ -1,0 +1,27 @@
+[[entries]]
+template = "fzf"
+target = "~/.config/fish/fzf-colors.fish"
+command = "fish ~/.config/fish/fzf-colors.fish"
+
+[[entries]]
+template = "fish"
+target = "~/.config/fish/colors.fish"
+command = "fish ~/.config/fish/colors.fish"
+
+[[entries]]
+template = "obsidian"
+target = "~/Notes/.obsidian/snippets/catppuccin-flavours.css"
+
+[[entries]]
+template = "lua"
+target = "~/.local/share/nvim/lazy/catppuccin/lua/catppuccin/palettes/dynamic.lua"
+
+[[entries]]
+template = "bat"
+target = "~/.config/bat/themes/catppuccin-flavours.tmTheme"
+command = "bat cache --build"
+
+[[entries]]
+template = "kitty"
+target = "~/.config/kitty/themes/catppuccin-flavours.conf"
+command = "kitten themes --reload-in=all Catppuccin Flavours && pkill -SIGUSR1 kitty"

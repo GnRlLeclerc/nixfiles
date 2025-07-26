@@ -2,7 +2,6 @@
 {
   imports = [
     ./betterdiscord.nix
-    ./neovim.nix
     ./obsidian.nix
     ./foliate.nix
   ];

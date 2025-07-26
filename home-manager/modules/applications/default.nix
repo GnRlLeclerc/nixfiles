@@ -14,7 +14,6 @@ in
     ./betterdiscord.nix
     ./flatpak.nix
     ./firefox.nix
-    ./kitty.nix
     ./miscellaneous.nix
     ./vscode.nix
     ./zathura.nix

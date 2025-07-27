@@ -21,6 +21,7 @@ in
       jq
       bind
       tokei
+      imagemagick
 
       # Fancy cli
       bat

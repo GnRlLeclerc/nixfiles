@@ -1,0 +1,30 @@
+# Kanagawa Dragon
+
+shade = "dark"
+
+rosewater = "a292a3" # dragon pink
+flamingo = "a292a3"  # dragon pink
+pink = "a292a3"      # dragon pink
+mauve = "a292a3"     # dragon pink
+red = "c4746e"       # dragon red
+maroon = "b98d7b"    # dragon orange 2
+peach = "b6927b"     # dragon orange
+yellow = "c4b28a"    # dragon yellow
+green = "8a9a7b"     # dragon green 2
+teal = "949fb5"      # dragon teal
+sky = "949fb5"       # dragon teal
+sapphire = "8ea4a2"  # dragon aqua
+blue = "8ba4b0"      # dragon blue 2
+lavender = "8992a7"  # dragon violet
+text = "c5c9c5"      # dragon white
+subtext1 = "a6a69c"  # dragon gray
+subtext0 = "9e9b93"  # dragon gray 2
+overlay2 = "9e9b93"  # dragon gray 2
+overlay1 = "7a8382"  # dragon gray 3
+overlay0 = "625e5a"  # dragon black 6
+surface2 = "393836"  # dragon black 5
+surface1 = "282727"  # dragon black 4
+surface0 = "1d1c19"  # dragon black 2
+base = "181616"      # dragon black 3
+mantle = "12120f"    # dragon black 1
+crust = "0d0c0c"     # dragon black 0

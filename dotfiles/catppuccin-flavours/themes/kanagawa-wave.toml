@@ -1,0 +1,31 @@
+# Kanagawa Wave
+
+shade = "dark"
+
+rosewater = "dcd7ba" # fuji white
+flamingo = "c8c093"  # old white
+pink = "d27e99"      # sakura pink
+mauve = "957fb8"     # oni violet
+red = "ff5d62"       # peach red
+maroon = "e46876"    # wave red
+peach = "ffa066"     # surimi orange
+yellow = "e6c384"    # carp yellow
+green = "98bb6c"     # spring green
+teal = "7aa89f"      # wave aqua 2
+sky = "7fb4ca"       # spring blue
+sapphire = "6a9589"  # wave aqua 1
+blue = "7e9cd8"      # crystal blue
+lavender = "b8b4d0"  # oni violet 2
+
+text = "dcd7ba"     # fuji white
+subtext1 = "bac2de" # TODO: finish this mapping
+subtext0 = "a6adc8"
+overlay2 = "9399b2"
+overlay1 = "7f849c"
+overlay0 = "6c7086"
+surface2 = "54546d" # sumi ink 6
+surface1 = "363646" # sumi ink 5
+surface0 = "2a2a37" # sumi ink 4
+base = "1f1f28"     # sumi ink 3
+mantle = "181820"   # sumi ink 1
+crust = "16161d"    # sumi ink 0

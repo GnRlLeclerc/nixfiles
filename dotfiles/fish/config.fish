@@ -4,7 +4,6 @@ abbr -a du dust
 abbr -a ps procs
 abbr -a neofetch fastfetch
 abbr -a lolcat dotacat
-abbr -a cfl catppuccin-flavours
 
 # Aliases (long flags)
 alias cat='bat --paging=never --style=plain --color=always'

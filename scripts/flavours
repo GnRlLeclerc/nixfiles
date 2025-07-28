@@ -27,7 +27,7 @@ def "main apply" [theme: string, --accent (-a): string] {
     "{}"
   }
 
-  for entry in $entries {
+  $entries | par-each { |entry|
     do {
       # Prepare folder where the theme will be generated
       cd $gen_path
@@ -59,10 +59,12 @@ def "main apply" [theme: string, --accent (-a): string] {
       # Run command if provided
       let command = $entry | get -i command
       if $command != null {
-         nu -c $command
+         nu -c $command | ignore
       }
     }
   }
+
+  exit 0
 }
 
 

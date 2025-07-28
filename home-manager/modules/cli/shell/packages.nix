@@ -50,6 +50,9 @@ in
 
       # Caching
       cachix
+
+      # Dynamic theming
+      catppuccin-whiskers
     ];
   };
 }

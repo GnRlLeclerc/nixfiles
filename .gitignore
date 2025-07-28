@@ -13,3 +13,5 @@
 /dotfiles/direnv/*
 !/dotfiles/direnv/direnv.toml
 
+# Helix
+/dotfiles/helix/themes/

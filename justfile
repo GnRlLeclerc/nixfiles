@@ -30,6 +30,7 @@ prune:
 # Symlink all dotfiles
 symlink:
   stow --target=$HOME/.config dotfiles
+  stow --target=$HOME/.local/bin scripts
    
 
 

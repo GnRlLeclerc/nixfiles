@@ -15,3 +15,6 @@
 
 # Helix
 /dotfiles/helix/themes/
+
+# Whiskers generated themes
+/dotfiles/whiskers/generated/

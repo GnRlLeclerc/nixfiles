@@ -1,0 +1,73 @@
+#!/usr/bin/env nu
+
+let cfg_path = "~/.config/whiskers" | path expand
+let theme_path = $cfg_path | path join "themes"
+let gen_path = $cfg_path | path join "generated"
+let tmpl_path = $cfg_path | path join "templates"
+
+# Generate themes from Catppuccin templates
+def "main apply" [theme: string, --accent (-a): string] {
+  # Reset the generated directory for generated themes
+  rm -rf $gen_path
+  mkdir $gen_path
+
+  # Open the config file
+  let config = open ($cfg_path | path join "config.toml")
+  let entries = $config.entries
+
+  # Open the theme file, extract colors and flavor from light/dark shade
+  let theme = open (($theme_path | path join $theme) + ".toml")
+  let colors = $theme | reject shade | wrap all | to json
+  let flavor = if $theme.shade == "light" { "latte" } else { "mocha" }
+
+  # Compute accent override option if an accent is provided
+  let accent = if $accent != null {
+    $"{\"accent\":\"($accent)\"}"
+  } else {
+    "{}"
+  }
+
+  for entry in $entries {
+    do {
+      # Prepare folder where the theme will be generated
+      cd $gen_path
+      mkdir $entry.template
+      cd $entry.template
+
+      # Compute complete template path
+      let template = ($tmpl_path | path join $entry.template) + ".tera"
+
+      # Run whiskers to generate the theme
+      whiskers --flavor $flavor --overrides $accent --color-overrides $colors $template
+
+      # Get the path of the main generated theme
+      # If there is a variant, go one directory deeper
+      let variant = $entry | get -i variant
+      let chosen = [ $gen_path $entry.template "themes" ] | path join
+      let chosen = if $variant == null {
+        $chosen
+      } else {
+        $chosen | path join $variant
+      }
+      let chosen = ls $chosen | first | get name
+
+      # Copy this file to the target path
+      let target = $entry.target | path expand
+      mkdir ($target | path dirname)
+      cp $chosen $target
+
+      # Run command if provided
+      let command = $entry | get -i command
+      if $command != null {
+         nu -c $command
+      }
+    }
+  }
+}
+
+
+# Print help
+def main [] {
+  print (help main)
+  exit 1
+}

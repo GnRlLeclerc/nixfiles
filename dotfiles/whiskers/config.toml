@@ -10,7 +10,7 @@ command = "fish ~/.config/fish/colors.fish"
 
 [[entries]]
 template = "obsidian"
-target = "~/Notes/.obsidian/snippets/catppuccin-flavours.css"
+target = "~/Notes/.obsidian/snippets/whiskers.css"
 
 [[entries]]
 template = "lua"
@@ -18,10 +18,15 @@ target = "~/.local/share/nvim/lazy/catppuccin/lua/catppuccin/palettes/dynamic.lu
 
 [[entries]]
 template = "bat"
-target = "~/.config/bat/themes/catppuccin-flavours.tmTheme"
+target = "~/.config/bat/themes/whiskers.tmTheme"
 command = "bat cache --build"
 
 [[entries]]
 template = "kitty"
-target = "~/.config/kitty/themes/catppuccin-flavours.conf"
-command = "kitten themes --reload-in=all Catppuccin Flavours && pkill -SIGUSR1 kitty"
+target = "~/.config/kitty/themes/whiskers.conf"
+command = "kitten themes --reload-in=all Whiskers; pkill -SIGUSR1 kitty"
+
+[[entries]]
+template = "helix"
+target = "~/.config/helix/themes/whiskers.toml"
+variant = "default"

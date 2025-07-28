@@ -22,8 +22,10 @@ set -gx EDITOR nvim
 set -gx DIRENV_LOG_FORMAT ''
 set -gx fish_greeting # Suppress fish greeting
 set -gx MINIMAL_FZF_PREVIEW 1
-set -gx BAT_THEME catppuccin-flavours
+set -gx BAT_THEME whiskers
 set -gx DELTA_PAGER "less --mouse"
+
+fish_add_path ~/.local/bin
 
 # No green "❯" and space transient prompt with 1 newline
 function starship_transient_prompt_func

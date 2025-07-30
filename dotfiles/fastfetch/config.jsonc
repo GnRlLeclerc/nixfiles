@@ -1,0 +1,155 @@
+{
+  "logo": {
+    "height": 20,
+    "padding": {
+      "top": 3
+    },
+    "source": "/nix/store/m0hdawjchjlycb3mjj26p0mygx65fsdl-nixos.png",
+    "type": "kitty"
+  },
+  "modules": [
+    {
+      "format": "-> \u001b[96m{1}\u001b[97m@\u001b[96m{2}",
+      "key": "                    ",
+      "keyWidth": 22,
+      "type": "title"
+    },
+    {
+      "format": " ──────────────────────────────────────────────────── ",
+      "key": "",
+      "keyWidth": 1,
+      "type": "locale"
+    },
+    "break",
+    {
+      "format": "-> {3} {9} {12}",
+      "key": "╭──󰣇 ",
+      "keyColor": "green",
+      "keyWidth": 6,
+      "type": "os"
+    },
+    {
+      "format": "-> {2}",
+      "key": "├── ",
+      "keyColor": "green",
+      "keyWidth": 6,
+      "type": "kernel"
+    },
+    {
+      "format": "-> {9} (system) {10} (user)",
+      "key": "├── ",
+      "keyColor": "green",
+      "keyWidth": 6,
+      "type": "packages"
+    },
+    {
+      "format": "-> {1}d {2}h {3}min",
+      "key": "├──  ",
+      "keyColor": "green",
+      "keyWidth": 6,
+      "type": "uptime"
+    },
+    {
+      "format": "-> {3} {4}",
+      "key": "╰──  ",
+      "keyColor": "green",
+      "keyWidth": 6,
+      "type": "shell"
+    },
+    "break",
+    {
+      "format": "-> {1} {2}",
+      "key": "╭── ",
+      "keyColor": "cyan",
+      "keyWidth": 6,
+      "type": "host"
+    },
+    {
+      "format": "-> {1} ({4}) [{8}]",
+      "key": "├── ",
+      "keyColor": "cyan",
+      "keyWidth": 6,
+      "temp": true,
+      "type": "cpu"
+    },
+    {
+      "format": "-> {1} {2} [{4}]",
+      "key": "├── ",
+      "keyColor": "cyan",
+      "keyWidth": 6,
+      "temp": true,
+      "type": "gpu"
+    },
+    {
+      "format": "-> {1} %",
+      "key": "├── ",
+      "keyColor": "cyan",
+      "keyWidth": 6,
+      "type": "loadavg"
+    },
+    {
+      "format": "-> {2} x {3}",
+      "key": "├──󰍹 ",
+      "keyColor": "cyan",
+      "keyWidth": 6,
+      "type": "monitor"
+    },
+    {
+      "format": "-> {1} / {2} ({3})",
+      "key": "├──  ",
+      "keyColor": "cyan",
+      "keyWidth": 6,
+      "type": "memory"
+    },
+    {
+      "format": "-> {1} / {2} ({3}) - {9}",
+      "key": "╰── ",
+      "keyColor": "cyan",
+      "keyWidth": 6,
+      "type": "disk"
+    },
+    "break",
+    {
+      "format": "-> {2} ({3})",
+      "key": "╭── ",
+      "keyColor": "yellow",
+      "keyWidth": 6,
+      "type": "wm"
+    },
+    {
+      "format": "-> {5}",
+      "key": "├── ",
+      "keyColor": "yellow",
+      "keyWidth": 6,
+      "type": "terminal"
+    },
+    {
+      "format": "-> {2}",
+      "key": "├── ",
+      "keyColor": "yellow",
+      "keyWidth": 6,
+      "type": "theme"
+    },
+    {
+      "format": "-> {2}",
+      "key": "├── ",
+      "keyColor": "yellow",
+      "keyWidth": 6,
+      "type": "icons"
+    },
+    {
+      "format": "-> {1}",
+      "key": "╰── ",
+      "keyColor": "yellow",
+      "keyWidth": 6,
+      "type": "terminalfont"
+    },
+    "break",
+    {
+      "format": " ──────────────────(\u001b[31m \u001b[32m \u001b[33m \u001b[34m \u001b[35m \u001b[36m \u001b[37m )────────────────── ",
+      "key": "",
+      "keyWidth": 1,
+      "type": "locale"
+    }
+  ]
+}

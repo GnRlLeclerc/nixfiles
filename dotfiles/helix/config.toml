@@ -1,0 +1,72 @@
+theme = "whiskers"
+
+[editor]
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.file-picker]
+git-ignore = false
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[editor.lsp]
+display-messages = true
+
+[editor.statusline]
+left = [
+  "mode",
+  "spacer",
+  "version-control",
+  "spacer",
+  "separator",
+  "file-name",
+  "file-modification-indicator",
+]
+right = [
+  "spinner",
+  "spacer",
+  "workspace-diagnostics",
+  "separator",
+  "spacer",
+  "diagnostics",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
+separator = "╎"
+
+[editor.statusline.mode]
+insert = "INSERT"
+normal = "NORMAL"
+select = "SELECT"
+
+[editor.whitespace.characters]
+nbsp = "⍽"
+newline = "⏎"
+space = "·"
+tab = "→"
+tabpad = "·"
+
+[keys.insert]
+C-space = "completion"
+
+[keys.normal]
+A-j = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_down",
+  "paste_before",
+]
+A-k = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before",
+]

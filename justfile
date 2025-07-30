@@ -6,17 +6,14 @@ help:
 # Switch to a new NixOS generation
 switch:
   sudo nixos-rebuild switch --flake .#main-laptop
-  just fix-all
 
 # Switch my own home-manager config
 thibaut:
   home-manager switch --flake .#thibaut
-  just fix-all
 
 # Test a new NixOS generation
 test:
   sudo nixos-rebuild test --flake .#main-laptop
-  just fix-all
 
 # Rollback to the previous NixOS generation
 rollback:
@@ -31,21 +28,8 @@ prune:
 symlink:
   stow --target=$HOME/.config dotfiles
   stow --target=$HOME/.local/bin scripts
+  stow --dir dotfiles --target=$HOME/.config/Code/User vscode
    
-
-
-# Read-write symlinks
-fix-all:
-  just fix-vscode-settings
-
-
-# Make VSCode's settings and keybindings symlink point to this repository instead of a readonly derivation build
-fix-vscode-settings:
-  unlink ~/.config/Code/User/settings.json
-  unlink ~/.config/Code/User/keybindings.json
-  ln -s $(pwd)/home-manager/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
-  ln -s $(pwd)/home-manager/dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-
 # Update nixpkgs unstable
 update-nixpkgs:
   nix flake update nixpkgs

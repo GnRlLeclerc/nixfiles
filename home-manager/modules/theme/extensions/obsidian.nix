@@ -22,11 +22,8 @@ in
       acc: vault:
       acc
       // {
-        "${vault}/.obsidian/snippets/base16.css".source = config.lib.stylix.colors {
-          template = ./templates/obsidian.mustache;
-        };
         "${vault}/.obsidian/appearance.json".text = builtins.toJSON {
-          enabledCssSnippets = [ "base16" ];
+          enabledCssSnippets = [ "whiskers" ];
         };
 
       }

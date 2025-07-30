@@ -30,3 +30,7 @@ command = "kitten themes --reload-in=all Whiskers; pkill -SIGUSR1 kitty"
 template = "helix"
 target = "~/.config/helix/themes/whiskers.toml"
 variant = "default"
+
+[[entries]]
+template = "zathura"
+target = "~/.config/zathura/colors.conf"

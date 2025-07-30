@@ -1,0 +1,10 @@
+map i recolor
+map p print
+
+set recolor	"true"
+set selection-clipboard	"clipboard"
+
+set synctex	"true"
+set synctex-editor-command	"nvr --remote-silent +%{line} %{input}"
+
+include colors.conf

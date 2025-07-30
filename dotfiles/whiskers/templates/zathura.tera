@@ -1,0 +1,46 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+    - accent: ["lavender"]
+  filename: "themes/{{ flavor.identifier }}.lua"
+---
+
+set default-fg                "#{{text.hex}}"
+set default-bg 			          "#{{base.hex}}"
+
+set completion-bg		          "#{{surface0.hex}}"
+set completion-fg		          "#{{text.hex}}"
+set completion-highlight-bg	  "#{{surface1.hex}}"
+set completion-highlight-fg	  "#{{text.hex}}"
+set completion-group-bg		    "#{{surface0.hex}}"
+set completion-group-fg		    "#{{blue.hex}}"
+
+set statusbar-fg		          "#{{text.hex}}"
+set statusbar-bg		          "#{{surface0.hex}}"
+
+set notification-bg		        "#{{surface0.hex}}"
+set notification-fg		        "#{{text.hex}}"
+set notification-error-bg	    "#{{surface0.hex}}"
+set notification-error-fg	    "#{{red.hex}}"
+set notification-warning-bg	  "#{{surface0.hex}}"
+set notification-warning-fg	  "#{{yellow.hex}}"
+
+set inputbar-fg			          "#{{text.hex}}"
+set inputbar-bg 		          "#{{surface0.hex}}"
+
+set recolor-lightcolor		    "#{{base.hex}}"
+set recolor-darkcolor		      "#{{text.hex}}"
+
+set index-fg			            "#{{text.hex}}"
+set index-bg			            "#{{base.hex}}"
+set index-active-fg		        "#{{text.hex}}"
+set index-active-bg		        "#{{surface0.hex}}"
+
+set render-loading-bg		      "#{{base.hex}}"
+set render-loading-fg		      "#{{text.hex}}"
+
+set highlight-color		        rgba({{subtext1.rgb.r}},{{subtext1.rgb.g}},{{subtext1.rgb.b}},0.3)
+set highlight-fg              rgba({{flavor.colors[accent].rgb.r}},{{flavor.colors[accent].rgb.g}},{{flavor.colors[accent].rgb.b}},0.5)
+set highlight-active-color	  rgba({{flavor.colors[accent].rgb.r}},{{flavor.colors[accent].rgb.g}},{{flavor.colors[accent].rgb.b}},0.7)

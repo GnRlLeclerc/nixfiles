@@ -42,3 +42,11 @@ target = "~/.config/zellij/themes/whiskers.kdl"
 [[entries]]
 template = "zjstatus"
 target = "~/.config/zellij/layouts/default.kdl"
+
+[[entries]]
+template = "gtk"
+target = "~/.config/gtk-4.0/gtk.css"
+
+[[entries]]
+template = "gtk"
+target = "~/.config/gtk-3.0/gtk.css"

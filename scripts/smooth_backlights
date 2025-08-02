@@ -1,12 +1,9 @@
 #!/usr/bin/env nu
 
-def main [value: int] {
+def main [steps: int] {
   # Config
   let values = 12
   let max_brightness = (brightnessctl max | str trim | into int)
-
-  # Get the step argument
-  let steps = ($value | into float)
 
   if $steps == 0 {
     exit 0
@@ -36,7 +33,7 @@ def main [value: int] {
 
   # Compute new x
   let x = $x + $delta
-  let x = if $x < 0 { 0 } else if $x > 1 { 1 } else { $x }
+  let x = if $x < 0 { 0 } else if $x > 1 { 1.0 } else { $x }
 
   # New brightness value
   let y = easing $x

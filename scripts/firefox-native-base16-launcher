@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Kill the binary when SIGTERM is received
+trap 'kill -SIGTERM $native_pid' SIGTERM
+
+# Run the binary in the background, storing its PID
+~/.cargo/bin/firefox-native-base16 &
+native_pid=$!
+wait $native_pid

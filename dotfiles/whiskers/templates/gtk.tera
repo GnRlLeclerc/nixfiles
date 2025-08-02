@@ -4,7 +4,7 @@ whiskers:
   matrix:
     - flavor
     - accent: ["lavender"]
-  filename: "themes/catppuccin-fzf-{{ flavor.identifier }}.fish"
+  filename: "themes/catppuccin-{{ flavor.identifier }}.css"
 ---
 
 @define-color accent_color #{{flavor.colors[accent].hex}};

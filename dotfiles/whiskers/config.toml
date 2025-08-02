@@ -50,3 +50,7 @@ target = "~/.config/gtk-4.0/gtk.css"
 [[entries]]
 template = "gtk"
 target = "~/.config/gtk-3.0/gtk.css"
+
+[[entries]]
+template = "gnome"
+target = "~/.themes/Whiskers/gnome-shell/gnome-shell.css"

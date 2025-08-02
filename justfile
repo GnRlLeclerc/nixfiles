@@ -29,6 +29,8 @@ symlink:
   stow --target=$HOME/.config dotfiles
   stow --target=$HOME/.local/bin scripts
   stow --dir dotfiles --target=$HOME/.config/Code/User vscode
+  mkdir -p ~/.themes
+  ln -s $(pwd)/dotfiles/gnome/Whiskers ~/.themes/Whiskers
    
 # Update nixpkgs unstable
 update-nixpkgs:

@@ -32,6 +32,10 @@ target = "~/.config/helix/themes/whiskers.toml"
 variant = "default"
 
 [[entries]]
+template = "zathura"
+target = "~/.config/zathura/colors.conf"
+
+[[entries]]
 template = "zellij"
 target = "~/.config/zellij/themes/whiskers.kdl"
 

@@ -1,0 +1,31 @@
+# Kanagawa Lotus
+
+shade = "light"
+
+rosewater = "b35b79"
+flamingo = "b35b79"
+pink = "b35b79"      # lotus pink
+mauve = "624c83"     # lotus violet
+red = "c84053"       # lotus red
+maroon = "c84053"
+peach = "cc6d00"     # lotus orange
+yellow = "77713f"    # lotus yellow
+green = "6f894e"     # lotus green
+teal = "4e8ca2"      # lotus teal 1
+sky = "6693bf"       # lotus teal 2
+sapphire = "5a7785"  # lotus teal 3
+blue = "4d699b"      # lotus blue 4
+lavender = "5d57a3"  # lotus blue 5
+
+text = "545464"     # lotus ink 1
+subtext1 = "43436c" # lotus ink 2
+subtext0 = "43436c" # lotus ink 2
+overlay2 = "8a8980" # lotus gray 3
+overlay1 = "716e61" # lotus gray 2
+overlay0 = "a09cac" # lotus violet 1
+surface2 = "716e61" # lotus gray 2
+surface1 = "8a8980" # lotus gray 3
+surface0 = "e5ddb0" # lotus white 2
+base = "f2ecbc"     # lotus white 3
+mantle = "e7dba0"   # lotus white 4
+crust = "e4d794"    # lotus white 5

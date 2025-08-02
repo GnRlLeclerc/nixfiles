@@ -34,3 +34,7 @@ variant = "default"
 [[entries]]
 template = "zellij"
 target = "~/.config/zellij/themes/whiskers.kdl"
+
+[[entries]]
+template = "zjstatus"
+target = "~/.config/zellij/layouts/default.kdl"

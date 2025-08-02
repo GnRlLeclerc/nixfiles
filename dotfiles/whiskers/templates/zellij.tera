@@ -5,20 +5,17 @@ whiskers:
 ---
 
 themes {
-{%- set palette = flavor.colors %}
   whiskers {
-    bg "#{{ palette.surface2.hex }}" // Surface2
-    fg "#{{ palette.text.hex }}" // Text
-    red "#{{ palette.red.hex }}"
-    green "#{{ palette.green.hex }}"
-    blue "#{{ palette.blue.hex }}"
-    yellow "#{{ palette.yellow.hex }}"
-    magenta "#{{ palette.pink.hex }}" // Pink
-    orange "#{{ palette.peach.hex }}" // Peach
-    cyan "#{{ palette.sky.hex }}" // Sky
-    black "#{{ palette.mantle.hex }}" // Mantle
-    white "#{{ palette.text.hex }}" // Text
-  }
-{%- if not loop.last %}
-{% endif -%}
+    bg "#{{ surface2.hex }}" // Surface2
+    fg "#{{ text.hex }}" // Text
+    red "#{{ red.hex }}"
+    green "#{{ green.hex }}"
+    blue "#{{ blue.hex }}"
+    yellow "#{{ yellow.hex }}"
+    magenta "#{{ pink.hex }}" // Pink
+    orange "#{{ peach.hex }}" // Peach
+    cyan "#{{ sky.hex }}" // Sky
+    black "#{{ mantle.hex }}" // Mantle
+    white "#{{ text.hex }}" // Text
+ }
 }

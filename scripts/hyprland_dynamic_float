@@ -1,0 +1,18 @@
+#!/usr/bin/env nu
+
+# Automatically convert windows to floating ones if their title matches a certain pattern
+# Used mainly for Firefox extension popups
+
+
+def handle [line: string] {
+  # Test for Firefox extension popups
+  if (($line | str starts-with "windowtitlev2>>") and ($line | str ends-with " - — Mozilla Firefox")) {
+    # Extract the window ID
+    let window_id = ($line | split row ">>" | get 1 | split row "," | get 0)
+
+    # Make the window float
+    hyprctl --batch $"dispatch togglefloating address:0x($window_id); dispatch resizewindowpixel exact 20% 50%,address:0x($window_id); dispatch movewindowpixel exact 40% 30%,address:0x($window_id)"
+  }
+}
+
+socat -U - UNIX-CONNECT:/run/user/1000/hypr/($env.HYPRLAND_INSTANCE_SIGNATURE)/.socket2.sock | lines | each { |line| handle $line }

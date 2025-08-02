@@ -122,6 +122,7 @@ in
       # Packages needed
       environment.systemPackages = with pkgs; [
         hypridle # Idle screen
+        hyprlock # Lock screen
         waybar # Status bar
         udiskie # USB automount
         swww # Wallpaper

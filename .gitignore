@@ -21,3 +21,6 @@
 
 # Zathura
 /dotfiles/zathura/colors.conf
+
+# Zellij
+/dotfiles/zellij/themes

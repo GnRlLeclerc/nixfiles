@@ -1,3 +1,8 @@
+# Start hyprland on login
+if status --is-login
+    uwsm start hyprland-uwsm.desktop || true
+end
+
 # Abbreviations
 abbr -a c clear
 abbr -a du dust

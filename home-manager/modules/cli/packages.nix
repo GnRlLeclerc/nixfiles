@@ -13,6 +13,7 @@
     bind
     tokei
     imagemagick
+    socat
 
     # Fancy cli
     bat

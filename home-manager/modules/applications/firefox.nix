@@ -20,8 +20,6 @@ in
       description = "The system for which firefox extensions are preinstalled";
     };
 
-    gnome = mkEnableOption "Enable gnome integration";
-
     # Bookmark group options
     bookmarks = {
       google = mkEnableOption "Enable google bookmarks";
@@ -392,8 +390,6 @@ in
           ];
         };
       };
-
-      enableGnomeExtensions = cfg.gnome;
     };
   };
 }

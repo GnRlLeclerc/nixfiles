@@ -9,6 +9,7 @@
 with lib;
 
 let
+  # TODO: celluloid sound issue: https://github.com/celluloid-player/celluloid/issues/506#issuecomment-2425581455
   cfg = config.settings;
 in
 {
@@ -20,7 +21,7 @@ in
         "hyprland"
         "gnome"
       ];
-      default = "gnome-xorg";
+      default = "gnome";
       description = "Choose a desktop environment";
     };
   };
@@ -29,6 +30,10 @@ in
     {
       # Enable CUPS for printing
       services.printing.enable = true;
+
+      # Hint at electron apps to run under wayland
+      # NIXOS_OZONE_WL works as well
+      environment.sessionVariables.NIXOS_OZONE_WL = "1";
     }
 
     #################################################
@@ -55,10 +60,6 @@ in
       # Gnome triple buffering patch: fix multi-monitors & mouse lag
       environment.sessionVariables.MUTTER_DEBUG_ENABLE_ATOMIC_KMS = "0";
 
-      # Hint at electron apps to run under wayland
-      # NIXOS_OZONE_WL works as well
-      environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
       # Fix Gdk display
       environment.sessionVariables.GSK_RENDERER = "gl";
 
@@ -71,12 +72,63 @@ in
             pkgs.gst_all_1.gst-plugins-ugly
             pkgs.gst_all_1.gst-libav
           ];
+
+      # Fix suspend/resume cycling because of nvidia power management
+      # https://discourse.nixos.org/t/suspend-resume-cycling-on-system-resume/32322/12
+      systemd = {
+        services."gnome-suspend" = {
+          description = "suspend gnome shell";
+          before = [
+            "systemd-suspend.service"
+            "systemd-hibernate.service"
+            "nvidia-suspend.service"
+            "nvidia-hibernate.service"
+          ];
+          wantedBy = [
+            "systemd-suspend.service"
+            "systemd-hibernate.service"
+          ];
+          serviceConfig = {
+            Type = "oneshot";
+            ExecStart = ''${pkgs.procps}/bin/pkill -f -STOP ${pkgs.gnome-shell}/bin/gnome-shell'';
+          };
+        };
+        services."gnome-resume" = {
+          description = "resume gnome shell";
+          after = [
+            "systemd-suspend.service"
+            "systemd-hibernate.service"
+            "nvidia-resume.service"
+          ];
+          wantedBy = [
+            "systemd-suspend.service"
+            "systemd-hibernate.service"
+          ];
+          serviceConfig = {
+            Type = "oneshot";
+            ExecStart = ''${pkgs.procps}/bin/pkill -f -CONT ${pkgs.gnome-shell}/bin/gnome-shell'';
+          };
+        };
+      };
     })
-    # TODO: celluloid sound issue: https://github.com/celluloid-player/celluloid/issues/506#issuecomment-2425581455
 
     (mkIf (cfg.desktop.environment == "hyprland") {
-      # TODO : hyprland
-      # Maybe do this in home-manager instead. See how to handle the login screen, then
+      # Enable Hyprland
+      programs.hyprland = {
+        enable = true;
+        withUWSM = true;
+      };
+
+      # Packages needed
+      environment.systemPackages = with pkgs; [
+        hypridle # Idle screen
+        waybar # Status bar
+        udiskie # USB automount
+        swww # Wallpaper
+        clipse # Clipboard
+        hyprpolkitagent # Polkit agent
+        rose-pine-hyprcursor # Cursor
+      ];
     })
   ]);
 }

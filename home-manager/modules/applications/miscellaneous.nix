@@ -16,6 +16,8 @@ with lib;
       signal-desktop
       # Broken: bitwarden-desktop
 
+      nautilus # File manager
+
       # Libre Office fresh + spellcheck
       libreoffice-fresh
       hunspell

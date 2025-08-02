@@ -33,3 +33,6 @@
 
 # Gnome
 /dotfiles/gnome/Whiskers/gnome-shell/gnome-shell.css
+
+# Hyprland
+/dotfiles/hypr/colors.conf

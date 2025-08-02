@@ -1,0 +1,31 @@
+# Rose Pine
+
+shade = "dark"
+
+rosewater = "ebbcba" # rose
+flamingo = "ebbcba"  # rose
+pink = "ebbcba"      # pink
+mauve = "c4a7e7"     # iris
+red = "eb6f92"       # love
+maroon = "eb6f92"    # love
+peach = "f6c177"     # gold
+yellow = "f6c177"    # gold
+green = "31748f"     # pine
+teal = "9ccfd8"      # foam
+sky = "9ccfd8"       # foam
+sapphire = "31748f"  # pine
+blue = "31748f"      # pine
+lavender = "c4a7e7"  # iris
+
+text = "e0def4"     # text
+subtext1 = "6e6a86" # muted
+subtext0 = "908caa" # subtle
+overlay2 = "908caa" # subtle
+overlay1 = "6e6a86" # muted
+overlay0 = "6e6a86" # muted
+surface2 = "524f67" # highlight high
+surface1 = "403d52" # highlight med
+surface0 = "21202e" # highlight low
+base = "191724"     # base
+mantle = "191724"   # base
+crust = "191724"    # base

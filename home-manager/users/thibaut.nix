@@ -21,10 +21,6 @@
     userName = "Thibaut";
   };
 
-  # Enable theming
-  stylix.enable = true;
-  stylix.targets.obsidian.vaults = [ "/Notes" ];
-
   # Enable all desktop applications
   settings.desktop-applications.enable = true;
 

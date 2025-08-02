@@ -15,7 +15,6 @@ in
     ./flatpak.nix
     ./firefox.nix
     ./miscellaneous.nix
-    ./zathura.nix
   ];
 
   options.settings.desktop-applications.enable = mkEnableOption "Desktop applications";
@@ -25,6 +24,5 @@ in
     programs.discord.enable = mkDefault cfg.enable;
     programs.firefox.enable = mkDefault cfg.enable;
     services.flatpak.enable = mkDefault cfg.enable;
-    programs.zathura.enable = mkDefault cfg.enable;
   };
 }

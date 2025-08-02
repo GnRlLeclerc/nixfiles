@@ -10,8 +10,6 @@ let
 in
 {
   imports = [
-    ./fastfetch.nix
-    ./helix.nix
     ./packages.nix
   ];
 

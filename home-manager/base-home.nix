@@ -5,10 +5,10 @@
   imports = [
     ./modules/applications
     ./modules/cli
-    ./modules/git.nix
     ./modules/languages
-    ./modules/theme
+    ./modules/appearance.nix
     ./modules/cache.nix
+    ./modules/git.nix
   ];
 
   ##########################

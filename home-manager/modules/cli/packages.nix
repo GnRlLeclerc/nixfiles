@@ -34,6 +34,7 @@
     nvtopPackages.full
     procs
     ripgrep
+    starship
     stow
     tldr
     zellij

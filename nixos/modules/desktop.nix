@@ -129,6 +129,7 @@ in
         clipse # Clipboard
         hyprpolkitagent # Polkit agent
         rose-pine-hyprcursor # Cursor
+        pulseaudio # Audio control
       ];
     })
   ]);

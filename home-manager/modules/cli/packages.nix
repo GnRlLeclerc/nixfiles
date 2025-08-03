@@ -17,6 +17,7 @@
 
     # Fancy cli
     bat
+    bluetui
     # cava  # BUG: broken
     cmatrix
     delta

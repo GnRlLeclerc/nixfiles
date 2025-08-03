@@ -1,0 +1,145 @@
+/* COLORS */
+
+/* Catppuccin */
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
+@define-color text #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+
+@define-color surface0 rgba(22, 25, 38, 0.9);
+@define-color surface1 rgba(22, 25, 38, 0.4);
+@define-color surface2 rgba(59, 61, 80, 0.9);
+@define-color surface3 #585b70;
+@define-color surface3 #394161;
+
+@define-color overlay0 #6c7086;
+@define-color overlay1 #7f849c;
+@define-color overlay2 #9ba3c3;
+
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color sapphire #74c7ec;
+@define-color sky #89dceb;
+@define-color teal #94e2d5;
+@define-color green #a6e3a1;
+@define-color yellow #f9e2af;
+@define-color peach #fab387;
+@define-color maroon #eba0ac;
+@define-color red #f38ba8;
+@define-color mauve #cba6f7;
+@define-color pink #f5c2e7;
+@define-color flamingo #f2cdcd;
+@define-color rosewater #f5e0dc;
+
+/* Reset all styles */
+* {
+  border: none;
+  /* border-radius: 3px; */
+  min-height: 0;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* The whole bar */
+#waybar {
+  background: @surface1;
+  color: @text;
+  font-family: "CaskaydiaCove Nerd Font", monospace;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* Each module */
+#battery,
+#clock,
+#memory,
+#mode,
+#network,
+#bluetooth,
+#pulseaudio,
+#temperature,
+#cpu,
+#tray,
+#custom-notifications,
+#custom-power,
+#mpris,
+#backlight {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+#custom-power {
+  font-weight: bold;
+  padding-right: 6px;
+  margin-right: 0px;
+}
+
+/* Each critical module */
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#battery.critical:not(.charging) {
+  background: @red;
+  border-radius: 2px;
+  color: @base;
+}
+
+/* Each warning */
+#network.disconnected,
+#memory.warning,
+#cpu.warning,
+#temperature.warning,
+#battery.warning:not(.charging) {
+  background: @peach;
+  border-radius: 2px;
+  color: @base;
+}
+
+/* Workspaces stuff */
+
+#workspaces {
+  font-size: 1px;
+}
+
+#workspaces button {
+  background-color: @surface3;
+  color: @mauve;
+  /* border-radius: 100%; */
+  padding: 0px;
+  transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+#workspaces button.active {
+  background: @mauve;
+}
+
+#workspaces button:hover {
+  background-color: @mauve;
+}
+
+#bluetooth {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#mpris {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* All hoverable elements */
+#bluetooth:hover,
+#network:hover,
+#pulseaudio:hover,
+#custom-notifications:hover,
+#custom-power:hover,
+#mpris:hover,
+#cpu:hover {
+  background: @surface2;
+  border-radius: 4px;
+}

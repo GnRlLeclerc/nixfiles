@@ -38,7 +38,7 @@ def main [steps: int] {
   # New brightness value
   let y = easing $x
   let brightness = $y * $max_brightness
-  let rounded = ($brightness + 0.5) | math floor
+  let rounded = $brightness | math round
 
   brightnessctl set $rounded
 }

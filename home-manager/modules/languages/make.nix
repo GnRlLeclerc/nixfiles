@@ -21,7 +21,8 @@ in
       gnumake
 
       # LSP
-      autotools-language-server
+      # python3.13-lsp-tree-sitter package broken
+      # autotools-language-server
     ];
   };
 }

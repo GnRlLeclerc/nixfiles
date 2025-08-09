@@ -128,6 +128,7 @@ return {
         gopls = true,
         autotools_ls = true,
         tinymist = true,
+        wgsl_analyzer = true,
         -- TODO: sqls
       }
 

@@ -21,6 +21,7 @@ in
     ./node.nix
     ./python.nix
     ./rust.nix
+    ./shaders.nix
     ./shells.nix
     ./toml.nix
     ./typst.nix
@@ -43,6 +44,7 @@ in
     node.enable = mkDefault cfg.enable;
     python.enable = mkDefault cfg.enable;
     rust.enable = mkDefault cfg.enable;
+    shaders.enable = mkDefault cfg.enable;
     shells.enable = mkDefault cfg.enable;
     toml.enable = mkDefault cfg.enable;
     typst.enable = mkDefault cfg.enable;

@@ -37,6 +37,7 @@ return {
         'typescript',
         'typst',
         'vim',
+        'wgsl',
         'yaml',
       },
       sync_install = false,

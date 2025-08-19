@@ -56,7 +56,8 @@ mark3_background #{{ sapphire.hex }}
 # The 16 terminal colors
 
 # black
-color0 #{% if flavor.dark %}{{ surface1.hex }}{% else %}{{ subtext1.hex }}{% endif %}
+# NOTE: customized "black" in dark mode to be background
+color0 #{% if flavor.dark %}{{ base.hex }}{% else %}{{ subtext1.hex }}{% endif %}
 color8 #{% if flavor.dark %}{{ surface2.hex }}{% else %}{{ subtext0.hex }}{% endif %}
 
 # red

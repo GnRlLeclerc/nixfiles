@@ -24,7 +24,8 @@
 
 # Zellij
 /dotfiles/zellij/themes
-/dotfiles/zellij/layouts
+/dotfiles/zellij/layouts/*
+!/dotfiles/zellij/layouts/default.kdl
 
 # GTK
 /dotfiles/gtk-4.0/gtk.css

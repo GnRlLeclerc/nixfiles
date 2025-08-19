@@ -42,7 +42,7 @@ def "main apply" [theme: string, --accent (-a): string] {
 
       # Get the path of the main generated theme
       # If there is a variant, go one directory deeper
-      let variant = $entry | get -i variant
+      let variant = $entry | get -o variant
       let chosen = [ $gen_path $entry.template "themes" ] | path join
       let chosen = if $variant == null {
         $chosen
@@ -57,7 +57,7 @@ def "main apply" [theme: string, --accent (-a): string] {
       cp $chosen $target
 
       # Run command if provided
-      let command = $entry | get -i command
+      let command = $entry | get -o command
       if $command != null {
          nu -c $command | ignore
       }

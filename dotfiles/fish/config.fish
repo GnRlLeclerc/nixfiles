@@ -30,6 +30,7 @@ set -gx BAT_THEME whiskers
 set -gx DELTA_PAGER "less --mouse"
 
 fish_add_path ~/.local/bin
+fish_add_path ~/.cargo/bin
 
 # No green "❯" and space transient prompt with 1 newline
 function starship_transient_prompt_func

@@ -36,10 +36,6 @@ template = "zathura"
 target = "~/.config/zathura/colors.conf"
 
 [[entries]]
-template = "zellij"
-target = "~/.config/zellij/themes/whiskers.kdl"
-
-[[entries]]
 template = "zjstatus"
 target = "~/.config/zellij/layouts/default.kdl"
 

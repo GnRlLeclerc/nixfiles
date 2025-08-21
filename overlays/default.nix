@@ -5,10 +5,12 @@
     inputs.rust-overlay.overlays.default
     inputs.nur.overlays.default
 
-  ] ++ (import ./stable);
+  ]
+  ++ (import ./stable);
   unstable = [
     inputs.rust-overlay.overlays.default
     inputs.nur.overlays.default
 
-  ] ++ (import ./unstable);
+  ]
+  ++ (import ./unstable);
 }

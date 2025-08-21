@@ -6,6 +6,7 @@
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
     nerd-fonts.caskaydia-cove
+    maple-mono.NF
 
     # Kanji support
     noto-fonts-cjk-sans

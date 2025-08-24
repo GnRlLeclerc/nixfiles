@@ -48,6 +48,7 @@ return {
 
           return default
         end,
+        rice = { 'rice-fmt' },
         rust = { 'rustfmt' },
         scss = { 'prettier' },
         sh = { 'shfmt' },
@@ -69,16 +70,10 @@ return {
     })
 
     -- Default formatter arguments
-    conform.formatters.stylua = {
-      prepend_args = {
-        '--indent-type',
-        'Spaces',
-        '--indent-width',
-        '2',
-        '--line-endings',
-        'Unix',
-        '--quote-style',
-        'AutoPreferSingle',
+    conform.formatters = {
+      ['rice-fmt'] = {
+        command = 'rice-fmt',
+        args = { '$FILENAME' },
       },
     }
 

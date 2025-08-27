@@ -14,5 +14,6 @@
     wget
     home-manager
     xkeyboard_config
+    seahorse
   ];
 }

@@ -53,6 +53,9 @@ with lib;
       # XP Pen tabler driver
       libsForQt5.xp-pen-deco-01-v2-driver
 
+      # VSCode
+      vscode
+
       # PDF reader
       zathura
     ];

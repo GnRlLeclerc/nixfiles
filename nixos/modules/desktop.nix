@@ -119,6 +119,10 @@ in
         withUWSM = true;
       };
 
+      # Use gnome keyring for secrets (needed for VSCode Copilot)
+      services.gnome.gnome-keyring.enable = true;
+      security.pam.services.login.enableGnomeKeyring = true; # load gnome-keyring at startup
+
       # Packages needed
       environment.systemPackages = with pkgs; [
         hypridle # Idle screen

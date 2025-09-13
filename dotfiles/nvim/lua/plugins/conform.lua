@@ -73,7 +73,7 @@ return {
     conform.formatters = {
       ['rice-fmt'] = {
         command = 'rice-fmt',
-        args = { '$FILENAME' },
+        stdin = true,
       },
     }
 

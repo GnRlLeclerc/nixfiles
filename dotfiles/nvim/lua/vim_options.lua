@@ -1,6 +1,9 @@
 -- Vim options
 -- In particular, contains some options that need to be loaded before lazy
 
+-- Avoid infinite size logfile (disable when debugging)
+vim.lsp.set_log_level('off')
+
 -- Start scrolling 5 lines before hitting the edge of the screen with the cursor
 vim.o.scrolloff = 5
 

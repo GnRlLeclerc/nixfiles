@@ -134,6 +134,10 @@ in
         hyprpolkitagent # Polkit agent
         rose-pine-hyprcursor # Cursor
         pulseaudio # Audio control
+
+        # Screenshots
+        grim
+        slurp
       ];
     })
   ]);

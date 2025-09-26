@@ -28,9 +28,11 @@
     fd
     fish
     fzf
+    jujutsu
     just
-    lazygit
     lazydocker
+    lazygit
+    lazyjj
     nix-diff
     nix-output-monitor
     nvtopPackages.full

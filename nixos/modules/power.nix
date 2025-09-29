@@ -1,5 +1,8 @@
 # Power management config
 {
+  # Compress RAM
+  zramSwap.enable = true;
+
   # Default NixOS power management
   powerManagement.enable = true;
 

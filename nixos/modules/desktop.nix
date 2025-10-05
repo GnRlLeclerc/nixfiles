@@ -134,6 +134,7 @@ in
         hyprpolkitagent # Polkit agent
         rose-pine-hyprcursor # Cursor
         pulseaudio # Audio control
+        eog # Gnome image viewer
 
         # Screenshots
         grim

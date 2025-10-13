@@ -29,6 +29,8 @@ vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { noremap = true, silent = tru
 
 -- Select the whole buffer
 vim.keymap.set('n', '<C-a>', 'GVgg', { noremap = true, silent = true, desc = 'Select all' })
+-- Save file
+vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true, desc = 'Save file' })
 
 -- Prune buffers to avoid neovim slowdown
 vim.keymap.set('n', '<leader>bo', '<cmd>%bd|e#<cr>', { desc = 'Close all buffers but the current one' })

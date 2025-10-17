@@ -10,6 +10,13 @@ with lib;
 
 {
   config = mkIf config.settings.desktop-applications.enable {
+    # App launcher
+    programs.anyrun = {
+      enable = true;
+      plugins = [
+        "${pkgs.anyrun}/lib/libapplications.so"
+      ];
+    };
     home.packages = with pkgs; [
       slack
       obsidian

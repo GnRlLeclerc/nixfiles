@@ -1,6 +1,6 @@
-# Start hyprland on login
+# Start niri on login
 if status --is-login
-    uwsm start hyprland-uwsm.desktop || true
+    niri-session || true
 end
 
 # Abbreviations

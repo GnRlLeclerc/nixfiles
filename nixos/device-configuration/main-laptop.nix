@@ -1,6 +1,5 @@
 # Configuration for my main personal laptop
-{ pkgs, ... }:
-{
+_: {
   imports = [
     ../base-configuration.nix
     ../hardware-configuration/main-laptop.nix
@@ -8,7 +7,7 @@
 
   # Setup the desktop environment and apps
   settings.desktop.enable = true;
-  settings.desktop.environment = "hyprland";
+  settings.desktop.environment = "niri";
 
   settings.bluetooth.enable = true;
   settings.sound.enable = true;

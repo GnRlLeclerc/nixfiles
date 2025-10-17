@@ -20,6 +20,7 @@ in
       type = types.enum [
         "hyprland"
         "gnome"
+        "niri"
       ];
       default = "gnome";
       description = "Choose a desktop environment";
@@ -139,6 +140,26 @@ in
         # Screenshots
         grim
         slurp
+      ];
+    })
+
+    (mkIf (cfg.desktop.environment == "niri") {
+      # Also enables gnome portal and gnome keyring
+      programs.niri.enable = true;
+
+      # Packages needed
+      environment.systemPackages = with pkgs; [
+        niri
+        hypridle # Idle screen
+        hyprlock # Lock screen
+        waybar # Status bar
+        udiskie # USB automount
+        swww # Wallpaper
+        clipse # Clipboard
+        hyprpolkitagent # Polkit agent
+        rose-pine-hyprcursor # Cursor
+        pulseaudio # Audio control
+        eog # Gnome image viewer
       ];
     })
   ]);

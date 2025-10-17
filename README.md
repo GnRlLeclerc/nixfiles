@@ -16,6 +16,12 @@ sudo nixos-rebuild switch --flake .#main-laptop –extra-experimental-features n
 
 ## Shortcuts
 
+Symlink all dotfiles:
+
+```bash
+just symlink
+```
+
 Switch:
 
 ```bash

@@ -3,6 +3,12 @@
 help:
   echo "Helper commands to navigate NixOS configurations"
 
+# Link systemd services to niri
+systemd:
+
+# Initial setup
+all: switch symlink systemd
+
 # Switch to a new NixOS generation
 switch:
   sudo nixos-rebuild switch --flake .#main-laptop

@@ -13,7 +13,7 @@ with lib;
     # App launcher
     programs.anyrun = {
       enable = true;
-      plugins = [
+      config.plugins = [
         "${pkgs.anyrun}/lib/libapplications.so"
       ];
     };

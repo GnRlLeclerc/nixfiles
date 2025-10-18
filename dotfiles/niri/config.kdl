@@ -17,6 +17,11 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
+cursor {
+    xcursor-theme "BreezeX-RosePine-Linux"
+    hide-when-typing
+}
+
 // Monitor configuration
 output "eDP-1" {
     scale 2

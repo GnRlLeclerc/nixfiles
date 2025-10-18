@@ -157,7 +157,7 @@ in
         swww # Wallpaper
         clipse # Clipboard
         hyprpolkitagent # Polkit agent
-        rose-pine-hyprcursor # Cursor
+        rose-pine-cursor # Cursor
         pulseaudio # Audio control
         eog # Gnome image viewer
       ];

@@ -79,7 +79,7 @@ function __fzf_complete
     set -l descriptions
     for line in $complist
         set -l key (string match -r '^\S+' -- "$line")
-        set -l val (string replace "$key" "" -- "$line" | string trim)
+        set -l val (string replace -- "$key" "" "$line" | string trim)
         set commands $commands $key
         set descriptions $descriptions $val
     end

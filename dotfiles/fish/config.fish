@@ -1,6 +1,6 @@
 # Start niri on login
 if status --is-login
-    niri --session
+    exec uwsm start niri
 end
 
 # Abbreviations

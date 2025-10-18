@@ -22,6 +22,10 @@ cursor {
     hide-when-typing
 }
 
+hotkey-overlay {
+    skip-at-startup
+}
+
 // Monitor configuration
 output "eDP-1" {
     scale 2
@@ -85,13 +89,9 @@ layout {
     }
 }
 
-// Add lines like this to spawn processes at startup.
-// Note that running niri as a session supports xdg-desktop-autostart,
-// which may be more convenient to use.
-// See the binds section below for more spawn examples.
-
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+// Startup daemons
+spawn-sh-at-startup "uwsm app -- swww-daemon"
+spawn-sh-at-startup "uwsm app -- waybar"
 
 // Disable client-side decorations if possible
 prefer-no-csd
@@ -147,11 +147,11 @@ binds {
 
     // Program shortcuts
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+B hotkey-overlay-title="Toggle waybar" { spawn "sh" "-c" "pkill waybar || waybar"; }
     Mod+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "sh" "-c" "pidof hyprlock || hyprlock"; }
     Mod+Space hotkey-overlay-title="Run Launcher: anyrun" { spawn "anyrun"; }
     Mod+E hotkey-overlay-title="Open File Manager: nautilus" { spawn "nautilus"; }
     Mod+W hotkey-overlay-title="Open Web Browser: firefox" { spawn "firefox"; }
+    Mod+B hotkey-overlay-title="Toggle Waybar" { spawn "sh" "toggle-waybar"; }
 
     // Volume
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }

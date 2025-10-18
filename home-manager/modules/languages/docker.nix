@@ -19,7 +19,7 @@ in
     home.packages = with pkgs; [
       # LSP
       docker-compose-language-service
-      dockerfile-language-server-nodejs
+      dockerfile-language-server
     ];
   };
 }

@@ -77,25 +77,7 @@ return {
         marksman = true,
         pyright = true,
         somesass_ls = true,
-        svelte = {
-          -- Fix for svelte language server not updating on js/ts file changes
-          -- https://github.com/sveltejs/language-tools/issues/2008
-          -- Will be fixed in neovim 11 -> https://github.com/neovim/neovim/pull/30595
-          on_attach = function(client, bufnr)
-            if client.name == 'svelte' then
-              vim.api.nvim_create_autocmd('BufWritePost', {
-                pattern = { '*.js', '*.ts' },
-                group = vim.api.nvim_create_augroup('svelte_ondidchangetsorjsfile', { clear = true }),
-                callback = function(ctx)
-                  -- Here use ctx.match instead of ctx.file
-                  client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
-                end,
-              })
-            end
-
-            on_attach(client, bufnr)
-          end,
-        },
+        svelte = true,
         taplo = true,
         tailwindcss = false,
         ts_ls = {
@@ -132,7 +114,6 @@ return {
         -- TODO: sqls
       }
 
-      local lspconfig = require('lspconfig')
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       capabilities.textDocument.foldingRange = {
         dynamicRegistration = false,
@@ -142,10 +123,11 @@ return {
       -- Hook all servers
       for lsp, config in pairs(servers) do
         if config ~= false then
-          ---@diagnostic disable-next-line: redefined-local
-          local config = (config == true) and {} or config
-          config = vim.tbl_deep_extend('force', { capabilities = capabilities, on_attach = on_attach }, config)
-          lspconfig[lsp].setup(config)
+          vim.lsp.enable(lsp)
+          if config ~= true then
+            config = vim.tbl_deep_extend('force', { capabilities = capabilities, on_attach = on_attach }, config)
+            vim.lsp.config(lsp, config)
+          end
         end
       end
 

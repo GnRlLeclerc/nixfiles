@@ -8,10 +8,14 @@ return {
       transparent_background = true,
       integrations = {
         telescope = {
-          style = 'nvchad',
+          enabled = true,
         },
         noice = true,
         copilot_vim = true,
+      },
+      float = {
+        transparent = true,
+        solid = true,
       },
     })
     vim.cmd.colorscheme('catppuccin')

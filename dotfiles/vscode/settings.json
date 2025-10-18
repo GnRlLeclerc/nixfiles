@@ -24,7 +24,7 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.inheritEnv": false,
   "window.titleBarStyle": "custom",
-  "workbench.iconTheme": "vscode-great-icons",
+  "workbench.iconTheme": "catppuccin-macchiato",
 
   "github.copilot.enable": {
     "*": true,
@@ -96,9 +96,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "clangd.arguments": [
-    "--clang-tidy"
-  ],
+  "clangd.arguments": ["--clang-tidy"],
   "clangd.checkUpdates": true,
   "clangd.path": "/usr/bin/clangd",
 

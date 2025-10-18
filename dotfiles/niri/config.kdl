@@ -92,6 +92,11 @@ layout {
 // Startup daemons
 spawn-sh-at-startup "uwsm app -- swww-daemon"
 spawn-sh-at-startup "uwsm app -- waybar"
+spawn-sh-at-startup "uwsm app -- clipse -listen"
+spawn-sh-at-startup "uwsm app -- udiskie"
+spawn-sh-at-startup "uwsm app -- hypridle"
+spawn-sh-at-startup "systemctl --user start hyprpolkitagent"
+
 
 // Disable client-side decorations if possible
 prefer-no-csd

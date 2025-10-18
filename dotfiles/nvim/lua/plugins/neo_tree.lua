@@ -42,7 +42,7 @@ return {
       filtered_items = {
         hide_dotfiles = false,
         hide_gitignored = false,
-        hide_by_name = { '.git', 'venv', '.venv', 'node_modules', '__pycache__' },
+        hide_by_name = { '.git', '.jj', 'venv', '.venv', 'node_modules', '__pycache__' },
       },
       follow_current_file = { enabled = true },
     },

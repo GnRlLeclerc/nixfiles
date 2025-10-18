@@ -13,8 +13,18 @@ input {
         }
     }
 
+    touchpad {
+        natural-scroll
+    }
+
     // Focus windows under the cursor
     focus-follows-mouse max-scroll-amount="0%"
+}
+
+gestures {
+    hot-corners {
+        off
+    }
 }
 
 cursor {
@@ -38,63 +48,30 @@ output "ASUSTek COMPUTER INC ASUS VG289Q1A 0x000170CB" {
     position x=1536 y=-120
 }
 
+overview {
+    backdrop-color "#1e1e2e" // Catppuccin Base
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
+    background-color "transparent" // bg color when no wallpaper
+
     focus-ring {
         width 2
+        active-color "#94e2d5" // Catppuccin Accent (teal atm)
+        urgent-color "#f38ba8" // Catppuccin Red
         inactive-color "transparent"
-    }
-
-    border {
-         width 1
-    }
-
-    // You can enable drop shadows for windows.
-    shadow {
-        // Uncomment the next line to enable shadows.
-        // on
-
-        // By default, the shadow draws only around its window, and not behind it.
-        // Uncomment this setting to make the shadow draw behind its window.
-        //
-        // Note that niri has no way of knowing about the CSD window corner
-        // radius. It has to assume that windows have square corners, leading to
-        // shadow artifacts inside the CSD rounded corners. This setting fixes
-        // those artifacts.
-        // 
-        // However, instead you may want to set prefer-no-csd and/or
-        // geometry-corner-radius. Then, niri will know the corner radius and
-        // draw the shadow correctly, without having to draw it behind the
-        // window. These will also remove client-side shadows if the window
-        // draws any.
-        // 
-        // draw-behind-window true
-
-        // You can change how shadows look. The values below are in logical
-        // pixels and match the CSS box-shadow properties.
-
-        // Softness controls the shadow blur radius.
-        softness 30
-
-        // Spread expands the shadow.
-        spread 5
-
-        // Offset moves the shadow relative to the window.
-        offset x=0 y=5
-
-        // You can also change the shadow color and opacity.
-        color "#0007"
     }
 }
 
 // Startup daemons
 spawn-sh-at-startup "uwsm app -- swww-daemon"
-spawn-sh-at-startup "uwsm app -- waybar"
 spawn-sh-at-startup "uwsm app -- clipse -listen"
 spawn-sh-at-startup "uwsm app -- udiskie"
 spawn-sh-at-startup "uwsm app -- hypridle"
+spawn-sh-at-startup "systemctl --user start waybar"
 spawn-sh-at-startup "systemctl --user start hyprpolkitagent"
 
 
@@ -122,7 +99,7 @@ window-rule {
 
 // Don't draw focus ring and border through transparent windows
 window-rule {
-    match app-id="kitty"
+    // match app-id="kitty"
     draw-border-with-background false
 }
 

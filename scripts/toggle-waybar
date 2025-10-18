@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-systemctl --user is-active --quiet waybar && \
-  systemctl --user stop waybar || \
+systemctl --user is-active --quiet waybar &&
+  systemctl --user stop waybar ||
   systemctl --user start waybar

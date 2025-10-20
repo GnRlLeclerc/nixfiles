@@ -4,7 +4,7 @@
     "padding": {
       "top": 3
     },
-    "source": "/nix/store/m0hdawjchjlycb3mjj26p0mygx65fsdl-nixos.png",
+    "source": "~/nixfiles/nixos.png",
     "type": "kitty"
   },
   "modules": [

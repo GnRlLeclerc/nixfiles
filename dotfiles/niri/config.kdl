@@ -201,8 +201,9 @@ binds {
     Mod+Ctrl+Alt+K     { move-column-to-monitor-up; }
     Mod+Ctrl+Alt+L     { move-column-to-monitor-right; }
 
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
+    // Inverted in position compared to J-K, but "U" means "up" to me
+    Mod+I              { focus-workspace-down; }
+    Mod+U              { focus-workspace-up; }
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
 

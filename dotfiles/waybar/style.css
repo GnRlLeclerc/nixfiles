@@ -9,9 +9,9 @@
 @define-color subtext0 #a6adc8;
 @define-color subtext1 #bac2de;
 
-@define-color surface0 rgba(22, 25, 38, 0.9);
-@define-color surface1 rgba(22, 25, 38, 0.8);
-@define-color surface2 rgba(59, 61, 80, 0.9);
+@define-color surface0 rgba(22, 25, 38, 1);
+@define-color surface1 rgba(22, 25, 38, 1);
+@define-color surface2 rgba(59, 61, 80, 1);
 @define-color surface3 #585b70;
 @define-color surface3 #394161;
 

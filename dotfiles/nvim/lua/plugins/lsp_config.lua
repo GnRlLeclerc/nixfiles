@@ -62,7 +62,6 @@ return {
         dockerls = true,
         eslint = true,
         fish_lsp = true,
-        graphql = true,
         html = true,
         -- htmx = true,
         jsonls = {
@@ -120,13 +119,20 @@ return {
         lineFoldingOnly = true,
       }
 
+      local default_cfg = {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
+
       -- Hook all servers
       for lsp, config in pairs(servers) do
         if config ~= false then
           vim.lsp.enable(lsp)
           if config ~= true then
-            config = vim.tbl_deep_extend('force', { capabilities = capabilities, on_attach = on_attach }, config)
+            config = vim.tbl_deep_extend('force', default_cfg, config)
             vim.lsp.config(lsp, config)
+          else
+            vim.lsp.config(lsp, default_cfg)
           end
         end
       end

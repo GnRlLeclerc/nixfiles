@@ -15,6 +15,7 @@ input {
 
     touchpad {
         natural-scroll
+        tap
     }
 
     // Focus windows under the cursor

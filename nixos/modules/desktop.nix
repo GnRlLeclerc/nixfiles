@@ -146,7 +146,17 @@ in
     (mkIf (cfg.desktop.environment == "niri") {
       # Also enables gnome portal and gnome keyring
       programs.niri.enable = true;
-      programs.uwsm.enable = true;
+      # Greetd for autologin + immediately run hyprlock
+      services.greetd = {
+        enable = true;
+        settings = rec {
+          default_session = initial_session;
+          initial_session = {
+            command = "niri-session";
+            user = "thibaut";
+          };
+        };
+      };
 
       # Packages needed
       environment.systemPackages = with pkgs; [

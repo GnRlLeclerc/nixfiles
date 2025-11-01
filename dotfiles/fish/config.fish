@@ -1,8 +1,3 @@
-# Start niri on login
-if status --is-login
-    niri-session &
-end
-
 # Abbreviations
 abbr -a c clear
 abbr -a du dust

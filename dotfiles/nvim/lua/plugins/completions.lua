@@ -20,5 +20,15 @@ return {
     completion = {
       documentation = { auto_show = true, auto_show_delay_ms = 500 },
     },
+
+    sources = {
+      default = { 'lsp', 'snippets', 'path' },
+
+      per_filetype = {
+        -- No completion sources for commit messages
+        gitcommit = {},
+      },
+      -- https://github.com/Saghen/blink.cmp/discussions/564
+    },
   },
 }

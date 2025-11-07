@@ -22,11 +22,12 @@ return {
     },
 
     sources = {
-      default = { 'lsp', 'snippets', 'path' },
+      default = { 'lsp', 'path' },
 
       per_filetype = {
         -- No completion sources for commit messages
         gitcommit = {},
+        markdown = {},
       },
       -- https://github.com/Saghen/blink.cmp/discussions/564
     },

@@ -24,30 +24,7 @@ return {
         lua = { 'stylua' },
         markdown = { 'prettier' },
         nix = { 'nixfmt' },
-        python = function(bufnr)
-          local default = { 'black', 'isort' }
-          -- Check for a pyproject.toml file that includes "tool.ruff.format" option
-          local paths = vim.fs.find('pyproject.toml', { upward = true, path = vim.api.nvim_buf_get_name(bufnr) })
-
-          if #paths == 0 then
-            return default
-          end
-
-          local file = io.open(paths[1], 'r')
-
-          if not file then
-            return default
-          end
-
-          local content = file:read('*all')
-          file:close()
-
-          if content:find('tool%.ruff%.format') then
-            return { 'ruff_organize_imports', 'ruff_format' }
-          end
-
-          return default
-        end,
+        python = { 'ruff_organize_imports', 'ruff_format' },
         rice = { 'rice-fmt' },
         rust = { 'rustfmt' },
         scss = { 'prettier' },

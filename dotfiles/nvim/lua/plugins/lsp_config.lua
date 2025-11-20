@@ -74,7 +74,7 @@ return {
         },
         jdtls = true,
         marksman = true,
-        pyright = true,
+        pyrefly = true,
         somesass_ls = true,
         svelte = true,
         taplo = true,

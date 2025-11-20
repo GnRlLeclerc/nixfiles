@@ -21,7 +21,7 @@ in
       python3
 
       # LSP
-      pyright
+      pyrefly
 
       # Formatter
       isort

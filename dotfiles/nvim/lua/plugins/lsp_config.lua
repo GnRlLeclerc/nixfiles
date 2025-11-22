@@ -75,6 +75,7 @@ return {
         jdtls = true,
         marksman = true,
         pyrefly = true,
+        ruff = true,
         somesass_ls = true,
         svelte = true,
         taplo = true,
@@ -108,7 +109,26 @@ return {
         nil_ls = true,
         gopls = true,
         autotools_ls = true,
-        tinymist = true,
+        tinymist = {
+          -- https://github.com/Myriad-Dreamin/tinymist/tree/main/editors/neovim#working-with-multiple-files-projects
+          on_attach = function(client, bufnr)
+            vim.keymap.set('n', '<leader>tp', function()
+              client:exec_cmd({
+                title = 'pin',
+                command = 'tinymist.pinMain',
+                arguments = { vim.api.nvim_buf_get_name(0) },
+              }, { bufnr = bufnr })
+            end, { desc = '[T]inymist [P]in', noremap = true })
+
+            vim.keymap.set('n', '<leader>tu', function()
+              client:exec_cmd({
+                title = 'unpin',
+                command = 'tinymist.pinMain',
+                arguments = { vim.v.null },
+              }, { bufnr = bufnr })
+            end, { desc = '[T]inymist [U]npin', noremap = true })
+          end,
+        },
         wgsl_analyzer = true,
         -- TODO: sqls
       }

@@ -22,6 +22,7 @@ with lib;
       obsidian
       signal-desktop
       # Broken: bitwarden-desktop
+      krita # drawing
 
       nautilus # File manager
 

@@ -1,7 +1,7 @@
 ---@diagnostic disable: missing-fields
 return {
   'nvim-treesitter/nvim-treesitter',
-  dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nushell/tree-sitter-nu' },
+  dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
   build = ':TSUpdate',
   config = function()
     local configs = require('nvim-treesitter.configs')
@@ -45,7 +45,7 @@ return {
         enable = true,
         disable = function(lang, buf)
           local max_filesize = 100 * 1024 -- 100 KB
-          local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+          local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(buf))
           if ok and stats and stats.size > max_filesize then
             return true
           end

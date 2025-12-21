@@ -27,6 +27,9 @@ in
       isort
       black
       ruff
+
+      # Dependency management
+      uv
     ];
   };
 }

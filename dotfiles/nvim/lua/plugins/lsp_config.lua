@@ -44,7 +44,6 @@ return {
         },
         lua_ls = true,
         rust_analyzer = true,
-        angularls = true,
         bashls = {
           on_attach = function(client, bufnr)
             -- Disable the language server for files in *.env

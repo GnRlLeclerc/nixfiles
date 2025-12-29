@@ -17,8 +17,10 @@
 
   programs.git = {
     enable = true;
-    userEmail = "thibaut2saivre@gmail.com";
-    userName = "Thibaut";
+    settings.user = {
+      email = "thibaut2saivre@gmail.com";
+      name = "Thibaut";
+    };
   };
 
   # Enable all desktop applications

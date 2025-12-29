@@ -4,9 +4,10 @@
 with lib;
 
 {
-  programs.git = {
+  programs = {
     delta = {
       enable = mkDefault true;
+      enableGitIntegration = mkDefault true;
       options = {
         features = mkDefault "decorations";
         dark = mkDefault true;
@@ -26,6 +27,8 @@ with lib;
       };
     };
 
-    lfs.enable = mkDefault true;
+    git = {
+      lfs.enable = mkDefault true;
+    };
   };
 }

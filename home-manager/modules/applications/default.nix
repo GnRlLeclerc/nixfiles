@@ -21,7 +21,7 @@ in
 
   config = {
     programs.chromium.enable = mkDefault cfg.enable;
-    programs.discord.enable = mkDefault cfg.enable;
+    programs.betterdiscord.enable = mkDefault cfg.enable;
     programs.firefox.enable = mkDefault cfg.enable;
     services.flatpak.enable = mkDefault cfg.enable;
   };

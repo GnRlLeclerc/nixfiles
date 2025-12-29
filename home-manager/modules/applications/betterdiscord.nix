@@ -10,10 +10,10 @@
 with lib;
 
 let
-  cfg = config.programs.discord;
+  cfg = config.programs.betterdiscord;
 in
 {
-  options.programs.discord.enable = mkEnableOption "Enable discord (betterdiscord)";
+  options.programs.betterdiscord.enable = mkEnableOption "Enable discord (betterdiscord)";
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [

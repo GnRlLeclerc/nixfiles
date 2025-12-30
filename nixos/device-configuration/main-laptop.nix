@@ -7,7 +7,6 @@ _: {
 
   # Setup the desktop environment and apps
   settings.desktop.enable = true;
-  settings.desktop.environment = "niri";
 
   settings.bluetooth.enable = true;
   settings.sound.enable = true;

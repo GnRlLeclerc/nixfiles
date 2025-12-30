@@ -3,6 +3,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -32,6 +33,8 @@ in
     # Also enables gnome portal and gnome keyring
     programs.niri.enable = true;
     programs.dms-shell.enable = true; # Dank Material Shell
+    programs.dms-shell.quickshell.package =
+      inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.quickshell;
     # Greetd for autologin + immediately run hyprlock
     services.greetd = {
       enable = true;

@@ -1,0 +1,19 @@
+---
+whiskers:
+  version: ^2.5.1
+  matrix:
+    - flavor
+    - accent: ["lavender"]
+  filename: "themes/catppuccin-fzf-{{ flavor.identifier }}.fish"
+---
+
+overview {
+    backdrop-color "{{base.hex}}"
+}
+
+layout {
+    focus-ring {
+        active-color "{{flavor.colors[accent].hex}}"
+        urgent-color "{{red.hex}}"
+    }
+}

@@ -46,3 +46,7 @@ target = "~/.config/gtk-3.0/gtk.css"
 [[entries]]
 template = "toml"
 target = "~/.mozilla/colors.toml"
+
+[[entries]]
+template = "niri"
+target = "~/.config/niri/colors.kdl"

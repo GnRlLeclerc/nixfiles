@@ -3,6 +3,8 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 
+include "colors.kdl"
+
 // Input / libinput configuration
 input {
     keyboard {
@@ -49,10 +51,6 @@ output "ASUSTek COMPUTER INC ASUS VG289Q1A 0x000170CB" {
     position x=1536 y=-120
 }
 
-overview {
-    backdrop-color "#1e1e2e" // Catppuccin Base
-}
-
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -61,8 +59,6 @@ layout {
 
     focus-ring {
         width 2
-        active-color "#94e2d5" // Catppuccin Accent (teal atm)
-        urgent-color "#f38ba8" // Catppuccin Red
         inactive-color "transparent"
     }
 }

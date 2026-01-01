@@ -22,7 +22,7 @@ return {
 
         -- Right part of lualine
         lualine_x = {},
-        lualine_y = { 'diagnostics', 'copilot', 'encoding', 'fileformat' },
+        lualine_y = { 'diagnostics', 'copilot' },
         lualine_z = { { 'progress', icon = '' }, 'location' },
       },
     })

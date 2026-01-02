@@ -74,7 +74,7 @@ return {
         jdtls = true,
         marksman = true,
         pyrefly = true,
-        qmlls = true,
+        qmlls = { cmd = { 'qmlls', '-E' } },
         ruff = true,
         somesass_ls = true,
         svelte = true,

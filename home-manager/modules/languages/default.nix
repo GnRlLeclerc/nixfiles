@@ -20,6 +20,7 @@ in
     ./nix.nix
     ./node.nix
     ./python.nix
+    ./qt.nix
     ./rust.nix
     ./shaders.nix
     ./shells.nix
@@ -43,6 +44,7 @@ in
     nix.enable = mkDefault cfg.enable;
     node.enable = mkDefault cfg.enable;
     python.enable = mkDefault cfg.enable;
+    qt.enable = mkDefault cfg.enable;
     rust.enable = mkDefault cfg.enable;
     shaders.enable = mkDefault cfg.enable;
     shells.enable = mkDefault cfg.enable;

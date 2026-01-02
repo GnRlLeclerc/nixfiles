@@ -74,6 +74,7 @@ return {
         jdtls = true,
         marksman = true,
         pyrefly = true,
+        qmlls = true,
         ruff = true,
         somesass_ls = true,
         svelte = true,

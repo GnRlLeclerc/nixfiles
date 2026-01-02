@@ -25,6 +25,7 @@ return {
         markdown = { 'prettier' },
         nix = { 'nixfmt' },
         python = { 'ruff_organize_imports', 'ruff_format' },
+        qml = { 'qmlformat' },
         rice = { 'rice-fmt' },
         rust = { 'rustfmt' },
         scss = { 'prettier' },

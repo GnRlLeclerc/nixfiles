@@ -1,0 +1,30 @@
+# Noctalia shell default theme
+
+shade = "dark"
+
+rosewater = "a9aefe" # secondary
+flamingo = "a9aefe"  # secondary
+pink = "a9aefe"      # secondary
+mauve = "a9aefe"     # secondary
+red = "fd4663"       # error
+maroon = "fd4663"    # error
+peach = "fff59b"     # primary
+yellow = "fff59b"    # primary
+green = "9bfece"     # tertiary
+teal = "9bfece"      # tertiary
+sky = "a9aefe"       # secondary
+sapphire = "a9aefe"  # secondary
+blue = "a9aefe"      # secondary
+lavender = "a9aefe"  # secondary
+text = "f3edf7"      # on surface
+subtext1 = "7c80b4"  # on surface variant
+subtext0 = "7c80b4"  # on surface variant
+overlay2 = "7c80b4"  # on surface variant
+overlay1 = "7c80b4"  # on surface variant
+overlay0 = "7c80b4"  # on surface variant
+surface2 = "21215f"  # surface variant
+surface1 = "21215f"  # surface variant
+surface0 = "21215f"  # surface variant
+base = "070722"      # surface
+mantle = "070722"    # surface
+crust = "070722"     # surface

@@ -68,7 +68,6 @@ spawn-sh-at-startup "swww-daemon"
 spawn-sh-at-startup "clipse -listen"
 spawn-sh-at-startup "udiskie"
 spawn-sh-at-startup "hypridle"
-spawn-sh-at-startup "systemctl --user start waybar"
 spawn-sh-at-startup "systemctl --user start hyprpolkitagent"
 spawn-sh-at-startup "hyprlock"
 

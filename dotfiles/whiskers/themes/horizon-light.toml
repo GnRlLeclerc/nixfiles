@@ -1,0 +1,31 @@
+# Horizon
+# Color names taken from the nvim theme
+
+shade = "light"
+
+rosewater = "FBC3A7" # bright yellow
+flamingo = "FBC3A7"  # bright yellow
+pink = "EE64AC"      # magenta
+mauve = "8a31b9"     # amethyst
+red = "E95678"       # red
+maroon = "EC6A88"    # bright red
+peach = "f6661e"     # tango
+yellow = "FAB795"    # yellow
+green = "29D398"     # green
+teal = "59E1E3"      # cyan
+sky = "6BE4E6"       # bright cyan
+sapphire = "3FC4DE"  # bright blue
+blue = "26BBD9"      # blue
+lavender = "EE64AC"  # magenta
+text = "06060C"      # dark text
+subtext1 = "333333"  # syntax black
+subtext0 = "333333"  # syntax black
+overlay2 = "f9cec3"  # ui accent alt
+overlay1 = "f9cec3"  # ui accent alt
+overlay0 = "f9cec3"  # ui accent alt
+surface2 = "f9cbbe"  # ui accent
+surface1 = "f9cbbe"  # ui accent
+surface0 = "fadad1"  # background alt
+base = "fdf0ed"      # background 
+mantle = "fadad1"    # background alt
+crust = "f9cbbe"     # ui accent

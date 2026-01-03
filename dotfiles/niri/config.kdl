@@ -61,6 +61,12 @@ layout {
         width 2
         inactive-color "transparent"
     }
+
+    shadow {
+        on
+        softness 5
+        spread 1
+    }
 }
 
 // Startup daemons

@@ -16,7 +16,7 @@ return {
         lualine_a = { 'mode' },
         lualine_b = {
           'filetype',
-          { 'filename', icon = { '󰑃', align = 'right' } },
+          'filename',
         },
         lualine_c = { 'branch', 'diff' },
 

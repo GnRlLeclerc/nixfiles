@@ -5,6 +5,11 @@
 
 include "colors.kdl"
 
+// Set environment variables for processes spawned by niri
+environment {
+  TERMINAL "kitty"
+}
+
 // Input / libinput configuration
 input {
     keyboard {
@@ -112,6 +117,7 @@ window-rule {
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match title="MiniLauncher"
     open-floating true
 }
 
@@ -133,7 +139,7 @@ binds {
     // Program shortcuts
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "sh" "-c" "pidof hyprlock || hyprlock"; }
-    Mod+Space hotkey-overlay-title="Run Launcher: anyrun" { spawn "anyrun"; }
+    Mod+Space hotkey-overlay-title="Run Launcher: minilauncher" { spawn "minilauncher"; }
     Mod+E hotkey-overlay-title="Open File Manager: nautilus" { spawn "nautilus"; }
     Mod+W hotkey-overlay-title="Open Web Browser: firefox" { spawn "firefox"; }
     Mod+B hotkey-overlay-title="Toggle Waybar" { spawn "sh" "toggle-waybar"; }

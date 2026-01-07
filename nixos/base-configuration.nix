@@ -2,6 +2,7 @@
 {
   inputs,
   lib,
+  pkgs,
   ...
 }:
 
@@ -35,7 +36,12 @@ with lib;
   };
 
   # Enable networking
-  networking.networkmanager.enable = mkDefault true;
+  networking.networkmanager = {
+    enable = mkDefault true;
+    plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
+  };
 
   # Auto mount drives
   # services.udisks2.enable = mkDefault true;

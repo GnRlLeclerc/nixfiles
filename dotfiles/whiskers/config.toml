@@ -12,6 +12,11 @@ command = "fish ~/.config/fish/colors.fish"
 template = "obsidian"
 target = "~/Notes/.obsidian/snippets/whiskers.css"
 
+# Thèse
+[[entries]]
+template = "obsidian"
+target = "~/Thèse/.obsidian/snippets/whiskers.css"
+
 [[entries]]
 template = "lua"
 target = "~/.local/share/nvim/lazy/catppuccin/lua/catppuccin/palettes/dynamic.lua"
@@ -50,3 +55,7 @@ target = "~/.mozilla/colors.toml"
 [[entries]]
 template = "niri"
 target = "~/.config/niri/colors.kdl"
+
+[[entries]]
+template = "minilauncher"
+target = "~/.config/minilauncher/colors.toml"

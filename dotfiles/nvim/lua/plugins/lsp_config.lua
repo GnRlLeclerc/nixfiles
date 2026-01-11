@@ -108,6 +108,7 @@ return {
         },
         nil_ls = true,
         gopls = true,
+        slint_lsp = true,
         -- autotools_ls = true,
         tinymist = {
           -- https://github.com/Myriad-Dreamin/tinymist/tree/main/editors/neovim#working-with-multiple-files-projects

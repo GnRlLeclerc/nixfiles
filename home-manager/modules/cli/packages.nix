@@ -41,6 +41,7 @@
     starship
     stow
     tldr
+    wiremix
     zellij
     zoxide
 

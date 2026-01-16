@@ -4,11 +4,6 @@ target = "~/.config/fish/fzf-colors.fish"
 command = "fish ~/.config/fish/fzf-colors.fish"
 
 [[entries]]
-template = "fish"
-target = "~/.config/fish/colors.fish"
-command = "fish ~/.config/fish/colors.fish"
-
-[[entries]]
 template = "obsidian"
 target = "~/Notes/.obsidian/snippets/whiskers.css"
 

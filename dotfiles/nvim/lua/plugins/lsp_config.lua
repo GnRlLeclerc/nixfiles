@@ -73,6 +73,7 @@ return {
         },
         jdtls = true,
         marksman = true,
+        -- ty = true,
         pyrefly = true,
         qmlls = { cmd = { 'qmlls', '-E' } },
         ruff = true,

@@ -99,6 +99,19 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
+// Fixed background image
+layer-rule {
+    place-within-backdrop true
+    match namespace="swww-daemon"
+}
+
+// No shadows in the overview
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
 // For all windows
 window-rule {
     geometry-corner-radius 12

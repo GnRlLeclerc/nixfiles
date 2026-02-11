@@ -257,6 +257,7 @@ in
           return-youtube-dislikes
           foxyproxy-standard
           languagetool
+          # TODO: google-scholar-button
         ];
 
         # Useful bookmarks with default priority

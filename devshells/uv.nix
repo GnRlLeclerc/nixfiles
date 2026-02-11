@@ -46,8 +46,6 @@
           cudatoolkit
           gcc13 # gcc <= 13 for cuda
           cudaPackages.cuda_cudart
-          cudaPackages.cuda_cudart.static
-
         ])
         ++ buildPkgs # Include the build libraries
         ++ (map (p: p.dev) buildPkgs); # Include the development headers

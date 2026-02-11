@@ -59,11 +59,8 @@ in
 
     # Required for pkg-config to find the libraries
     packages = with pkgs; [
-      pkgconf
+      pkg-config
     ];
-
-    # https://github.com/tauri-apps/tauri/issues/8929
-    NO_STRIP = "true";
 
     PKG_CONFIG_PATH =
       with pkgs;

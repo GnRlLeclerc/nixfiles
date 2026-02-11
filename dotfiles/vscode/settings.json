@@ -8,7 +8,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit"
+    "source.organizeImports": "explicit",
   },
   "editor.fontFamily": "JetBrainsMono Nerd Font, Courier New, monospace",
   "editor.fontLigatures": "'calt', 'zero'",
@@ -31,14 +31,14 @@
     "plaintext": false,
     "markdown": true,
     "scminput": false,
-    "yaml": true
+    "yaml": true,
   },
 
   "code-runner.runInTerminal": true,
   "code-runner.saveFileBeforeRun": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "workbench.editorAssociations": {
-    "*.csv": "gc-excelviewer-csv-editor"
+    "*.csv": "gc-excelviewer-csv-editor",
   },
 
   // ******************************************************************************************* //
@@ -46,55 +46,55 @@
   // ******************************************************************************************* //
 
   "[c]": {
-    "editor.defaultFormatter": "xaver.clang-format"
+    "editor.defaultFormatter": "xaver.clang-format",
   },
   "[cpp]": {
-    "editor.defaultFormatter": "xaver.clang-format"
+    "editor.defaultFormatter": "xaver.clang-format",
   },
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[dockercompose]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[edge]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.defaultFormatter": "vscode.html-language-features",
   },
   "[graphql]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[java]": {
-    "editor.defaultFormatter": "redhat.java"
+    "editor.defaultFormatter": "redhat.java",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[latex]": {
-    "editor.defaultFormatter": "James-Yu.latex-workshop"
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "charliermarsh.ruff",
   },
   "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
+    "editor.defaultFormatter": "svelte.svelte-vscode",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "clangd.arguments": ["--clang-tidy"],
   "clangd.checkUpdates": true,
@@ -115,8 +115,8 @@
   "java.imports.gradle.wrapper.checksums": [
     {
       "sha256": "2c23278a62dc9f96ab11bee897d9f53e6479d6419135e4560ce822a6431df5e5",
-      "allowed": false
-    }
+      "allowed": false,
+    },
   ],
 
   // Javascript
@@ -138,7 +138,7 @@
     // "markdown",
     "org",
     "restructuredtext",
-    "rsweave"
+    "rsweave",
   ],
 
   // Makefile
@@ -150,11 +150,11 @@
 
   // Add explicit hints overlays for arguments, return types, variable types...
   "python.terminal.activateEnvironment": false,
-  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.functionReturnTypes": false,
   "python.analysis.inlayHints.variableTypes": false, // Deactivate variable type inlays (they clutter the view)
-  "python.analysis.inlayHints.pytestParameters": true,
-  "python.analysis.inlayHints.callArgumentNames": "partial", // Do not show argument names when the variable has the same name
-  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.inlayHints.pytestParameters": false,
+  "python.analysis.inlayHints.callArgumentNames": "off", // Do not show argument names when the variable has the same name
+  "python.analysis.typeCheckingMode": "standard",
 
   "python.analysis.diagnosticSeverityOverrides": {
     "reportMissingTypeStubs": "none", // Scipy does not have type stubs
@@ -168,8 +168,8 @@
 
     // Set severity to Warning
     "reportUnusedVariable": "warning",
-    "reportMissingParameterType": "warning",
-    "reportGeneralTypeIssues": "error"
+    "reportMissingParameterType": "none", // Keeps warning even though default args specify the type implicitly
+    "reportGeneralTypeIssues": "error",
   },
 
   // Rust
@@ -180,14 +180,14 @@
   // Shader
   "glsllint.additionalStageAssociations": {
     "frag.glsl": "frag",
-    "vert.glsl": "vert"
+    "vert.glsl": "vert",
   },
   "glsllint.supportedLangsWithStringLiterals": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "elm"
+    "elm",
   ],
 
   // Typescript
@@ -214,7 +214,7 @@
     "XXX",
     "[ ]",
     "[x]",
-    "DEBUG"
+    "DEBUG",
   ],
   "todo-tree.highlights.backgroundColourScheme": [
     "red",
@@ -224,7 +224,7 @@
     "blue",
     "indigo",
     "violet",
-    "indigo"
+    "indigo",
   ],
   "todo-tree.highlights.foregroundColourScheme": [
     "white",
@@ -234,7 +234,7 @@
     "white",
     "white",
     "black",
-    "white"
+    "white",
   ],
 
   // ******************************************************************************************* //
@@ -247,73 +247,73 @@
       {
         "scope": "emphasis",
         "settings": {
-          "fontStyle": "italic"
-        }
+          "fontStyle": "italic",
+        },
       },
       {
         "scope": "strong",
         "settings": {
-          "fontStyle": "bold"
-        }
+          "fontStyle": "bold",
+        },
       },
       {
         "scope": "entity.other.attribute-name",
         "settings": {
-          "fontStyle": "italic"
-        }
+          "fontStyle": "italic",
+        },
       },
       {
         "scope": "markup.underline",
         "settings": {
-          "fontStyle": "underline"
-        }
+          "fontStyle": "underline",
+        },
       },
       {
         "scope": "markup.bold",
         "settings": {
-          "fontStyle": "bold"
-        }
+          "fontStyle": "bold",
+        },
       },
       {
         "scope": "markup.heading",
         "settings": {
-          "fontStyle": "bold"
-        }
+          "fontStyle": "bold",
+        },
       },
       {
         "scope": "markup.italic",
         "settings": {
-          "fontStyle": "italic"
-        }
+          "fontStyle": "italic",
+        },
       },
       {
         "scope": "storage.type",
         "settings": {
-          "fontStyle": "italic"
-        }
+          "fontStyle": "italic",
+        },
       },
       {
         "scope": "storage.modifier",
         "settings": {
-          "fontStyle": "italic"
-        }
+          "fontStyle": "italic",
+        },
       },
       {
         "name": "String interpolation",
         "scope": [
           "punctuation.definition.template-expression.begin",
           "punctuation.definition.template-expression.end",
-          "punctuation.section.embedded"
+          "punctuation.section.embedded",
         ],
         "settings": {
-          "fontStyle": "italic"
-        }
+          "fontStyle": "italic",
+        },
       },
       {
         "scope": "keyword.control",
         "settings": {
-          "fontStyle": "italic"
-        }
+          "fontStyle": "italic",
+        },
       },
       {
         "scope": [
@@ -321,64 +321,68 @@
           "keyword.operator.expression",
           "keyword.operator.cast",
           "keyword.operator.sizeof",
-          "keyword.operator.logical.python"
+          "keyword.operator.logical.python",
         ],
         "settings": {
-          "fontStyle": "italic"
-        }
+          "fontStyle": "italic",
+        },
       },
       {
         "name": "this.self",
         "scope": "variable.language",
         "settings": {
           "fontStyle": "italic",
-          "foreground": "#ff5874"
-        }
+          "foreground": "#ff5874",
+        },
       },
       {
         "name": "@Decorator",
         "scope": ["meta.decorator punctuation.decorator"],
         "settings": {
-          "fontStyle": "italic"
-        }
+          "fontStyle": "italic",
+        },
       },
       {
         "scope": ["punctuation.definition.comment", "comment"],
         "settings": {
           // "foreground": "#ff5874",
-          "fontStyle": "italic"
-        }
+          "fontStyle": "italic",
+        },
       },
 
       // Personnal changes (at the end for override)
       {
         "scope": "meta.function-call.generic.python",
         "settings": {
-          "foreground": "#5BAAEC"
-        }
+          "foreground": "#5BAAEC",
+        },
       },
       {
         "scope": ["keyword.control", "keyword.operator"],
         "settings": {
-          "fontStyle": "bold"
-        }
+          "fontStyle": "bold",
+        },
       },
       {
         "scope": ["storage.type", "storage.modifier", "constant"],
         "settings": {
-          "fontStyle": "italic bold"
-        }
+          "fontStyle": "italic bold",
+        },
       },
       {
         "scope": ["comment", "string.quoted.triple"],
         "settings": {
-          "fontStyle": "italic"
-        }
-      }
-    ]
+          "fontStyle": "italic",
+        },
+      },
+    ],
   },
   "github.copilot.editor.enableAutoCompletions": true,
-  "workbench.colorTheme": "Stylix",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "update.mode": "none",
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "workbench.preferredHighContrastColorTheme": "Catppuccin Frappé",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "python.defaultInterpreterPath": "/nix/store/jjz96slbxiz48y44avdkidgwagqm6fmv-home-manager-path/bin/python",
 }

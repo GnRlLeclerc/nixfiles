@@ -40,6 +40,7 @@ let
         ./node.nix
         ./python-datascience.nix
         ./python.nix
+        ./slint.nix
         ./tauri.nix
         ./uv.nix
         ./wgpu.nix

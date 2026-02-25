@@ -1,0 +1,9 @@
+layout {
+  pane split_direction="vertical" {
+    pane name="nvim" command="nvim"
+    pane split_direction="horizontal" {
+      pane name="cli"
+      pane name="cli"
+    }
+  }
+}

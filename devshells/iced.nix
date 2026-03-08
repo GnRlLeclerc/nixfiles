@@ -8,10 +8,10 @@ in
   # https://github.com/rust-windowing/winit/issues/3603
   iced = pkgs.mkShell rec {
     buildInputs = with pkgs; [
-      xorg.libX11
-      xorg.libXcursor
-      xorg.libxcb
-      xorg.libXi
+      libX11
+      libXcursor
+      libxcb
+      libXi
       libxkbcommon
       wayland
     ];

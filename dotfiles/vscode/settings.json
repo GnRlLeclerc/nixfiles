@@ -385,4 +385,7 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "python.defaultInterpreterPath": "/nix/store/jjz96slbxiz48y44avdkidgwagqm6fmv-home-manager-path/bin/python",
+  "python.languageServer": "Default",
+  "editor.defaultFormatter": "charliermarsh.ruff",
+  "notebook.defaultFormatter": "charliermarsh.ruff",
 }

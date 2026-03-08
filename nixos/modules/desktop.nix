@@ -49,6 +49,7 @@ in
     # Packages needed
     environment.systemPackages = with pkgs; [
       niri
+      wl-mirror
       xwayland-satellite
       hypridle # Idle screen
       hyprlock # Lock screen

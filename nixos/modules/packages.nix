@@ -8,7 +8,7 @@
     just
     ncdu
     neovim
-    nixfmt-rfc-style
+    nixfmt
     curl
     pciutils
     wget

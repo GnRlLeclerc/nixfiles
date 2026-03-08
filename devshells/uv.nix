@@ -19,19 +19,24 @@
             tk
 
             # Display libraries
-            xorg.libX11
+            libX11
             libGLU
             libGL
 
             # PyGObject dependencies (matplotlib backend)
             cairo
-            xorg.libxcb
+            libxcb
             glib
 
             # BUG: these don't fix the gtk namespace not available error
             gobject-introspection
             gtk3
             glibc
+
+            # Stuff for GraphConf
+            libxrender
+            libxext
+            expat
           ];
         in
         pkgs:
@@ -40,7 +45,10 @@
           pkg-config
 
           # PyGobject
-          xorg.xorgproto
+          xorgproto
+
+          glib-networking
+          gsettings-desktop-schemas
 
           # CUDA
           cudatoolkit

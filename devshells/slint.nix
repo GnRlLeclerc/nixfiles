@@ -8,6 +8,7 @@
       wayland
       fontconfig
       pkg-config
+      slint-lsp
     ];
     LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
   };

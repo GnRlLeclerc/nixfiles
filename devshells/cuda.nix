@@ -8,7 +8,6 @@
       cudatoolkit
       gcc13 # gcc <= 13 for cuda
       cudaPackages.cuda_cudart
-      cudaPackages.cuda_cudart.static
     ];
 
     CUDA_HOME = "${pkgs.cudatoolkit}";

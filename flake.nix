@@ -56,7 +56,7 @@
       nixosConfigurations = import ./nixos/nixos-configurations.nix inheritArgs;
       homeConfigurations = import ./home-manager/home-configurations.nix inheritArgs;
       devShells = import ./devshells inheritArgs;
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt);
     in
     {
       inherit

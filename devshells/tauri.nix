@@ -31,23 +31,23 @@ in
       libselinux
       lerc
       libsepol
-      xorg.libXdmcp
+      libXdmcp
       util-linux.dev
       pcre2
       sqlite
       libpsl
       libxkbcommon
       libepoxy
-      xorg.libXtst
+      libXtst
       nghttp2
 
       # Appimage build dependencies (still bugged, disabled)
       # libz
       # libstdcxx5
-      # xorg.libX11
+      # libX11
       # fontconfig
       # freetype
-      # xorg.libxcb
+      # libxcb
       # libdrm
       # mesa
       # expat
@@ -82,10 +82,10 @@ in
     #   pkgs.lib.makeLibraryPath [
     #     libz
     #     libstdcxx5
-    #     xorg.libX11
+    #     libX11
     #     fontconfig
     #     freetype
-    #     xorg.libxcb
+    #     libxcb
     #     libdrm
     #     mesa
     #     expat

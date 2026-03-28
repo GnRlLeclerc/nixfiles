@@ -17,7 +17,8 @@
   settings.graphics.enable = true;
   settings.me.enable = true;
 
-  hardware.nvidia.open = false;
+  # Required for Blackwell GPU
+  hardware.nvidia.open = true;
 
   services.fwupd.enable = true;
 

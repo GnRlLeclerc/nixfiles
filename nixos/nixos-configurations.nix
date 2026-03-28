@@ -73,7 +73,8 @@ in
   telecom-laptop = mkNixosConfiguration {
     modules = [
       ./device-configuration/telecom-laptop.nix
-      # TODO: add nvidia support
+      # NOTE:close enough (my laptop is gen4)
+      nixos-hardware.nixosModules.lenovo-thinkpad-p16s-intel-gen3
     ];
     users.thibaut = import ../home-manager/users/thibaut.nix;
     system = "x86_64-linux";

@@ -1,9 +1,13 @@
-# Configuration for my main personal laptop
-_: {
+# Configuration for my work laptop at telecom
+{ pkgs, ... }:
+{
   imports = [
     ../base-configuration.nix
-    ../hardware-configuration/main-laptop.nix
+    ../hardware-configuration/telecom-laptop.nix
   ];
+
+  # Latest linux kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Setup the desktop environment and apps
   settings.desktop.enable = true;
@@ -32,5 +36,5 @@ _: {
 
   networking.hostName = "nixos";
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.11";
 }

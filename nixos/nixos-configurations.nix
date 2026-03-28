@@ -55,7 +55,8 @@ let
           };
 
         }
-      ] ++ config.modules;
+      ]
+      ++ config.modules;
     };
 in
 {
@@ -64,6 +65,15 @@ in
     modules = [
       ./device-configuration/main-laptop.nix
       nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7-nvidia
+    ];
+    users.thibaut = import ../home-manager/users/thibaut.nix;
+    system = "x86_64-linux";
+  };
+  # Configuration for my work laptop
+  telecom-laptop = mkNixosConfiguration {
+    modules = [
+      ./device-configuration/telecom-laptop.nix
+      # TODO: add nvidia support
     ];
     users.thibaut = import ../home-manager/users/thibaut.nix;
     system = "x86_64-linux";

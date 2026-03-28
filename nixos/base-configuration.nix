@@ -59,9 +59,6 @@ with lib;
   #      Nix settings      #
   ##########################
 
-  # Overriden by the flake (set to unstable)
-  system.stateVersion = "24.05";
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = mkDefault true;
 

@@ -1,0 +1,13 @@
+#!/usr/bin/env nu
+
+# Call cargo clean on all direct child folders of the given path
+def main [path: string] {
+  ls $path | where type == dir | par-each { |it|
+    print $"Cleaning ($it.name)..."
+    cd $it.name
+    do -i { cargo clean e>| ignore | ignore }
+  }
+
+  return
+}
+

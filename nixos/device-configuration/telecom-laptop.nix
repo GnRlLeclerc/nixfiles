@@ -6,8 +6,11 @@
     ../hardware-configuration/telecom-laptop.nix
   ];
 
-  # Latest linux kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  hardware.nvidia.prime.sync.enable = false;
+  services.xserver.videoDrivers = [
+    "modesetting"
+    "nvidia"
+  ];
 
   # Setup the desktop environment and apps
   settings.desktop.enable = true;

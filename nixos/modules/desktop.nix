@@ -21,6 +21,13 @@ in
     # Enable CUPS for printing
     services.printing.enable = true;
 
+    # Set dark theme as default
+    programs.dconf.profiles.user.databases = [
+      {
+        settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      }
+    ];
+
     # Hint at electron apps to run under wayland
     # NIXOS_OZONE_WL works as well
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -60,6 +67,7 @@ in
       rose-pine-cursor # Cursor
       pulseaudio # Audio control
       eog # Gnome image viewer
+      gsettings-desktop-schemas
     ];
   };
 }

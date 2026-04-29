@@ -32,7 +32,7 @@ in
       svelte-language-server
 
       # Formatter
-      nodePackages.prettier
+      prettier
     ];
   };
 }

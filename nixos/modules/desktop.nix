@@ -62,7 +62,7 @@ in
       hyprlock # Lock screen
       waybar # Status bar
       udiskie # USB automount
-      swww # Wallpaper
+      awww # Wallpaper
       hyprpolkitagent # Polkit agent
       rose-pine-cursor # Cursor
       pulseaudio # Audio control

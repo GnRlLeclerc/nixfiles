@@ -29,6 +29,7 @@ with lib;
 
     git = {
       lfs.enable = mkDefault true;
+      signing.format = null;
     };
   };
 }

@@ -21,7 +21,7 @@ in
       yaml-language-server
 
       # Formatter
-      nodePackages.prettier
+      prettier
     ];
   };
 }

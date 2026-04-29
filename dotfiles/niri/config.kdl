@@ -75,7 +75,7 @@ layout {
 }
 
 // Startup daemons
-spawn-sh-at-startup "swww-daemon"
+spawn-sh-at-startup "awww-daemon"
 spawn-sh-at-startup "clipse -listen"
 spawn-sh-at-startup "udiskie"
 spawn-sh-at-startup "hypridle"
@@ -102,7 +102,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // Fixed background image
 layer-rule {
     place-within-backdrop true
-    match namespace="swww-daemon"
+    match namespace="awww-daemon"
 }
 
 // No shadows in the overview
@@ -120,7 +120,7 @@ window-rule {
 
 // Don't draw focus ring and border through transparent windows
 window-rule {
-    // match app-id="kitty"
+    match app-id="kitty"
     draw-border-with-background false
 }
 

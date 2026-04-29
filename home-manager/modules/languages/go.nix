@@ -18,13 +18,14 @@ in
 
     home.packages = with pkgs; [
       # Language
-      go_1_24
+      go
 
       # Language server
       gopls
 
       # Formatter
-      gotools
+      # BUG: https://github.com/nixos/nixpkgs/issues/509480
+      # gotools
     ];
   };
 }

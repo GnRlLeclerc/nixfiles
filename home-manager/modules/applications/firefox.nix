@@ -32,7 +32,8 @@ in
   config = {
 
     programs.firefox = {
-      profiles.default = {
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
+      profiles.thibaut = {
         id = 0;
         isDefault = true;
 

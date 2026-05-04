@@ -52,7 +52,6 @@
 
           # CUDA
           cudatoolkit
-          gcc13 # gcc <= 13 for cuda
           cudaPackages.cuda_cudart
         ])
         ++ buildPkgs # Include the build libraries

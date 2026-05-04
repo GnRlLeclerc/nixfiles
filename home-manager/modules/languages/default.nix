@@ -10,6 +10,7 @@ in
   imports = [
     ./c-cpp.nix
     ./cmake.nix
+    ./cuda.nix
     ./docker.nix
     ./go.nix
     ./java.nix
@@ -34,6 +35,7 @@ in
   config.settings.languages = {
     c-cpp.enable = mkDefault cfg.enable;
     cmake.enable = mkDefault cfg.enable;
+    cuda.enable = mkDefault cfg.enable;
     docker.enable = mkDefault cfg.enable;
     go.enable = mkDefault cfg.enable;
     java.enable = mkDefault cfg.enable;

@@ -22,6 +22,7 @@
 
   # Required for Blackwell GPU
   hardware.nvidia.open = true;
+  hardware.nvidia.modesetting.enable = true;
 
   services.fwupd.enable = true;
 

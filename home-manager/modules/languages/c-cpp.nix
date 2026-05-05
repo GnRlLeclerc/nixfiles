@@ -22,7 +22,8 @@ in
       gnumake
 
       # Debuggers
-      gdb
+      # BUG: conflict with cuda
+      # gdb
       valgrind
 
       # LSP & formatters

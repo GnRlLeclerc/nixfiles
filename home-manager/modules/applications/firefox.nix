@@ -33,7 +33,7 @@ in
 
     programs.firefox = {
       configPath = "${config.xdg.configHome}/mozilla/firefox";
-      profiles.thibaut = {
+      profiles.default = {
         id = 0;
         isDefault = true;
 

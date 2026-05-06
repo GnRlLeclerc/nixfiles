@@ -1,4 +1,5 @@
 advanced_mouse_actions false
+mouse_hover_effects false
 
 keybinds clear-defaults=true {
     locked {

@@ -11,6 +11,8 @@
     "modesetting"
     "nvidia"
   ];
+  hardware.nvidia.powerManagement.enable = true;
+  hardware.nvidia.powerManagement.finegrained = false;
 
   # Setup the desktop environment and apps
   settings.desktop.enable = true;

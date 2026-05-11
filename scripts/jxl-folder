@@ -12,11 +12,16 @@ def main [folder: string, --distance = 1] {
       | where name =~ '\.(png|jpg|jpeg|webp)$'
     )
 
+    let total = ($images | length)
+
     # Compress in parallel
-    $images | par-each { |image|
+    $images | enumerate | par-each { |it|
+        let image = $it.item
+        let idx = $it.index + 1
         let name = ($image.name | path parse | get stem) + '.jxl'
         let output = ($output_dir | path join $name)
-        cjxl ($image.name) $output -d $distance -e 9 -E 3 -I 1 --brotli_effort=11
+        cjxl ($image.name) $output -d $distance -e 9 -E 3 -I 1 --brotli_effort=11 | complete
+        print -e $"($idx)/($total): ($name)"
     }
 }
 

@@ -1,0 +1,22 @@
+#!/usr/bin/env nu
+
+# Compress all images in a folder using jxl with max effort
+def main [folder: string, --distance = 1] {
+    let output_dir = ($folder + '_jxl')
+    mkdir $output_dir
+
+    # Find all image files
+    let images = (
+      ls $folder
+      | where type == file
+      | where name =~ '\.(png|jpg|jpeg|webp)$'
+    )
+
+    # Compress in parallel
+    $images | par-each { |image|
+        let name = ($image.name | path parse | get stem) + '.jxl'
+        let output = ($output_dir | path join $name)
+        cjxl ($image.name) $output -d $distance -e 9 -E 3 -I 1 --brotli_effort=11
+    }
+}
+

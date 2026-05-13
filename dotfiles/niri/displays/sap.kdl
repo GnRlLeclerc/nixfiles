@@ -1,0 +1,7 @@
+// SAP labs screens config
+
+// Center top
+output "HDMI-A-1" {
+    scale 2
+    position x=-192 y=-1080
+}

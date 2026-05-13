@@ -5,3 +5,13 @@ output "HDMI-A-1" {
     scale 2
     position x=-192 y=-1080
 }
+
+output "DP-3" {
+    scale 2
+    position x=-192 y=-1080
+}
+
+output "DP-1" {
+    scale 2
+    position x=-192 y=-1080
+}

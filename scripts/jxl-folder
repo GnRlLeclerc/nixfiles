@@ -23,5 +23,7 @@ def main [folder: string, --distance = 1] {
         cjxl ($image.name) $output -d $distance -e 9 -E 3 -I 1 --brotli_effort=11 | complete
         print -e $"($idx)/($total): ($name)"
     }
+
+    ignore
 }
 

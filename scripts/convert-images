@@ -1,19 +1,19 @@
 #!/usr/bin/env nu
 
-# Transform all images in a folder to webp for smaller sizes
-def main [folder: string, --inplace = true] {
+# Transform all images in a folder to another format using imagemagick
+def main [folder: string, --inplace = true, --format = "jpeg"] {
     # Find all image files
     let images = (
       ls $folder
       | where type == file
-      | where name =~ '\.(png|jpg|jpeg)$'
+      | where name =~ '\.(png|jpg|jpeg|webp)$'
     )
 
     let total = ($images | length)
 
     # Compress in parallel
     $images |  par-each { |image|
-        let new = $image.name | path parse | upsert extension { 'webp' } | path join
+        let new = $image.name | path parse | upsert extension { $format } | path join
 
         magick $image.name $new
 

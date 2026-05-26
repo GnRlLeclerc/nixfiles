@@ -1,0 +1,9 @@
+#!/usr/bin/env nu
+
+# SSH to a polytechnique machine
+def main [machine: string] {
+  let user = 'thibaut.de-saivre'
+  let host = $'($machine).polytechnique.fr'
+
+  ssh $'($user)@($host)' -i ~/.ssh/polytechnique
+}

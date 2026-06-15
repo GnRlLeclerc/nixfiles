@@ -1,0 +1,29 @@
+#!/usr/bin/env nu
+
+let config = cat ~/.config/ssp.toml | from toml
+
+# SCP with shortcuts
+# `from` & `to` can refer to shortcuts defined in ssp.toml
+# A file can be specified, it will be appended to the `from`
+# resolved shortcut.
+# If no shortcut corresponds, will behave like scp.
+def main [from: string, to: string, file?: string, -r] {
+
+  def get_cfg [key: string] {
+    if $key in $config {
+      return ($config | get $key)
+    }
+    return $key
+  }
+
+  mut $from = get_cfg $from
+  let $to = get_cfg $to
+
+  if $file != null {
+    $from = $from | path join $file
+  }
+
+  let $flags = if $r { ["-r"] } else { [] }
+
+  scp ...$flags $from $to
+}

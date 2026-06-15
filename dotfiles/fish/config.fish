@@ -6,6 +6,7 @@ abbr -a neofetch fastfetch
 abbr -a lolcat dotacat
 
 # Aliases (long flags)
+alias restart-audio="systemctl --user restart pipewire.service pipewire-pulse.service"
 alias cat='bat --paging=never --style=plain --color=always'
 alias less='bat --paging=always --style=plain --color=always'
 alias cargo-update='cargo install-update -a'

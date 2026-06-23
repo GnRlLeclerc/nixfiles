@@ -1,0 +1,21 @@
+#!/usr/bin/env nu
+
+# Turn a jupyter notebook into a runnable python script
+def main [path: string, target: string] {
+
+  rm -f $target
+  let file = open $path | from json
+  let cells = $file.cells
+
+  for cell in $cells {
+    if $cell.cell_type != "code" {
+      continue
+    }
+
+    for line in $cell.source {
+      $line | save --append $target
+    }
+
+    "\n" | save --append $target
+  }
+}

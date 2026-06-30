@@ -4,6 +4,7 @@ abbr -a du dust
 abbr -a ps procs
 abbr -a neofetch fastfetch
 abbr -a lolcat dotacat
+abbr -a lz 'ls | fzf --ansi'
 
 # Aliases (long flags)
 alias restart-audio="systemctl --user restart pipewire.service pipewire-pulse.service"

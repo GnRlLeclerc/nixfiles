@@ -17,6 +17,7 @@ alias lr='eza -lTg -L 2 --icons --header --group-directories-first  --color=alwa
 alias lR='eza -lTg --icons --header --group-directories-first  --color=always'
 alias la='eza -ag --icons --header --group-directories-first  --color=always'
 alias git-remove-local='git fetch -p ; git branch -r | awk '\''{print $1}'\'' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '\''{print $1}'\'' | xargs git branch -d'
+alias cargo-reset-index='rm -rf ~/.cargo/registry/index/'
 
 # Environment variables
 set -gx EDITOR nvim

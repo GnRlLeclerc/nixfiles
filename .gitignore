@@ -33,3 +33,5 @@
 # Niri
 /dotfiles/niri/colors.kdl
 
+# NixOS switch profile
+.profile

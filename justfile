@@ -4,16 +4,16 @@ help:
   echo "Helper commands to navigate NixOS configurations"
 
 # Switch to a new NixOS generation
-switch:
-  sudo nixos-rebuild switch --flake .#main-laptop
+switch PROFILE=`cat .profile`:
+  sudo nixos-rebuild switch --flake .#{{PROFILE}}
+
+# Test a new NixOS generation
+test PROFILE=`cat .profile`:
+  sudo nixos-rebuild test --flake .#{{PROFILE}}
 
 # Switch my own home-manager config
 thibaut:
   home-manager switch --flake .#thibaut
-
-# Test a new NixOS generation
-test:
-  sudo nixos-rebuild test --flake .#main-laptop
 
 # Rollback to the previous NixOS generation
 rollback:

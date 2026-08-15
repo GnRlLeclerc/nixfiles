@@ -3,8 +3,9 @@
 
 let
   nodeVersions = with pkgs; [
-    nodejs_20
     nodejs_22
+    nodejs_24
+    nodejs_26
   ];
 
   mkNodeShell = node: pkgs.mkShell { packages = [ node ]; };

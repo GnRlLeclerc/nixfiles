@@ -1,0 +1,6 @@
+gui:
+  showCommandLog: false
+  showBottomLine: false
+  showListFooter: false
+  nerdFontsVersion: "3"
+  showPanelJumps: false

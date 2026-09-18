@@ -19,6 +19,7 @@
     bat
     bluetui
     # cava  # BUG: broken
+    claude-code
     cmatrix
     delta
     dotacat

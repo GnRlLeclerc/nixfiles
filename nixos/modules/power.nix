@@ -29,9 +29,7 @@
       CPU_MIN_PERF_ON_BAT = 0;
       CPU_MAX_PERF_ON_BAT = 40;
 
-      # Battery life
-      START_CHARGE_THRESH_BAT0 = 70;
-      STOP_CHARGE_THRESH_BAT0 = 1;
+      # Battery charge thresholds are device-specific, see device-configuration/
     };
   };
 }

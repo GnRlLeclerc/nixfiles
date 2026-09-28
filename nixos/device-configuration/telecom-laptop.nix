@@ -28,6 +28,12 @@
 
   services.fwupd.enable = true;
 
+  # Battery life (ThinkPad): start charging below 70%, stop at 80%
+  services.tlp.settings = {
+    START_CHARGE_THRESH_BAT0 = 70;
+    STOP_CHARGE_THRESH_BAT0 = 80;
+  };
+
   # Enable Vulkan rendering
   # Prefer rendering with the AMD GPU
   # environment.sessionVariables.VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";

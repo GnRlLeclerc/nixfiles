@@ -16,8 +16,8 @@ thibaut:
   home-manager switch --flake .#thibaut
 
 # Rollback to the previous NixOS generation
-rollback:
-  sudo nixos-rebuild switch --rollback --flake .#main-laptop
+rollback PROFILE=`cat .profile`:
+  sudo nixos-rebuild switch --rollback --flake .#{{PROFILE}}
 
 # Remove all old nixos & home-manager generations, and collect garbage
 prune: 

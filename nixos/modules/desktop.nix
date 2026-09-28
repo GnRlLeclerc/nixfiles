@@ -63,6 +63,7 @@ in
       waybar # Status bar
       udiskie # USB automount
       awww # Wallpaper
+      clipse # Clipboard manager
       hyprpolkitagent # Polkit agent
       rose-pine-cursor # Cursor
       pulseaudio # Audio control

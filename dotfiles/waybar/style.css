@@ -83,6 +83,7 @@
 #memory.critical,
 #cpu.critical,
 #temperature.critical,
+#pulseaudio.microphone.source-muted,
 #battery.critical:not(.charging) {
   background: @red;
   border-radius: 2px;

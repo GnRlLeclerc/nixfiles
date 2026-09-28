@@ -25,6 +25,7 @@
     // "tray",
     "custom/notifications",
     "pulseaudio",
+    "pulseaudio#microphone",
     "backlight",
     "battery",
     "network",
@@ -158,6 +159,16 @@
       ],
     },
     "on-click": "pavucontrol",
+  },
+  // Default microphone (the "source-muted" class is set when muted)
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " muted",
+    "tooltip-format": "{desc}",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
   },
   "backlight": {
     // "device": "acpi_video1",

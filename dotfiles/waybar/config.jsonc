@@ -158,7 +158,7 @@
         " "
       ],
     },
-    "on-click": "pavucontrol",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
   },
   // Default microphone (the "source-muted" class is set when muted)
   "pulseaudio#microphone": {

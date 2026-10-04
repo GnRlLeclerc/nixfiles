@@ -15,6 +15,10 @@ _: {
 
   hardware.nvidia.open = false;
 
+  # Run the NVIDIA driver without the GSP firmware: with it, the dGPU stops answering
+  # (Xid 119) when an ACPI event wakes it from runtime D3, then suspend & shutdown hang
+  hardware.nvidia.moduleParams.nvidia.NVreg_EnableGpuFirmware = 0;
+
   services.fwupd.enable = true;
 
   # Battery life (Lenovo IdeaPad/Yoga): STOP=1 enables conservation mode (~60%), START is ignored

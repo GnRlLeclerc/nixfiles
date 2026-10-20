@@ -21,10 +21,16 @@ in
     # Enable CUPS for printing
     services.printing.enable = true;
 
-    # Set dark theme as default
+    # Set dark theme, icons and cursor as defaults
+    # GTK apps read these from dconf (via the settings portal) instead of gtk-{3,4}.0/settings.ini
     programs.dconf.profiles.user.databases = [
       {
-        settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+        settings."org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+          icon-theme = "Papirus-Dark";
+          cursor-theme = "BreezeX-RosePine-Linux";
+          cursor-size = lib.gvariant.mkInt32 24;
+        };
       }
     ];
 
@@ -66,6 +72,7 @@ in
       clipse # Clipboard manager
       hyprpolkitagent # Polkit agent
       rose-pine-cursor # Cursor
+      adwaita-icon-theme # Fallback icons for GTK apps
       pulseaudio # Audio control
       eog # Gnome image viewer
       gsettings-desktop-schemas

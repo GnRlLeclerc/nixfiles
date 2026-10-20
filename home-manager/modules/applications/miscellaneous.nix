@@ -27,7 +27,7 @@ with lib;
       nautilus # File manager
 
       # Libre Office fresh + spellcheck
-      libreoffice-fresh
+      libreoffice-stable
       hunspell
       hunspellDicts.fr-any
       hunspellDicts.en-us

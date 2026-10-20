@@ -43,7 +43,7 @@ with lib;
     ];
   };
 
-  # Auto mount drives
+  # Auto mount drives (enabled if fwupd is enabled)
   # services.udisks2.enable = mkDefault true;
 
   # Enable flatpak
@@ -69,5 +69,11 @@ with lib;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
+  ];
+
+  # https://emudhra.we-have-a-problem.com/
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
   ];
 }

@@ -6,6 +6,8 @@ abbr -a neofetch fastfetch
 abbr -a lolcat dotacat
 abbr -a lz 'ls | fzf --ansi'
 abbr -a lg lazygit
+abbr -a compress "tar -czvf"
+abbr -a decompress "tar -xzvf"
 
 # Aliases (long flags)
 alias restart-audio="systemctl --user restart pipewire.service pipewire-pulse.service"

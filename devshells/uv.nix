@@ -37,9 +37,6 @@
             libxrender
             libxext
             expat
-
-            # Build singularity/apptainer containers to share envs
-            apptainer
           ];
         in
         pkgs:
@@ -56,6 +53,9 @@
           # CUDA
           cudatoolkit
           cudaPackages.cuda_cudart
+
+          # Build singularity/apptainer containers to share envs
+          apptainer
         ])
         ++ buildPkgs # Include the build libraries
         ++ (map (p: p.dev) buildPkgs); # Include the development headers

@@ -37,6 +37,9 @@
             libxrender
             libxext
             expat
+
+            # Build singularity/apptainer containers to share envs
+            apptainer
           ];
         in
         pkgs:

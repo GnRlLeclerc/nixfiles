@@ -35,3 +35,6 @@
 
 # NixOS switch profile
 .profile
+
+# Yazi plugins
+/dotfiles/yazi/plugins/

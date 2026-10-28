@@ -1,0 +1,7 @@
+# Yazi keymaps (merged on top of the defaults)
+
+[[mgr.prepend_keymap]]
+# The default <Enter> opens directories in the editor, which shows its file tree
+on = "<Enter>"
+run = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"

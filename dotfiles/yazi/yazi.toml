@@ -1,0 +1,5 @@
+# Yazi configuration
+
+[opener]
+# Open text files directly in nvim
+edit = [{ run = "nvim %s", desc = "nvim", block = true, for = "unix" }]

@@ -43,6 +43,7 @@
     stow
     tldr
     wiremix
+    yazi
     zellij
     zoxide
 

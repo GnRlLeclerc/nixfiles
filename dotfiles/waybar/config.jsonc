@@ -184,8 +184,9 @@
       "",
       ""
     ],
-    "on-scroll-up": "light -A 1",
-    "on-scroll-down": "light -U 1",
+    // 1% steps for fine control, never down to 0 (screen fully off)
+    "on-scroll-up": "brightnessctl -q set 1%+",
+    "on-scroll-down": "brightnessctl -q -n set 1%-",
     "interval": 2,
   },
   "battery": {
